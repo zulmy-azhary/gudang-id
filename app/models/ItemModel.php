@@ -1,8 +1,8 @@
 <?php 
 
 class ItemModel{
-    private $tableItems = 'items';
-    private $tableCategory = 'kategori';
+    private $tableItems = 'i_itemlist';
+    private $tableCategory = 'i_category';
     private $db;
 
     // Instance DB when ItemModel class is called
@@ -33,11 +33,11 @@ class ItemModel{
                 ";
         
         $this->db->query($query);
-        $this->db->bind('kd_barang', $data['kd_barang']);
-        $this->db->bind('nm_barang', $data['nm_barang']);
-        $this->db->bind('kategori', $data['kategori']);
-        $this->db->bind('harga', $data['harga']);
-        $this->db->bind('stok', $data['stok']);
+        $this->db->bind(':kd_barang', $data['kd_barang']);
+        $this->db->bind(':nm_barang', $data['nm_barang']);
+        $this->db->bind(':kategori', $data['kategori']);
+        $this->db->bind(':harga', $data['harga']);
+        $this->db->bind(':stok', $data['stok']);
         $this->db->execute();
 
         return $this->db->rowCounting();
@@ -47,7 +47,7 @@ class ItemModel{
     public function deleteData($id){
         $query = "DELETE FROM $this->tableItems WHERE id_barang = :id";
         $this->db->query($query);
-        $this->db->bind('id', $id);
+        $this->db->bind(':id', $id);
         $this->db->execute();
 
         return $this->db->rowCounting();
@@ -56,7 +56,7 @@ class ItemModel{
     // Count data from items table based on id_kat
     public function countData($param){
         $this->db->query("SELECT COUNT(*) as count FROM $this->tableItems where id_kat = :kategori");
-        $this->db->bind('kategori', $param);
+        $this->db->bind(':kategori', $param);
         
         return $this->db->resultSet();
     }

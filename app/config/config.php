@@ -1,7 +1,9 @@
 <?php 
 
 // BaseURL
-define('BASEURL', 'http://localhost/gudang-id/public');
+define('BASEURL', 'http://localhost/gudang-id');
+define('APPROOT', dirname(dirname(__FILE__)));
+
 
 // DB
 define('DB_HOST', 'localhost');

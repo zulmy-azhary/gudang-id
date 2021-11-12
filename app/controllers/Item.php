@@ -1,43 +1,33 @@
 <?php
 
 class Item extends Controller{
+    public function __construct()
+    {
+        $this->itemModel = $this->model("ItemModel");
+    }    
+    
     // ! View
     // View for index item
     public function index(){
         $data = [
             'title' => 'Item List',
-            'items' => $this->model('ItemModel')->getData()
+            'items' => $this->itemModel->getData()
         ];
-        $this->view('templates/header', $data);
         $this->view('item/index', $data);
-        $this->view('templates/footer');
     }
     // View for create item
     public function create(){
         $data = [
             'title' => 'Add Item',
         ];
-        $this->view('templates/header', $data);
         $this->view('item/create', $data);
-        $this->view('templates/footer');
-    }
-
-    // View for stock in 
-    public function in(){
-        $data = [
-            'title' => 'Stock In',
-            'items' => $this->model('ItemModel')->getData()
-        ];
-        $this->view('templates/header', $data);
-        $this->view('stock/stock-in', $data);
-        $this->view('templates/footer');
     }
 
 
     // ! Method
     // Method for create
     public function add(){
-        if($this->model('ItemModel')->createData($_POST) !== null){
+        if($this->itemModel->createData($_POST) !== null){
             header('Location: ' . BASEURL . '/item');
             exit;            
         }
@@ -45,7 +35,7 @@ class Item extends Controller{
     
     // Method for delete
     public function delete($id){
-        if($this->model('ItemModel')->deleteData($id) !== null){
+        if($this->itemModel->deleteData($id) !== null){
             header('Location: ' . BASEURL . '/item');
             exit;            
         }

@@ -70,7 +70,7 @@ $(document).ready(function () {
 	});
 
 	// Select Item from Stock In
-	$("#selectStockInModal").click(function () {
+	$(document).on('click', '#selectStockInModal',function () {
 		let id = $(this).data("id");
 		let code = $(this).data("code");
 		let name = $(this).data("name");
@@ -84,19 +84,3 @@ $(document).ready(function () {
 		$("#buttonModal").modal("hide");
 	});
 });
-
-// Auto date
-// $(document).ready(function () {
-// 	let date = new Date();
-// 	let day = date.getDate();
-// 	let month = date.getMonth() + 1;
-// 	let year = date.getFullYear();
-
-// 	if (day < 10) day = "0" + day;
-// 	if (month < 10) month = "0" + month;
-
-// 	let today = `${year}-${month}-${day}`;
-
-// 	$("#stockIn-date").val(today);
-// 	console.log(today);
-// });
