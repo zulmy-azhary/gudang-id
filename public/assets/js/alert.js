@@ -38,7 +38,35 @@ $(function () {
 			cancelButtonText: "Kembali",
 		}).then((result) => {
 			if (result.isConfirmed) {
-				$("#createForm").submit();
+				Swal.fire({
+					title: "Data telah ditambahkan!",
+					icon: "success",
+				}).then(() => {
+					$("#createForm").submit();
+				});
+			}
+		});
+	});
+
+	// Update Button
+	$(".update-button").click(function (e) {
+		e.preventDefault();
+		Swal.fire({
+			title: "Ubah Data?",
+			icon: "question",
+			showCancelButton: true,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Ya",
+			cancelButtonText: "Kembali",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				Swal.fire({
+					title: "Data telah diubah!",
+					icon: "success",
+				}).then(() => {
+					$("#updateModalForm").submit();
+				});
 			}
 		});
 	});

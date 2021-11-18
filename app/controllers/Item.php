@@ -23,7 +23,7 @@ class Item extends Controller{
         $this->view('item/create', $data);
     }
 
-
+    
     // ! Method
     // Method for create
     public function add(){
@@ -33,6 +33,18 @@ class Item extends Controller{
         }
     }
     
+    // Get data by id from item modal
+    public function getData(){
+        echo json_encode($this->itemModel->getItemById($_POST['id']));
+    }
+
+    public function update(){
+        if($this->itemModel->updateData($_POST) !== null){
+            header('Location: ' . BASEURL . '/item');
+            exit;            
+        }
+    }
+
     // Method for delete
     public function delete($id){
         if($this->itemModel->deleteData($id) !== null){

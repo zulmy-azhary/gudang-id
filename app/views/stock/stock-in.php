@@ -41,7 +41,7 @@
                                                 <div class="form-group">
                                                     <label for="stockIn-code" class="col-sm-12 col-form-label">Kode Barang</label>
                                                     <div class="input-group col-sm-12">
-                                                        <!-- <input type="hidden" name="id_barang_in" id="stockIn-id" style="visibility: hidden;"> -->
+                                                        <input type="hidden" name="id_barang_in" id="stockIn-id">
                                                         <input type="text" class="form-control" id="stockIn-code" name="kd_barang_in" placeholder="Pilih kode barang" readonly>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text btn-add" type="button" data-toggle="modal" data-target="#buttonModal">

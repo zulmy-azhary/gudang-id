@@ -184,8 +184,6 @@ body::-webkit-scrollbar {
   color: #fef5f2 !important;
   font-size: 0.8rem !important;
   font-weight: 500 !important;
-  width: 86px;
-  height: 35px;
 }
 
 .btn-login i, .btn-add i {
@@ -212,8 +210,6 @@ body::-webkit-scrollbar {
   color: #fef5f2 !important;
   font-size: 0.8rem !important;
   font-weight: 500 !important;
-  width: 86px;
-  height: 35px;
 }
 
 .btn-cancel i, .btn-delete i {
@@ -240,8 +236,6 @@ body::-webkit-scrollbar {
   color: #fef5f2 !important;
   font-size: 0.8rem !important;
   font-weight: 500 !important;
-  width: 86px;
-  height: 35px;
 }
 
 .btn-accept i {
@@ -268,8 +262,6 @@ body::-webkit-scrollbar {
   color: #fef5f2 !important;
   font-size: 0.8rem !important;
   font-weight: 500 !important;
-  width: 86px;
-  height: 35px;
 }
 
 .btn-edit i {

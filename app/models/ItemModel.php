@@ -28,8 +28,7 @@ class ItemModel{
                 kd_barang = :kd_barang,
                 nm_barang = :nm_barang,
                 id_kat = :kategori,
-                harga = :harga,
-                stok = :stok
+                harga = :harga
                 ";
         
         $this->db->query($query);
@@ -37,7 +36,35 @@ class ItemModel{
         $this->db->bind(':nm_barang', $data['nm_barang']);
         $this->db->bind(':kategori', $data['kategori']);
         $this->db->bind(':harga', $data['harga']);
-        $this->db->bind(':stok', $data['stok']);
+        $this->db->execute();
+
+        return $this->db->rowCounting();
+    }
+
+    public function getItemById($id){
+        $query = "SELECT a.id_barang, a.kd_barang, a.nm_barang, a.id_kat, a.harga, b.nm_kat
+                FROM $this->tableItems as a INNER JOIN $this->tableCategory as b
+                ON a.id_kat = b.id_kat
+                WHERE a.id_barang = :id
+                ";
+
+        $this->db->query($query);
+        $this->db->bind(':id', $id);
+        return $this->db->single();
+    }
+    public function updateData($data){
+        $query = "UPDATE $this->tableItems SET
+                nm_barang = :nm_barang,
+                id_kat = :kategori,
+                harga = :harga
+                WHERE id_barang = :id_barang
+                ";
+
+        $this->db->query($query);
+        $this->db->bind(':nm_barang', $data['nm_barang']);
+        $this->db->bind(':kategori', $data['kategori']);
+        $this->db->bind(':harga', $data['harga']);
+        $this->db->bind(':id_barang', $data['id_barang']);
         $this->db->execute();
 
         return $this->db->rowCounting();
@@ -62,7 +89,10 @@ class ItemModel{
     }
 
     public function update_stock_in($data){
-        $query = "UPDATE $this->tableItems SET stok = stok + :stock_in WHERE id_barang = :id";
+        $query = "UPDATE $this->tableItems SET
+                stok = stok + :stock_in
+                WHERE id_barang = :id
+                ";
 
         $this->db->query($query);
         $this->db->bind(':id', $data['id_barang_in']);

@@ -40,14 +40,14 @@ $(function () {
 				last: '<i class="fas fa-angle-double-right"></i>',
 			},
 		},
-    });
-    
-    // Table for Customer
-    $("#customerList").DataTable({
-        responsive: true,
-        paging: true,
-        lengthChange: true,
-        autoWidth: false,
+	});
+
+	// Table for Customer
+	$("#customerList").DataTable({
+		responsive: true,
+		paging: true,
+		lengthChange: true,
+		autoWidth: false,
 		ordering: false,
 		info: false,
 		language: {
@@ -58,7 +58,7 @@ $(function () {
 				last: '<i class="fas fa-angle-double-right"></i>',
 			},
 		},
-    });
+	});
 });
 
 // ! Event
@@ -86,7 +86,7 @@ $(document).ready(function () {
 	});
 
 	// Select Item from Stock In
-	$(document).on('click', '#selectStockInModal',function () {
+	$(document).on("click", "#selectStockInModal", function () {
 		let id = $(this).data("id");
 		let code = $(this).data("code");
 		let name = $(this).data("name");
@@ -98,5 +98,34 @@ $(document).ready(function () {
 		$("#stockIn-category").val(category);
 		$("#initial-stock").val(stock);
 		$("#buttonModal").modal("hide");
+	});
+
+	// $(document).on('click', '#updateModal', function () {
+	// 	let category = $(this).data("category");
+	// 	let code = $(this).data("code");
+	// 	let name = $(this).data("name")
+
+	// 	$("#updateCategory").val(category);
+	// 	$("#updateItemCode").val(code);
+	// 	$("#updateNameItem").val(name);
+	// })
+	$(document).on("click", "#updateModal", function () {
+		let id = $(this).data("id");
+
+		$.ajax({
+			url: 'http://localhost/gudang-id/public/item/getdata',
+			data: { id: JSON.stringify(id) },
+			method: 'POST',
+			success: function (res) {
+				let data = JSON.parse(res);
+
+				$("#updateIdBarang").val(data.id_barang);
+				$("#updateItemCode").val(data.kd_barang);
+				$("#updateItemName").val(data.nm_barang);
+				$("#updateCategoryName").val(data.nm_kat);
+				$("#updateCategory").val(data.id_kat);
+				$("#updatePrice").val(data.harga);
+			}
+		})
 	});
 });

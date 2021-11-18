@@ -18,8 +18,8 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link">
+                <li class="nav-item <?= $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'menu-open' : ''; ?>">
+                    <a class="nav-link <?= $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
                         <i class="bx bx-layer"></i>
                         <p>
                             Item

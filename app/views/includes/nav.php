@@ -12,7 +12,7 @@
                 <img class="brand-image img-circle elevation-3" src="<?= BASEURL ?>/dist/img/avatar5.png" width="30" height="30">
             </span>
             
-            <ul class="dropdown-menu dropdown-menu-right dropdown-menu-dark">
+            <ul class="dropdown-menu dropdown-menu-right dropdown-menu-dark text-center">
                 <li><h5 class="dropdown-item disabled"><?= $_SESSION['fullname']; ?></h5></li>
                 <li><p class="dropdown-item disabled p-0 mb-0 role-profile text-success"><?= $_SESSION['role']; ?></p></li>
                 <div class="dropdown-divider"></div>
