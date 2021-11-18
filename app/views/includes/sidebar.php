@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?= BASEURL ?>/customer" class="nav-link <?= $data['title'] == 'Customer List' ? 'active' : ''; ?>">
                         <i class='bx bx-group' ></i>
                         <p>Customer</p>
                     </a>

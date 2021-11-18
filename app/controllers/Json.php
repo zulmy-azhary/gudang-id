@@ -1,6 +1,8 @@
 <?php 
 
 class Json extends Controller{
+
+    // Ajax for create item
     public function itemJson(){
         $jsonData = json_decode($_POST['data'], true);
         $category = $jsonData['category'];
@@ -22,9 +24,8 @@ class Json extends Controller{
             'key' => $key,
         ];
         
-        print_r($data);
         // return value into json file
         $jsonFile = json_encode($data, JSON_PRETTY_PRINT);
-        file_put_contents('json/jsonData.json', $jsonFile);
+        print_r($jsonFile);
     }
 } 

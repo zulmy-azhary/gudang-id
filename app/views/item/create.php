@@ -34,7 +34,7 @@
                                                             </span>
                                                         </div>
                                                         <select class="custom-select" id="item-category" name="kategori" required>
-                                                            <option selected value="">Pilih Kategori</option>
+                                                            <option selected data-value="-" value="">Pilih Kategori</option>
                                                             <option value="1" data-value="EK">Elektronik</option>
                                                             <option value="2" data-value="TK">Toolkits</option>
                                                         </select>

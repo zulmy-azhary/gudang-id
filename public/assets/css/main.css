@@ -1,3 +1,4 @@
+/* Don't delete from this style */
 .role-profile{
 	font-size: 14px;
 }
@@ -14,6 +15,13 @@
 	text-align: center;
 }
 
+.footer-wrapper{
+	gap: 1rem;
+}
+/* To this */
+
+
+/* Styling starting from this */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 * {
 	font-family: "Poppins", sans-serif;
@@ -535,8 +543,4 @@
 .main-footer {
 	background: #202332;
 	border: none;
-}
-
-.footer-wrapper{
-	gap: 1rem;
 }

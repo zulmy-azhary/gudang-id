@@ -56,15 +56,13 @@ $(document).ready(function () {
 			url: "http://localhost/gudang-id/public/json/itemJson",
 			method: "post",
 			data: { data: JSON.stringify(data) },
-			success: function () {
+			success: function (data) {
 				// Get json file
-				$.getJSON("http://localhost/gudang-id/public/json/jsonData.json", function (data) {
-					let dataset = data;
-					$("#item-code").val(dataset.code);
-					if (data.key == null) {
-						$("#item-code").val("-");
-					}
-				});
+				let dataset = JSON.parse(data);
+				$("#item-code").val(dataset.code);
+				if (dataset.key == "-") {
+					$("#item-code").val("-");
+				}
 			},
 		});
 	});

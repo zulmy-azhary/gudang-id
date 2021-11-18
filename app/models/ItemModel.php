@@ -15,7 +15,7 @@ class ItemModel{
         $query = "SELECT a.*, b.*
                     FROM $this->tableItems as a 
                     INNER JOIN $this->tableCategory as b
-                    ON a.id_kat = b.id_kat
+                    ON a.id_kat = b.id_kat ORDER BY a.kd_barang
                 ";
         
         $this->db->query($query);
@@ -59,5 +59,16 @@ class ItemModel{
         $this->db->bind(':kategori', $param);
         
         return $this->db->resultSet();
+    }
+
+    public function update_stock_in($data){
+        $query = "UPDATE $this->tableItems SET stok = stok + :stock_in WHERE id_barang = :id";
+
+        $this->db->query($query);
+        $this->db->bind(':id', $data['id_barang_in']);
+        $this->db->bind(':stock_in', $data['set_stok_in']);
+        $this->db->execute();
+
+        return $this->db->rowCounting();
     }
 }

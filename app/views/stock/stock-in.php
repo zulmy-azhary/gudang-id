@@ -53,7 +53,7 @@
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <label for="stockIn-stock">Tambah Stok</label>
-                                                        <input type="number" class="form-control" id="set-stockIn-stock" name="set_stok_in" min="0">
+                                                        <input type="number" class="form-control" id="set-stockIn-stock" name="set_stok_in" min="1" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group mt-5 mb-0">

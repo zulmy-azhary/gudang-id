@@ -2,9 +2,6 @@
 <html lang="en">
     <?php require APPROOT . '/views/includes/head.php' ?>
     <body class="hold-transition sidebar-mini">
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?= BASEURL ?>/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-        </div>
         <div class="wrapper">
             <?php require APPROOT . '/views/includes/nav.php' ?>
             <?php require APPROOT . '/views/includes/sidebar.php' ?>
@@ -13,7 +10,7 @@
                 <div class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 col-title">
                                 <h1 class="m-0">Dashboard</h1>
                             </div>
                         </div>
