@@ -5,7 +5,7 @@
         <div class="wrapper">
             <?php require APPROOT . '/views/includes/nav.php' ?>
             <?php require APPROOT . '/views/includes/sidebar.php' ?>
-            <div class="content-wrapper">
+            <div class="content-wrapper layout-fixed">
                 <section class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">

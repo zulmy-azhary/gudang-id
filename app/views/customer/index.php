@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php require APPROOT . '/views/includes/head.php' ?>
-    <body class="hold-transition sidebar-mini">
+    <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
             <?php require APPROOT . '/views/includes/nav.php' ?>
             <?php require APPROOT . '/views/includes/sidebar.php' ?>
@@ -23,7 +23,7 @@
                         <div class="col-12 table-row">
                             <div class="card">
                                 <div class="card-body">
-                                    <table id="dataItem" class="table table-dark table-striped">
+                                    <table id="customerList" class="table table-dark table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Code</th>

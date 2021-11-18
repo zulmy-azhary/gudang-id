@@ -40,7 +40,25 @@ $(function () {
 				last: '<i class="fas fa-angle-double-right"></i>',
 			},
 		},
-	});
+    });
+    
+    // Table for Customer
+    $("#customerList").DataTable({
+        responsive: true,
+        paging: true,
+        lengthChange: true,
+        autoWidth: false,
+		ordering: false,
+		info: false,
+		language: {
+			paginate: {
+				first: '<i class="fas fa-angle-double-left"></i>',
+				previous: '<i class="fas fa-angle-left"></i>',
+				next: '<i class="fas fa-angle-right"></i>',
+				last: '<i class="fas fa-angle-double-right"></i>',
+			},
+		},
+    });
 });
 
 // ! Event

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php require APPROOT . '/views/includes/head.php' ?>
-    <body class="hold-transition sidebar-mini">
+    <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
             <?php require APPROOT . '/views/includes/nav.php' ?>
             <?php require APPROOT . '/views/includes/sidebar.php' ?>
@@ -10,7 +10,7 @@
                 <section class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">
-                            <div class="col-sm-12 col-title">
+                            <div class="col-sm-6 col-title">
                                 <h1>Tambah Data Barang</h1>
                             </div>
                         </div>
@@ -19,14 +19,15 @@
                 
                 <section class="content">
                     <div class="container-fluid">
-                        <form action="<?= BASEURL ?>/item/add" method="POST" id="createForm" class="form-horizontal">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-body py-5">
-                                            <div class="form-group row form-group-center">
-                                                <label for="item-category" class="col-sm-12 col-md-2 col-form-label">Kategori</label>
-                                                <div class="col-lg-4 col-md-7 col-sm-12 input-wrapper">
+                        <div class="row row-content">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <form action="<?= BASEURL ?>/item/add" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
+                                        <div class="card-body col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="item-category" class="col-sm-12 col-form-label">Kategori</label>
+                                                <div class="col-sm-12">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
@@ -41,9 +42,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row form-group-center">
-                                                <label for="item-code" class="col-sm-12 col-md-2 col-form-label">Kode Barang</label>
-                                                <div class="col-lg-4 col-md-7 col-sm-12 input-wrapper">
+
+                                            <div class="form-group">
+                                                <label for="item-code" class="col-sm-12 col-form-label">Kode Barang</label>
+                                                <div class="col-sm-12">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
@@ -54,9 +56,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row form-group-center">
-                                                <label for="item-name" class="col-sm-12 col-md-2 col-form-label">Nama Barang</label>
-                                                <div class="col-lg-4 col-md-7 col-sm-12 input-wrapper">
+
+                                            <div class="form-group">
+                                                <label for="item-name" class="col-sm-12 col-form-label">Nama Barang</label>
+                                                <div class="col-sm-12">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
@@ -67,9 +70,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row form-group-center">
-                                                <label for="item-price" class="col-sm-12 col-md-2 col-form-label">Harga</label>
-                                                <div class="col-lg-4 col-md-7 col-sm-12 input-wrapper">
+
+                                            <div class="form-group">
+                                                <label for="item-price" class="col-sm-12 col-form-label">Harga</label>
+                                                <div class="col-sm-12">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
@@ -80,30 +84,18 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row form-group-center">
-                                                <label for="item-stock" class="col-sm-12 col-md-2 col-form-label">Stok</label>
-                                                <div class="col-lg-4 col-md-7 col-sm-12 input-wrapper">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">
-                                                                <i class='bx bx-library'></i>   
-                                                            </span>
-                                                        </div>
-                                                        <input type="number" id="inputItemStock" class="form-control" name="stok" value="0" autocomplete="off" readonly>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row submit-button">
-                                                <div class="col-md-12 button-group">
+
+                                            <div class="col-md-12 button-group">
+                                                <div class="row row-action">
                                                     <a class="btn btn-cancel px-3 py-2" href="<?= BASEURL ?>/item">Kembali</a>
                                                     <button type="submit" class="btn btn-accept create-button px-3 py-2">Simpan</button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </section>
             </div>

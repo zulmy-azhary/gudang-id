@@ -1,0 +1,437 @@
+@import 'main_lib';
+
+//! *** reset all set for pages ***
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+//! *** for hide scrollbar on all browser if it works XD ***
+body {
+    -ms-overflow-style: none; // *IE Edge++
+    scrollbar-width: none; // *for mozilla firefox
+    overflow-y: scroll;
+    margin: 0;
+    &::-webkit-scrollbar {
+        display: none; // *for google chrome
+    }
+}
+
+//! *** public component ***
+//* header for all pages
+.main-header {
+    background: $backgroundColorOne;
+    border: none;
+}
+
+//* sidebar custom content for all pages
+.main-sidebar {
+    background: $backgroundColorTwo;
+    .brand-link {
+        border: 0;
+        color: $fontSecond;
+        .brand-text {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    }
+    .sidebar * {
+        &.bx, & p {
+            color: $fontSecond;
+        }
+        & p {
+            font-weight: 600;
+        }
+        &.nav-link {
+            padding: 0.8rem 1rem;
+            align-items: center;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            transition: 0.1s;
+            display: flex;
+            gap: 0.5rem;
+            margin: 0;
+            .bx {
+                font-size: 1.5rem;
+            }
+            &:hover{
+                background: $elementColorFour;
+                .bx, p {
+                    color: $fontPrimary;
+                }
+            }
+            &.active {
+                &.nav-link {
+                    background: $elementColorFour;
+                    .bx, p {
+                        color: $fontPrimary;
+                    }
+                }
+            }
+        }
+        &.nav-treeview {
+            background: $backgroundColorOne;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+//* custom for content
+.content-wrapper {
+    background: $backgroundColorOne;
+    .content-header {
+        .container-fluid {
+            .row {
+                .col-sm-6{
+                    h1{
+                        color: $elementColorFive;
+                    }
+                }
+                .card{
+                    label, .invoice-serial, .total {
+                        font-weight: bold;
+                        color: $fontSecond;
+                    }
+                    .total {
+                        font-size: 3rem;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+//* card custom
+.card {
+    @include Cards;
+}
+
+//* table custom
+.table {
+    background: transparent;
+    thead, tbody {
+        td {
+            font-size: 0.9rem;
+        }
+        th,td {
+            vertical-align: middle;
+            color: $fontSecond;
+            text-align: center;
+            border: none;
+            .btn {
+                vertical-align: middle;
+                color: $fontPrimary;
+                i {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+//* form component
+.form-group {
+    label {
+        color: $fontSecond;
+        font-size: 0.9rem;
+    }
+    .input-group {
+        .input-group-prepend, .input-group-append {
+            .input-group-text {
+                border: none !important;
+                background: $elementColorOne;
+                i {
+                    font-size: 1.3rem;
+                    color: $fontPrimary;
+                }
+            }
+        }
+        .form-control {
+            @include Inputs;
+            cursor: pointer;
+        }
+        .custom-select {
+            @include Inputs;
+            cursor: pointer;
+        }
+    }
+}
+
+//* color for button component
+.btn-login, .btn-add        { @include Buttons($elementColorOne !important); }
+.btn-cancel, .btn-delete    { @include Buttons($elementColorTwo !important); }
+.btn-accept                 { @include Buttons($elementColorThree !important); }
+.btn-edit                  { @include Buttons($elementColorFour !important); }
+
+//* component custom for data tables
+.dataTables_wrapper * {
+    #itemList_length,
+    #customerList_length {
+        label {
+            align-items: center;
+            margin-bottom: none;
+            color: $fontSecond;
+            display: flex;
+            gap: 0.5rem;
+            .custom-select {
+                @include Inputs;
+                option{
+                    @include Inputs;
+                }
+            }
+        }
+    }
+    #stockInList_filter,
+    #itemList_filter,
+    #customerList_filter,
+    #transaction_filter {
+        label {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            color: $fontSecond;
+            font-weight: 500;
+            input {
+                @include Inputs;
+            }
+        }
+    }
+    #stockInList_paginate,
+    #itemList_paginate,
+    #customerList_paginate,
+    #transaction_paginate {
+        ul {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: auto;
+            li {
+                a {
+                    box-shadow: none !important;
+                    outline: none !important;
+                    justify-content: center;
+                    border: none !important;
+                    background: none;
+                    align-items: center;
+                    color: $fontSecond;
+                    display: flex;
+                    height: 100%;
+                }
+            }
+            .active {
+                a {
+                    color: $fontPrimary;
+                }
+            }
+        }
+    }
+
+    #itemList_info,
+    #customerList_info,
+    #transaction_info {
+        color: $fontSecond;
+    }
+}
+
+//* custom for footer
+.main-footer {
+    background: $backgroundColorOne;
+    border: none;
+}
+//! *** end of public component ***
+
+
+.content-wrapper {
+    .content {
+        .content-container {
+            .row-content{
+                .col-md-4 {
+                    .card {
+                        @include Cards;
+                        .card-body {
+                            .form-group {
+                                label {
+                                    color: $fontSecond;
+                                    font-size: 0.9rem;
+                                }
+                                .input-group {
+                                    .input-group-prepend {
+                                        .input-group-text {
+                                            border: none !important;
+                                            background: $elementColorOne;
+                                            i {
+                                                font-size: 1.3rem;
+                                                color: $fontPrimary;
+                                            }
+                                        }
+                                    }
+                                    .form-control {
+                                        @include Inputs;
+                                    }
+                                    select {
+                                        @include Inputs;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }   
+                .col-md-12 {
+                    display: flex;
+                    justify-content: center;
+                    .card {
+                        @include Cards;
+                        .form-horizontal {
+                            .card-body {
+                                .form-group {
+                                    label {
+                                        color: $fontSecond;
+                                        font-size: 0.9rem;
+                                    }
+                                    .col-sm-10 {
+                                        .input-group {
+                                            .input-group-prepend {
+                                                .input-group-text {
+                                                    border: none !important;
+                                                    background: $elementColorOne;
+                                                    i {
+                                                        font-size: 1.3rem;
+                                                        color: $fontPrimary;
+                                                    }
+                                                }
+                                            }
+                                            input {
+                                                @include Inputs;
+                                                padding: 0rem 1.1rem
+                                            }
+                                            select {
+                                                @include Inputs;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//! *** specify pages ***
+
+//* form login
+.login-page {
+    background-color: $backgroundColorOne !important;
+    .card {
+        @include Cards;
+        border-radius: 1rem;
+        .card-header {
+            color: $fontSecond;
+        }
+        .card-footer {
+            .sign-up {
+                color: $fontSecond !important;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+
+.content-wrapper {
+    .content {
+        .container-fluid {
+            .row-content {
+                
+                //* dashboard
+                .box-wrapper {
+                    .small-box {
+                        @include Cards;
+                        justify-content: center;
+                        padding: 1rem;
+                        gap: 0.5rem;
+                        i {
+                            font-size: 3rem;
+                        }
+                        span {
+                            font-size: 0.9rem;
+                            color: $fontSecond;
+                        }
+                        
+                        h5 {
+                            font-weight: bold;
+                            color: $fontPrimary;
+                        }
+                        
+                        .bxs-data           {color: $elementColorFour;} 
+                        .bx-up-arrow-alt    {color: $elementColorTwo;} 
+                        .bxs-dollar-circle  {color: $elementColorThree;} 
+                        .bxs-user-account   {color: $elementColorOne;}
+                        
+                    }
+                }
+                .connectedSortable {
+                    .card {
+                        @include Cards;
+                        .card-header {
+                            border: none;
+                            color: $fontSecond;
+                            h3 {
+                                font-weight: 600;
+                            }
+                        }
+                        .card-body {
+                            .form-group {
+                                .col-sm-10 {
+                                    .input-group {
+                                        .form-control {
+                                            @include Inputs;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .card-footer {
+                            .sign-up {
+                                color: $fontSecond !important;
+                            }
+                        }
+                    }
+                }
+                
+                //  * item-add
+                .col-md-12 {
+                    .row-action {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1rem;
+                    }
+                }
+                
+                // * transactions
+                .col-sm-4 {
+                    .card{
+                        .invoice-serial, .total {
+                            font-weight: bold;
+                            color: $fontSecond;
+                        }
+                        .total {
+                            font-size: 3rem;
+                        }
+                    }
+                    .row-action {
+                        .btn-add, .btn-accept, .btn-cancel {
+                            height: 2.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//! *** end of specify pages ***

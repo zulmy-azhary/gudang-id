@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php require APPROOT . '/views/includes/head.php' ?>
-    <body class="hold-transition sidebar-mini">
+    <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
             <?php require APPROOT . '/views/includes/nav.php' ?>
             <?php require APPROOT . '/views/includes/sidebar.php' ?>
@@ -20,80 +20,112 @@
                 
                 <!-- !main content -->
                 <section class="content">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-3 col-6">
-                                <div class="small-box bg-info">
-                                    <h5>Overall Item</h5>
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- !for monitoring item dan transactions -->
+                        <div class="col-lg-8">
+                            <div class="row row-content">
+                                <!-- ?items out -->
+                                <div class="box-wrapper col-sm-4">
+                                    <div class="small-box shadow-none">
+                                        <i class='bx bx-up-arrow-alt'></i>
+                                        <span>Items Out</span>
+                                        <h5>---</h5>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <div class="small-box bg-success">
-                                    <h5>Entered Item</h5>
+                                
+                                <!-- ?total customers -->
+                                <div class="box-wrapper col-sm-4">
+                                    <div class="small-box shadow-none">
+                                        <i class='bx bxs-user-account'></i>
+                                        <span>Total Customers</span>
+                                        <h5>---</h5>
+                                    </div>
                                 </div>
+
+                                <div class="box-wrapper col-sm-4">
+                                    <div class="small-box shadow-none">
+                                    <i class='bx bx-down-arrow-alt'></i>
+                                        <span>Items In</span>
+                                        <h5>---</h5>
+                                    </div>
                             </div>
-                            <div class="col-lg-3 col-6">
-                                <div class="small-box bg-warning">
-                                    <h5>Item Out</h5>
+                            </div>
+                            
+                            <div class="row row-content">
+                                <div class="col-sm-6">
+                                    <div class="connectedSortable">
+                                        <div class="card shadow-none">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Categories</h3>
+                                                
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <div class="small-box bg-success">
-                                    <h5>Total Customers</h5>
+                                <div class="col-sm-6">
+                                    <div class="connectedSortable">
+                                        <div class="card shadow-none">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Recent Transaction</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="row">
-                            <section class="col-lg-6 connectedSortable">
-                                <div class="card bg-gradient-primary">
-                                    <div class="card-header border-0">
-                                        <h3 class="card-title">
-                                        </h3>
-                                        <!-- card tools -->
-                                        <div class="card-tools">
-                                            <button type="button" class="btn btn-primary btn-sm" data-card-widget="collapse" title="Collapse">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
+                        <!-- !for user monitoring sections -->
+                        <div class="col-lg-4">
+                            <div class="row-content">
+                                <div class="connectedSortable">
+                                    <div class="card shadow-none">
+                                        <div class="card-header">
+                                            <h3 class="card-title">User Online</h3>
+                                            
+                                            <div class="card-tools">
+                                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <!-- /.card-tools -->
-                                    </div>
-                                    <div class="card-body">
-                                    </div>
-                                    <!-- /.card-body-->
-                                    <div class="card-footer bg-transparent">
-                                        <div class="row">
-                                        </div>
-                                        <!-- /.row -->
-                                    </div>
-                                </div>                        
-                            </section>
-                            
-                            <section class="col-lg-6 connectedSortable">
-                                <div class="card bg-gradient-info">
-                                    <div class="card-header border-0">
-                                        <h3 class="card-title">
-                                        </h3>
-                                        
-                                        <div class="card-tools">
-                                            <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
+                                        <div class="card-body">
+                                            <table class="table table-striped table-valign-middle">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <img src="" class="img-circle img-size-32 mr-2">
+                                                        </td>
+                                                        <td class="text-left">
+                                                            Admin 1
+                                                        </td>
+                                                        <td class="text-right">
+                                                            role
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                    </div>
-                                    <!-- /.card-body -->
-                                    <div class="card-footer bg-transparent">
-                                        <div class="row">
-                                        </div>
-                                        <!-- /.row -->
-                                    </div>
-                                    <!-- /.card-footer -->
                                 </div>
-                            </section>
+                            </div>
                         </div>
                     </div>
+                    
+                </div>
                 </section>
                 <!-- !end of main content -->
             </div>

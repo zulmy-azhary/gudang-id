@@ -1,6 +1,6 @@
-<aside class="main-sidebar sidebar-dark-primary navbar-navy elevation-4">
+<aside class="main-sidebar shadow-sm">
     <!-- Brand Logo -->
-    <p class="brand-link">
+    <p class="brand-link d-flex align-items-center">
         <img src="<?= BASEURL; ?>/assets/img/brand/auto.svg" alt="Gudang ID Logo" class="brand-image img-circle elevation-2" style="opacity: .8">
         <span class="brand-text">Gudang ID</span>
     </p>
@@ -19,16 +19,27 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= BASEURL; ?>/stock/in" class="nav-link <?= $data['title'] == 'Stock In' ? 'active' : ''; ?>">
-                        <i class='bx bx-log-in-circle'></i>
-                        <p>Stock In</p>
+                    <a class="nav-link">
+                        <i class="bx bx-layer"></i>
+                        <p>
+                            Item
+                            <i class="right bx bx-chevron-left"></i>
+                        </p>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= BASEURL; ?>/item" class="nav-link <?= $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
-                        <i class='bx bx-layer' ></i>
-                        <p>Item List</p>
-                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= BASEURL; ?>/item" class="nav-link <?= $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
+                                <i class='bx bx-radio-circle-marked'></i>
+                                <p>List Item</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= BASEURL; ?>/stock/in" class="nav-link <?= $data['title'] == 'Stock In' ? 'active' : ''; ?>">
+                                <i class='bx bx-radio-circle-marked'></i>
+                                <p>Stock In</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="<?= BASEURL ?>/customer" class="nav-link <?= $data['title'] == 'Customer List' ? 'active' : ''; ?>">

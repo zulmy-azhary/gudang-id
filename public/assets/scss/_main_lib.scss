@@ -1,0 +1,51 @@
+// !import poppins from google font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+//! *** background color ***
+$backgroundColorOne : #202332;
+$backgroundColorTwo : #2a2e3f;
+
+//! *** element color ***
+$elementColorOne    : #6b55fa;
+$elementColorTwo    : #f17040;
+$elementColorThree  : #37ce55;
+$elementColorFour   : #538aec;
+$elementColorFive   : #9eacbe;
+
+//! *** font color ***
+$fontPrimary : #fef5f2;
+$fontSecond : #9eacbe;
+
+@mixin Cards {
+    background: $backgroundColorTwo !important;
+    box-shadow: none !important;
+    flex-direction: column;
+    display: flex;
+}
+
+@mixin Inputs{
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    font-size: 0.9rem !important;
+}
+
+@mixin Buttons($background){
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    background: $background;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.3rem !important;
+    color: $fontPrimary !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    width: 86px;
+    height: 35px;
+    i {
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
