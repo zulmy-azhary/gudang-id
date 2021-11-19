@@ -30,6 +30,26 @@ $fontSecond : #9eacbe;
     font-size: 0.9rem !important;
 }
 
+@mixin AnimatedForm {
+    
+    // !jika si user ngeklik kolom inputannya
+    &:focus + .label,
+    &:valid + .label {
+        color: $elementColorOne;
+        font-size: 0.9rem;
+        top: -1.5rem;
+    }
+    &:focus ~ .floating-component,
+    &:valid ~ .floating-component {
+        height: 2.5rem;
+    }
+    
+    // !jika inputan tersebut valid
+    
+    
+    
+}
+
 @mixin Buttons($background){
     box-shadow: none !important;
     outline: none !important;

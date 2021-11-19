@@ -41,13 +41,18 @@
                                                 <div class="form-group">
                                                     <label for="stockIn-code" class="col-sm-12 col-form-label">Kode Barang</label>
                                                     <div class="input-group col-sm-12">
-                                                        <input type="hidden" name="id_barang_in" id="stockIn-id">
-                                                        <input type="text" class="form-control" id="stockIn-code" name="kd_barang_in" placeholder="Pilih kode barang" readonly>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text btn-add" type="button" data-toggle="modal" data-target="#buttonModal">
-                                                                <i class='bx bx-search-alt' ></i>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class='bx bx-qr'></i>
                                                             </span>
                                                         </div>
+
+                                                        <input type="hidden" name="id_barang_in" id="stockIn-id">
+                                                        <input type="text" class="form-control rounded-right" id="stockIn-code" name="kd_barang_in" placeholder="Pilih kode barang" readonly>
+
+                                                        <button class="btn btn-add ml-2" type="button" data-toggle="modal" data-target="#buttonModal">
+                                                            +
+                                                        </button>
                                                     </div>
                                                 </div>
 
@@ -105,18 +110,12 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="form-group mt-5 mb-0">
-                                                    <div class="footer-wrapper d-flex justify-content-end" style="gap: 1rem;">
+                                                <div class="col-md-12 button-group d-flex justify-content-end">
+                                                    <div class="row-action justify-content-end">
                                                         <button type="reset" class="btn btn-cancel">Reset</button>
                                                         <button type="submit" name="stock_in_add" class="btn btn-accept">Submit</button>
                                                     </div>
-                                                </div> -->
-                                            <div class="col-md-12 button-group">
-                                                <div class="row row-action">
-                                                <button type="reset" class="btn btn-cancel">Reset</button>
-                                                <button type="submit" name="stock_in_add" class="btn btn-accept">Submit</button>
                                                 </div>
-                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -129,11 +128,9 @@
                 <div class="modal fade" id="buttonModal" aria-labelledby="modalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content card">
-                                <div class="modal-header border-0">
+                                <div class="modal-header border-0 d-flex align-items-center">
                                     <h4 class="modal-title" id="modalLabel">List Barang</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
+                                    <button class="btn" type="button" data-dismiss="modal">x</button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="modal-wrapper table-responsive">
@@ -155,7 +152,7 @@
                                                     <td><?= $item['nm_kat']; ?></td>
                                                     <td><?= $item['stok']; ?></td>
                                                     <td>
-                                                        <button class="btn btn-primary" id="selectStockInModal"
+                                                        <button class="btn btn-add" id="selectStockInModal"
                                                                 data-id="<?= $item['id_barang']; ?>"
                                                                 data-code="<?= $item['kd_barang']; ?>"
                                                                 data-name="<?= $item['nm_barang']; ?>"

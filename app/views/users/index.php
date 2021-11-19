@@ -3,41 +3,33 @@
     <?php require APPROOT . '/views/includes/head.php' ?>
     <body class="hold-transition login-page">
         <div class="login-box">
-            <div class="card card-outline card-primary">
-                <div class="card-header text-center">
+            <div class="card shadow-sm">
+                <div class="card-header text-center border-0">
                     <h1>Gudang ID</p>
                 </div>
-                <div class="card-body">
-                    <h5 class="login-box-msg">Login Form</h5>
+                
+                <form action="<?= BASEURL ?>/users" method="POST" class="form-horizontal">
+                    <div class="card-body">
+                        <div class="col-sm-12">
 
-                    <form action="<?= BASEURL ?>/users" method="POST">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="username" placeholder="Username">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <i class='bx bxs-user-circle' ></i>
-                                </div>
+                            <div class="input-box mb-4 mt-4">
+                                <input type="text" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ' '; ?>" name="username" autocomplete="off">
+                                <span class="label">username</span>
+                                <span class="floating-component"></span>
                             </div>
-                            <div class="invalid-feedback">
-                                <?= $data['usernameError']; ?>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="password" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="password" placeholder="Password">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <i class='bx bxs-lock-alt' ></i>
-                                </div>
-                            </div>
-                            <div class="invalid-feedback">
-                                <?= $data['passwordError']; ?>
+
+                            <div class="input-box mb-5 mt-2">
+                            <input type="password" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ' '; ?>" name="password" placeholder="">
+                                <span class="label">password</span>
+                                <span class="floating-component"></span>
                             </div>
                         </div>
-                        <div class="input-group mt-5">
-                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+                        <div class="input-group col-sm-12 display-4 text-center">
+                            <button type="submit" class="btn btn-login btn-block">Login</button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
                 <div class="card-footer">
                     <p>Not registered yet? Sign up <a href="<?= BASEURL ?>/users/register">here</a></p>
                 </div>

@@ -84,13 +84,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="col-md-12 button-group">
-                                                <div class="row row-action">
-                                                    <a class="btn btn-cancel px-3 py-2" href="<?= BASEURL ?>/item">Kembali</a>
-                                                    <button type="submit" class="btn btn-accept create-button px-3 py-2">Simpan</button>
+                                            <div class="col-md-12 d-flex justify-content-end">
+                                                <div class="row-action justify-content-end">
+                                                        <a class="btn btn-cancel px-3 py-2" href="<?= BASEURL ?>/item">Kembali</a>
+                                                        <button type="submit" class="btn btn-accept create-button px-3 py-2">Simpan</button>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </form>
                                 </div>

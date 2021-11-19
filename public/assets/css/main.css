@@ -46,11 +46,11 @@ body::-webkit-scrollbar {
 }
 
 .main-sidebar .sidebar *.nav-link {
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 1rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   font-size: 0.8rem;
   -webkit-transition: 0.1s;
   transition: 0.1s;
@@ -58,7 +58,8 @@ body::-webkit-scrollbar {
   display: -ms-flexbox;
   display: flex;
   gap: 0.5rem;
-  margin: 0;
+  cursor: pointer;
+  margin: 0.4rem 0rem;
 }
 
 .main-sidebar .sidebar *.nav-link .bx {
@@ -83,7 +84,8 @@ body::-webkit-scrollbar {
 
 .main-sidebar .sidebar *.nav-treeview {
   background: #202332;
-  border-radius: 0.5rem;
+  margin: 0.4rem 0rem;
+  border-radius: 0.3rem;
 }
 
 .content-wrapper {
@@ -277,6 +279,36 @@ body::-webkit-scrollbar {
           align-items: center;
 }
 
+.row-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.row-action .btn {
+  width: 5.431rem;
+}
+
+.modal {
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+}
+
+.modal .modal-dialog .modal-content .modal-header {
+  color: #9eacbe;
+}
+
+.modal .modal-dialog .modal-content .modal-header .btn {
+  color: #9eacbe;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.modal .modal-dialog .modal-content .modal-header .btn:hover {
+  color: #f17040;
+}
+
 .dataTables_wrapper * #itemList_length label,
 .dataTables_wrapper * #customerList_length label {
   -webkit-box-align: center;
@@ -392,104 +424,6 @@ body::-webkit-scrollbar {
   border: none;
 }
 
-.content-wrapper .content .content-container .row-content .col-md-4 .card {
-  background: #2a2e3f !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-4 .card .card-body .form-group label {
-  color: #9eacbe;
-  font-size: 0.9rem;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-4 .card .card-body .form-group .input-group .input-group-prepend .input-group-text {
-  border: none !important;
-  background: #6b55fa;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-4 .card .card-body .form-group .input-group .input-group-prepend .input-group-text i {
-  font-size: 1.3rem;
-  color: #fef5f2;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-4 .card .card-body .form-group .input-group .form-control {
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  outline: none !important;
-  border: none !important;
-  font-size: 0.9rem !important;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-4 .card .card-body .form-group .input-group select {
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  outline: none !important;
-  border: none !important;
-  font-size: 0.9rem !important;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-12 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-12 .card {
-  background: #2a2e3f !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-12 .card .form-horizontal .card-body .form-group label {
-  color: #9eacbe;
-  font-size: 0.9rem;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-12 .card .form-horizontal .card-body .form-group .col-sm-10 .input-group .input-group-prepend .input-group-text {
-  border: none !important;
-  background: #6b55fa;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-12 .card .form-horizontal .card-body .form-group .col-sm-10 .input-group .input-group-prepend .input-group-text i {
-  font-size: 1.3rem;
-  color: #fef5f2;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-12 .card .form-horizontal .card-body .form-group .col-sm-10 .input-group input {
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  outline: none !important;
-  border: none !important;
-  font-size: 0.9rem !important;
-  padding: 0rem 1.1rem;
-}
-
-.content-wrapper .content .content-container .row-content .col-md-12 .card .form-horizontal .card-body .form-group .col-sm-10 .input-group select {
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-  outline: none !important;
-  border: none !important;
-  font-size: 0.9rem !important;
-}
-
 .login-page {
   background-color: #202332 !important;
 }
@@ -505,16 +439,69 @@ body::-webkit-scrollbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 1rem;
+  border-radius: 0.4rem;
 }
 
 .login-page .card .card-header {
   color: #9eacbe;
 }
 
-.login-page .card .card-footer .sign-up {
+.login-page .card .card-body .input-box {
+  position: relative;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.login-page .card .card-body .input-box input {
+  background: transparent;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+  font-size: 0.9rem !important;
+  position: absolute;
+  z-index: 1;
+}
+
+.login-page .card .card-body .input-box input:focus + .label,
+.login-page .card .card-body .input-box input:valid + .label {
+  color: #6b55fa;
+  font-size: 0.9rem;
+  top: -1.5rem;
+}
+
+.login-page .card .card-body .input-box input:focus ~ .floating-component,
+.login-page .card .card-body .input-box input:valid ~ .floating-component {
+  height: 2.5rem;
+}
+
+.login-page .card .card-body .input-box .label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #9eacbe;
+  font-size: 1rem;
+  font-weight: bolder;
+  display: block;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  pointer-events: none;
+}
+
+.login-page .card .card-body .input-box .floating-component {
+  width: 100%;
+  height: 0.12rem;
+  background: #9eacbe;
+  border-radius: 0.2rem;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  bottom: 0;
+}
+
+.login-page .card .card-footer {
   color: #9eacbe !important;
-  font-size: 0.8rem;
 }
 
 .content-wrapper .content .container-fluid .row-content .box-wrapper .small-box {
@@ -597,16 +584,6 @@ body::-webkit-scrollbar {
 
 .content-wrapper .content .container-fluid .row-content .connectedSortable .card .card-footer .sign-up {
   color: #9eacbe !important;
-}
-
-.content-wrapper .content .container-fluid .row-content .col-md-12 .row-action {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 1rem;
 }
 
 .content-wrapper .content .container-fluid .row-content .col-sm-4 .card .invoice-serial, .content-wrapper .content .container-fluid .row-content .col-sm-4 .card .total {

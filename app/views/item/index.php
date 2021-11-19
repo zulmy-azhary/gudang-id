@@ -53,8 +53,10 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <a class="btn btn-accept" href="<?= BASEURL ?>/item/create"><i class='bx bx-plus' ></i> Tambah</a>
+                                <div class="col-md-12 button-group">
+                                    <div class="row row-action">
+                                        <a class="btn btn-accept" href="<?= BASEURL ?>/item/create"></i> Tambah</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -67,11 +69,9 @@
                 <form action="<?= BASEURL ?>/item/update" method="POST" id="updateModalForm">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content card">
-                            <div class="modal-header border-0">
-                                <h4 class="modal-title" id="modalLabel">Edit Barang</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
+                            <div class="modal-header border-0 d-flex align-items-center">
+                                <h4 class="modal-title" id="modalLabel">List Barang</h4>
+                                <button class="btn" type="button" data-dismiss="modal">x</button>
                             </div>
                             <div class="modal-body">
                                 <div class="modal-wrapper table-responsive">
@@ -135,9 +135,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <div class="col-md-12 button-group">
-                                    <div class="row row-action justify-content-center" style="gap: 1rem;">
+                            <div class="modal-footer border-0">
+                                <div class="col-md-12">
+                                    <div class="row-action justify-content-center" style="gap: 1rem;">
                                         <button class="btn btn-cancel px-3 py-2" data-dismiss="modal">Kembali</button>
                                         <button type="submit" class="btn btn-accept update-button px-3 py-2">Update</button>
                                     </div>

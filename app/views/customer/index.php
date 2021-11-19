@@ -53,10 +53,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row-action col-12">
-                            <a class="btn btn-accept" href="../pages/customer-add.html">
-                                add items
-                            </a>
+                        <div class="col-md-12">
+                            <div class="row-action">
+                                <a class="btn btn-cancel px-3 py-2" href="<?= BASEURL ?>/item">Kembali</a>
+                                <button type="submit" class="btn btn-accept create-button px-3 py-2">Simpan</button>
+                            </div>
                         </div>
                     </div>
                 </section>
