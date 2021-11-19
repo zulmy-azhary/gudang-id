@@ -55,14 +55,12 @@ class ItemModel{
     public function updateData($data){
         $query = "UPDATE $this->tableItems SET
                 nm_barang = :nm_barang,
-                id_kat = :kategori,
                 harga = :harga
                 WHERE id_barang = :id_barang
                 ";
 
         $this->db->query($query);
         $this->db->bind(':nm_barang', $data['nm_barang']);
-        $this->db->bind(':kategori', $data['kategori']);
         $this->db->bind(':harga', $data['harga']);
         $this->db->bind(':id_barang', $data['id_barang']);
         $this->db->execute();

@@ -43,15 +43,15 @@
                                                     <div class="input-group col-sm-12">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
-                                                                <i class='bx bx-qr'></i>
+                                                                <i class="bx bx-barcode"></i>
                                                             </span>
                                                         </div>
 
                                                         <input type="hidden" name="id_barang_in" id="stockIn-id">
-                                                        <input type="text" class="form-control rounded-right" id="stockIn-code" name="kd_barang_in" placeholder="Pilih kode barang" readonly>
+                                                        <input type="text" class="form-control rounded-right" id="stockIn-code" name="kd_barang_in" placeholder="Pilih kode barang..." readonly>
 
-                                                        <button class="btn btn-add ml-2" type="button" data-toggle="modal" data-target="#buttonModal">
-                                                            +
+                                                        <button class="btn btn-add ml-2 d-flex align-items-center" type="button" data-toggle="modal" data-target="#buttonModal">
+                                                            <i class='bx bx-search-alt mr-1'></i>Search
                                                         </button>
                                                     </div>
                                                 </div>
@@ -85,24 +85,24 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <div class="row col-sm-12 m-0">
-                                                        <div class="col-sm-6 pl-0">
+                                                    <div class="row col-sm-12 col-md-12 col-lg-12 m-0 p-0">
+                                                        <div class="col-sm-12 col-md-6 col-lg-6">
                                                             <label for="initial-stock" class="col-form-label">Stok Awal</label>
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
-                                                                    <i class='bx bx-category-alt'></i>
+                                                                    <i class='bx bx-archive' ></i>
                                                                     </span>
                                                                 </div>
                                                                 <input type="text" class="form-control" id="initial-stock" name="stok_in" value="-" readonly>
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-6 pr-0">
+                                                        <div class="col-sm-12 col-md-6 col-lg-6">
                                                             <label for="stockIn-stock" class="col-form-label">Tambah Stok</label>
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
-                                                                        <i class='bx bx-category-alt'></i>
+                                                                    <i class='bx bx-archive-in'></i>
                                                                     </span>
                                                                 </div>
                                                                 <input type="number" class="form-control" id="set-stockIn-stock" name="set_stok_in" min="1" required>

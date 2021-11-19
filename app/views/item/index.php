@@ -70,14 +70,14 @@
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content card">
                             <div class="modal-header border-0 d-flex align-items-center">
-                                <h4 class="modal-title" id="modalLabel">List Barang</h4>
+                                <h4 class="modal-title" id="modalLabel">Update Data Barang</h4>
                                 <button class="btn" type="button" data-dismiss="modal">x</button>
                             </div>
                             <div class="modal-body">
                                 <div class="modal-wrapper table-responsive">
                                     <div class="form-horizontal d-flex justify-content-center">
                                         <input type="hidden" name="id_barang" id="updateIdBarang">
-                                        <div class="card-body col-md-6">
+                                        <div class="card-body col-md-8">
                                             <div class="form-group">
                                                 <label for="updateCategory" class="col-sm-12 col-form-label">Kategori</label>
                                                 <div class="col-sm-12">
@@ -98,7 +98,7 @@
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
-                                                                <i class='bx bx-category-alt' ></i>
+                                                                <i class="bx bx-barcode"></i>
                                                             </span>
                                                         </div>
                                                         <input type="text" class="form-control" name="kd_barang" id="updateItemCode" readonly>
@@ -111,7 +111,7 @@
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
-                                                                <i class='bx bx-category-alt' ></i>
+                                                                <i class="bx bx-purchase-tag"></i>
                                                             </span>
                                                         </div>
                                                         <input type="text" class="form-control" name="nm_barang" id="updateItemName" autocomplete="off">
@@ -124,10 +124,10 @@
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
-                                                                <i class='bx bx-category-alt' ></i>
+                                                                <i class='bx bx-dollar-circle' ></i>
                                                             </span>
                                                         </div>
-                                                        <input type="text" class="form-control" name="harga" id="updatePrice" autocomplete="off">
+                                                        <input type="number" class="form-control" name="harga" min="1000" id="updatePrice" autocomplete="off">
                                                     </div>
                                                 </div>
                                             </div>

@@ -10,18 +10,23 @@
                 
                 <form action="<?= BASEURL ?>/users" method="POST" class="form-horizontal">
                     <div class="card-body">
-                        <div class="col-sm-12">
-
+                        <div class="col-sm-12 input-group">
                             <div class="input-box mb-4 mt-4">
-                                <input type="text" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ' '; ?>" name="username" autocomplete="off">
-                                <span class="label">username</span>
+                                <input type="text" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="username" autocomplete="off">
+                                <span class="label">Username</span>
                                 <span class="floating-component"></span>
+                                <div class="invalid-feedback">
+                                    <?= $data['usernameError']; ?>
+                                </div>
                             </div>
 
                             <div class="input-box mb-5 mt-2">
-                            <input type="password" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ' '; ?>" name="password" placeholder="">
-                                <span class="label">password</span>
+                                <input type="password" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="password">
+                                <span class="label">Password</span>
                                 <span class="floating-component"></span>
+                                <div class="invalid-feedback">
+                                    <?= $data['passwordError']; ?>
+                                </div>
                             </div>
                         </div>
 
