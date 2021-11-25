@@ -8,6 +8,15 @@ class Stock extends Controller{
         $this->stockModel = $this->model("StockModel");
     }
 
+    //view for list of stock in
+    public function list(){
+        $data = [
+            'title' => 'Stock List',
+            'items' => $this->itemModel->getData()
+        ];
+        $this->view('stock/index', $data);
+    }
+
     // View for stock in 
     public function in(){
         $data = [

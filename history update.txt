@@ -1,0 +1,70 @@
+[***] GUDANG.ID [***]
+aplikasi manajemen data gudang dan data penjualan
+
+[v0.0] analisa dan perancangan fitur-fitur awal dan siapa yang akan menggunakannya.
+[*] level user yang akan mengakses aplikasi
+    1. Manager
+    2. Super Admin
+    3. Admin
+
+[*] Fitur-fitur (halaman apa saja yang akan ada didalam sistem)
+    1. Monitoring
+    2. Data Item
+        - spesifikasi tabel untuk list item
+        - Kode barang
+        - Nama barang
+        - Kategori
+        - Harga
+    3. Data Pelanggan
+        - Spesifikasi tabel
+        - Kode Pelanggan
+        - Nama Pelanggan
+        - Alamat
+        - Telepon
+    4. Data Transaksi
+        - Spesifikasi tabel
+        - Kode Barang
+        - Nama Barang
+        - Kategori
+        - Harga barang satuan
+        - Quantitas
+        - Diskon
+        - Total
+    5. Data Admin (Admin level pengelola gudang)
+    6. Report
+
+
+[v0.1] (Penambahan fitur)
+    1. Fitur Multiuser pada halaman login
+        - Manager
+        - Super Admin	= Akses data Admin, transaksi, barang, laporan.
+        - User		    = Akses transaksi, barang, laporan.
+
+
+[v0.2] (update Crud untuk halaman item)
+    1. Data Item
+        - Menambah halaman form untuk input item baru (non stock) kedalam tabel list item
+        - Menambah halaman baru untuk stock-in (update stock untuk barang yang sudah ada di list).
+    2. Data pelanggan
+        - Menambah data pelanggan
+    3. Data Transaksi
+        - Memanmbahkan halaman baru untuk slot transaksi.
+
+
+[v0.3] (update Crud untuk halaman item)
+    1. Data Item
+        - menambahkan fitur update data barang di bagian tabel list item.
+        - menambhakan fitur hapus data barang di bagian tabel list item.
+
+
+[v0.4] (update crud pada halaman transaksi dan halaman stok barang)
+    1. Data item
+        - menambah halaman untuk data stok-barang.
+        - form input untuk data stok barang.
+        - tabel history untuk stok barang.
+    2. Data Transaksi
+        - Form transaksi
+        - update untuk form data pelanggan.
+
+
+

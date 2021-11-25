@@ -10,35 +10,40 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6 col-title">
-                                <h1 class="m-0">List Data Barang</h1>
+                                <h1 class="m-0">Histori Barang Masuk</h1>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- main content -->
                 <section class="content">
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row row-content">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <table id="itemList" class="table table-dark table-striped text-center">
-                                            <thead id="itemListHeader">
+                                            <thead id="stockListHeader">
                                                 <tr>
+                                                    <th>Tanggal</th>
                                                     <th>Kode Barang</th>
                                                     <th>Nama Barang</th>
                                                     <th>Kategori</th>
-                                                    <th>Harga</th>
+                                                    <th>Stok</th>
+                                                    <th>Admin</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php foreach($data['items'] as $item ) : ?>
                                                 <tr>
+                                                    <td>Tanggal</td>
                                                     <td><?= $item['kd_barang']; ?></td>
                                                     <td><?= $item['nm_barang']; ?></td>
                                                     <td><?= $item['nm_kat']; ?></td>
-                                                    <td><?= $item['harga']; ?></td>
+                                                    <td><?= $item['stok']; ?></td>
+                                                    <td>Admin</td>
                                                     <td>
                                                         <a href="<?= BASEURL ?>/item/update/<?= $item['id_barang']; ?>" class="btn btn-edit" data-toggle="modal" data-target="#itemUpdateModal" id="updateModal" data-id="<?= $item['id_barang']; ?>">
                                                             <i class='bx bx-edit' ></i>
@@ -53,13 +58,14 @@
                                 </div>
                                 <div class="col-md-12 button-group">
                                     <div class="row row-action">
-                                        <a class="btn btn-accept" href="<?= BASEURL ?>/item/create"></i> Tambah</a>
+                                        <a class="btn btn-accept" href="<?= BASEURL ?>/stock/in"></i> Tambah</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                <!-- !end of main content -->
             </div>
 
             <!-- Modal for Edit / Update Button -->

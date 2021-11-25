@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= BASEURL; ?>/stock/in" class="nav-link <?= $data['title'] == 'Stock In' ? 'active' : ''; ?>">
+                            <a href="<?= BASEURL; ?>/stock/list" class="nav-link <?= $data['title'] == 'Stock List' ? 'active' : ''; ?>">
                                 <i class='bx bx-radio-circle-marked'></i>
                                 <p>Stock In</p>
                             </a>
@@ -48,7 +48,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?= BASEURL ?>/transaction" class="nav-link <?= $data['title'] == 'Transaction' ? 'active' : ''; ?>">
                         <i class='bx bx-dollar-circle' ></i>
                         <p>Transaction</p>
                     </a>
