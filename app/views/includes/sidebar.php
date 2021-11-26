@@ -18,8 +18,8 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item <?= $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'menu-open' : ''; ?>">
-                    <a class="nav-link <?= $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
+                <li class="nav-item <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'menu-open' : ''; ?>">
+                    <a class="nav-link <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
                         <i class="bx bx-layer"></i>
                         <p>
                             Item
@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= BASEURL; ?>/stock/list" class="nav-link <?= $data['title'] == 'Stock List' ? 'active' : ''; ?>">
+                            <a href="<?= BASEURL; ?>/stock/list" class="nav-link <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' ? 'active' : ''; ?>">
                                 <i class='bx bx-radio-circle-marked'></i>
                                 <p>Stock In</p>
                             </a>

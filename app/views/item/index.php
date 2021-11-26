@@ -29,6 +29,7 @@
                                                     <th>Nama Barang</th>
                                                     <th>Kategori</th>
                                                     <th>Harga</th>
+                                                    <th>Stok</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -39,8 +40,9 @@
                                                     <td><?= $item['nm_barang']; ?></td>
                                                     <td><?= $item['nm_kat']; ?></td>
                                                     <td><?= $item['harga']; ?></td>
+                                                    <td><?= $item['stok']; ?></td>
                                                     <td>
-                                                        <a href="<?= BASEURL ?>/item/update/<?= $item['id_barang']; ?>" class="btn btn-edit" data-toggle="modal" data-target="#itemUpdateModal" id="updateModal" data-id="<?= $item['id_barang']; ?>">
+                                                        <a href="<?= BASEURL ?>/item/update/<?= $item['id_barang']; ?>" class="btn btn-edit" data-toggle="modal" data-target="#itemUpdateModal" id="itemUpdateModalButton" data-id="<?= $item['id_barang']; ?>">
                                                             <i class='bx bx-edit' ></i>
                                                         </a>
                                                         <a class="btn btn-delete delete-button" href="<?= BASEURL ?>/item/delete/<?= $item['id_barang']; ?>"><i class='bx bx-trash'></i></a>
@@ -53,7 +55,7 @@
                                 </div>
                                 <div class="col-md-12 button-group">
                                     <div class="row row-action">
-                                        <a class="btn btn-accept" href="<?= BASEURL ?>/item/create"></i> Tambah</a>
+                                        <a class="btn btn-accept" href="<?= BASEURL ?>/item/create">Tambah</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,61 +74,59 @@
                                 <button class="btn" type="button" data-dismiss="modal">x</button>
                             </div>
                             <div class="modal-body">
-                                <div class="modal-wrapper table-responsive">
-                                    <div class="form-horizontal d-flex justify-content-center">
-                                        <input type="hidden" name="id_barang" id="updateIdBarang">
-                                        <div class="card-body col-md-8">
-                                            <div class="form-group">
-                                                <label for="updateCategory" class="col-sm-12 col-form-label">Kategori</label>
-                                                <div class="col-sm-12">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">
-                                                                <i class='bx bx-category-alt' ></i>
-                                                            </span>
-                                                        </div>
-                                                        <input type="text" class="form-control" name="kategoriName" id="updateCategoryName" readonly>
-                                                        <input type="hidden" name="kategori" id="updateCategory">
+                                <div class="form-horizontal d-flex justify-content-center">
+                                    <input type="hidden" name="id_barang" id="updateIdBarang">
+                                    <div class="card-body col-md-8">
+                                        <div class="form-group">
+                                            <label for="updateCategory" class="col-sm-12 col-form-label">Kategori</label>
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class='bx bx-category-alt' ></i>
+                                                        </span>
                                                     </div>
+                                                    <input type="text" class="form-control" name="kategoriName" id="updateCategoryName" readonly>
+                                                    <input type="hidden" name="kategori" id="updateCategory">
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="updateItemCode" class="col-sm-12 col-form-label">Kode Barang</label>
-                                                <div class="col-sm-12">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">
-                                                                <i class="bx bx-barcode"></i>
-                                                            </span>
-                                                        </div>
-                                                        <input type="text" class="form-control" name="kd_barang" id="updateItemCode" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateItemCode" class="col-sm-12 col-form-label">Kode Barang</label>
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="bx bx-barcode"></i>
+                                                        </span>
                                                     </div>
+                                                    <input type="text" class="form-control" name="kd_barang" id="updateItemCode" readonly>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="updateItemName" class="col-sm-12 col-form-label">Nama Barang</label>
-                                                <div class="col-sm-12">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">
-                                                                <i class="bx bx-purchase-tag"></i>
-                                                            </span>
-                                                        </div>
-                                                        <input type="text" class="form-control" name="nm_barang" id="updateItemName" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateItemName" class="col-sm-12 col-form-label">Nama Barang</label>
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="bx bx-purchase-tag"></i>
+                                                        </span>
                                                     </div>
+                                                    <input type="text" class="form-control" name="nm_barang" id="updateItemName" autocomplete="off">
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="updatePrice" class="col-sm-12 col-form-label">Harga</label>
-                                                <div class="col-sm-12">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">
-                                                                <i class='bx bx-dollar-circle' ></i>
-                                                            </span>
-                                                        </div>
-                                                        <input type="number" class="form-control" name="harga" min="1000" id="updatePrice" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updatePrice" class="col-sm-12 col-form-label">Harga</label>
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class='bx bx-dollar-circle' ></i>
+                                                        </span>
                                                     </div>
+                                                    <input type="number" class="form-control" name="harga" min="1000" id="updatePrice" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>

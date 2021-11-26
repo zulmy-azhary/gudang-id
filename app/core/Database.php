@@ -73,7 +73,7 @@ class Database{
     }
 
     // Untuk menghitung ada berapa baris yang berubah didalam tabel
-    public function rowCounting(){
+    public function rowCount(){
         return $this->statement->rowCount();
     }
 }

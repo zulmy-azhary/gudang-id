@@ -10,7 +10,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6 col-title">
-                                <h1 class="m-0">Histori Barang Masuk</h1>
+                                <h1 class="m-0">History Barang Masuk</h1>
                             </div>
                         </div>
                     </div>
@@ -22,43 +22,41 @@
                         <div class="row row-content">
                             <div class="col-12">
                                 <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-tools">
+                                            <a class="btn btn-info btn-flat" href="<?= BASEURL ?>/stock/in"><i class='bx bx-plus' ></i> Add Stock</a>
+                                        </div>
+                                    </div>
                                     <div class="card-body">
-                                        <table id="itemList" class="table table-dark table-striped text-center">
+                                        <table id="stockInHistoryList" class="table table-dark table-striped text-center">
                                             <thead id="stockListHeader">
                                                 <tr>
                                                     <th>Tanggal</th>
                                                     <th>Kode Barang</th>
                                                     <th>Nama Barang</th>
-                                                    <th>Kategori</th>
-                                                    <th>Stok</th>
+                                                    <th>Qty</th>
                                                     <th>Admin</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php foreach($data['items'] as $item ) : ?>
+                                                <?php foreach($data['items'] as $stockIn) : ?>
                                                 <tr>
-                                                    <td>Tanggal</td>
-                                                    <td><?= $item['kd_barang']; ?></td>
-                                                    <td><?= $item['nm_barang']; ?></td>
-                                                    <td><?= $item['nm_kat']; ?></td>
-                                                    <td><?= $item['stok']; ?></td>
-                                                    <td>Admin</td>
+                                                    <td><?= indo_date($stockIn['date']); ?></td>
+                                                    <td><?= $stockIn['kd_barang']; ?></td>
+                                                    <td><?= $stockIn['nm_barang']; ?></td>
+                                                    <td><?= $stockIn['qty']; ?></td>
+                                                    <td><?= $stockIn['fullname']; ?></td>
                                                     <td>
-                                                        <a href="<?= BASEURL ?>/item/update/<?= $item['id_barang']; ?>" class="btn btn-edit" data-toggle="modal" data-target="#itemUpdateModal" id="updateModal" data-id="<?= $item['id_barang']; ?>">
-                                                            <i class='bx bx-edit' ></i>
-                                                        </a>
-                                                        <a class="btn btn-delete delete-button" href="<?= BASEURL ?>/item/delete/<?= $item['id_barang']; ?>"><i class='bx bx-trash'></i></a>
+                                                        <button class="btn btn-edit" data-toggle="modal" data-target="#stockInHistoryModal" id="stockInHistoryModalButton" data-id="<?= $stockIn['stock_id']; ?>">
+                                                            <i class='bx bx-info-circle'></i>
+                                                        </button>
+                                                        <a class="btn btn-delete delete-button" href="<?= BASEURL ?>/stock/stockInDelete/<?= $stockIn['stock_id']; ?>/<?= $stockIn['id_barang']; ?>"><i class='bx bx-trash'></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 button-group">
-                                    <div class="row row-action">
-                                        <a class="btn btn-accept" href="<?= BASEURL ?>/stock/in"></i> Tambah</a>
                                     </div>
                                 </div>
                             </div>
@@ -69,71 +67,53 @@
             </div>
 
             <!-- Modal for Edit / Update Button -->
-            <div class="modal fade" id="itemUpdateModal" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal fade" id="stockInHistoryModal" aria-labelledby="modalLabel" aria-hidden="true">
                 <form action="<?= BASEURL ?>/item/update" method="POST" id="updateModalForm">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content card">
                             <div class="modal-header border-0 d-flex align-items-center">
-                                <h4 class="modal-title" id="modalLabel">Update Data Barang</h4>
+                                <h4 class="modal-title" id="modalLabel">Detail Barang Masuk</h4>
                                 <button class="btn" type="button" data-dismiss="modal">x</button>
                             </div>
                             <div class="modal-body">
-                                <div class="modal-wrapper table-responsive">
-                                    <div class="form-horizontal d-flex justify-content-center">
-                                        <input type="hidden" name="id_barang" id="updateIdBarang">
-                                        <div class="card-body col-md-8">
-                                            <div class="form-group">
-                                                <label for="updateCategory" class="col-sm-12 col-form-label">Kategori</label>
-                                                <div class="col-sm-12">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">
-                                                                <i class='bx bx-category-alt' ></i>
-                                                            </span>
-                                                        </div>
-                                                        <input type="text" class="form-control" name="kategoriName" id="updateCategoryName" readonly>
-                                                        <input type="hidden" name="kategori" id="updateCategory">
-                                                    </div>
-                                                </div>
+                                <div class="container-fluid">
+                                    <div class="detail-group mb-4">
+                                        <h4>Tanggal ditambahkan :</h4>
+                                        <p id="stockInDateDetail"></p>
+                                    </div>
+
+                                    <div class="detail-group mb-4">
+                                        <h4>Detail barang :</h4>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h5>Kode Barang</h5>
+                                                <p id="stockInItemCodeDetail"></p>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="updateItemCode" class="col-sm-12 col-form-label">Kode Barang</label>
-                                                <div class="col-sm-12">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">
-                                                                <i class="bx bx-barcode"></i>
-                                                            </span>
-                                                        </div>
-                                                        <input type="text" class="form-control" name="kd_barang" id="updateItemCode" readonly>
-                                                    </div>
-                                                </div>
+                                            <div class="col-sm-6">
+                                                <h5>Nama Barang</h5>
+                                                <p id="stockInItemNameDetail"></p>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="updateItemName" class="col-sm-12 col-form-label">Nama Barang</label>
-                                                <div class="col-sm-12">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">
-                                                                <i class="bx bx-purchase-tag"></i>
-                                                            </span>
-                                                        </div>
-                                                        <input type="text" class="form-control" name="nm_barang" id="updateItemName" autocomplete="off">
-                                                    </div>
-                                                </div>
+                                            <div class="col-sm-6">
+                                                <h5>Kategori</h5>
+                                                <p id="stockInCategoryDetail"></p>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="updatePrice" class="col-sm-12 col-form-label">Harga</label>
-                                                <div class="col-sm-12">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">
-                                                                <i class='bx bx-dollar-circle' ></i>
-                                                            </span>
-                                                        </div>
-                                                        <input type="number" class="form-control" name="harga" min="1000" id="updatePrice" autocomplete="off">
-                                                    </div>
-                                                </div>
+                                            <div class="col-sm-6">
+                                                <h5>Jumlah</h5>
+                                                <p id="stockInQtyDetail"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="detail-group">
+                                        <h4>Ditambahkan oleh :</h4>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h5>Nama Pengguna</h5>
+                                                <p id="stockInFullNameDetail"></p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <h5>User Role</h5>
+                                                <p id="stockInRoleDetail"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -141,16 +121,13 @@
                             </div>
                             <div class="modal-footer border-0">
                                 <div class="col-md-12">
-                                    <div class="row-action justify-content-center" style="gap: 1rem;">
+                                    <div class="row-action justify-content-end" style="gap: 1rem;">
                                         <button class="btn btn-cancel px-3 py-2" data-dismiss="modal">Kembali</button>
-                                        <button type="submit" class="btn btn-accept update-button px-3 py-2">Update</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.modal-content -->
                     </div>
-                    <!-- /.modal-dialog -->
                 </form>
             </div>
             <?php require APPROOT . '/views/includes/footer.php' ?>

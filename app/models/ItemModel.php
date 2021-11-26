@@ -37,8 +37,7 @@ class ItemModel{
         $this->db->bind(':kategori', $data['kategori']);
         $this->db->bind(':harga', $data['harga']);
         $this->db->execute();
-
-        return $this->db->rowCounting();
+        return $this->db->rowCount();
     }
 
     public function getItemById($id){
@@ -47,7 +46,7 @@ class ItemModel{
                 ON a.id_kat = b.id_kat
                 WHERE a.id_barang = :id
                 ";
-
+        
         $this->db->query($query);
         $this->db->bind(':id', $id);
         return $this->db->single();
@@ -64,29 +63,29 @@ class ItemModel{
         $this->db->bind(':harga', $data['harga']);
         $this->db->bind(':id_barang', $data['id_barang']);
         $this->db->execute();
-
-        return $this->db->rowCounting();
+        return $this->db->rowCount();
     }
 
     // Query for delete data from items table
     public function deleteData($id){
         $query = "DELETE FROM $this->tableItems WHERE id_barang = :id";
+        
         $this->db->query($query);
         $this->db->bind(':id', $id);
         $this->db->execute();
-
-        return $this->db->rowCounting();
+        return $this->db->rowCount();
     }
 
     // Count data from items table based on id_kat
     public function countData($param){
-        $this->db->query("SELECT COUNT(*) as count FROM $this->tableItems where id_kat = :kategori");
+        $query = "SELECT COUNT(*) as count FROM $this->tableItems where id_kat = :kategori";
+
+        $this->db->query($query);
         $this->db->bind(':kategori', $param);
-        
         return $this->db->resultSet();
     }
 
-    public function update_stock_in($data){
+    public function updateStockIn($data){
         $query = "UPDATE $this->tableItems SET
                 stok = stok + :stock_in
                 WHERE id_barang = :id
@@ -97,6 +96,20 @@ class ItemModel{
         $this->db->bind(':stock_in', $data['set_stok_in']);
         $this->db->execute();
 
-        return $this->db->rowCounting();
+        return $this->db->rowCount();
+    }
+
+    public function deleteStockIn($data){
+        $query = "UPDATE $this->tableItems SET
+                stok = stok - :stock_in
+                WHERE id_barang = :id
+                ";
+
+        $this->db->query($query);
+        $this->db->bind(':id', $data['id_barang']);
+        $this->db->bind(':stock_in', $data['qty']);
+        $this->db->execute();
+
+        return $this->db->rowCount();
     }
 }

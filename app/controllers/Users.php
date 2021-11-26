@@ -95,7 +95,7 @@ class Users extends Controller{
     // ! Login
     public function index(){
         $data = [
-            'title' => 'Login Page',
+            'title' => 'Login',
             'username' => '',
             'password' => '',
             'usernameError' => '',
@@ -107,7 +107,7 @@ class Users extends Controller{
             //Sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
-                'title' => 'Login Page',
+                'title' => 'Login',
                 'username' => trim($_POST['username']),
                 'password' => trim($_POST['password']),
                 'usernameError' => '',
@@ -138,7 +138,7 @@ class Users extends Controller{
         }
         else{
             $data = [
-                'title' => 'Login Page',
+                'title' => 'Login',
                 'username' => '',
                 'password' => '',
                 'usernameError' => '',

@@ -10,7 +10,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6 col-title">
-                                <h1>Update Stok Barang</h1>
+                                <h1>Tambah Stok Barang Masuk</h1>
                             </div>
                         </div>
                     </div>
@@ -21,6 +21,11 @@
                         <div class="row row-content">
                             <div class="col-md-12">
                                 <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-tools">
+                                            <a class="btn btn-warning btn-flat" href="<?= BASEURL ?>/stock/list"><i class='bx bx-undo'></i> Kembali</a>
+                                        </div>
+                                    </div>
                                     <form action="<?= BASEURL ?>/stock/process" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
                                         <div class="card-body col-md-6">
 

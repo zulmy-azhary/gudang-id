@@ -12,7 +12,7 @@ class Stock extends Controller{
     public function list(){
         $data = [
             'title' => 'Stock List',
-            'items' => $this->itemModel->getData()
+            'items' => $this->stockModel->getStockIn()
         ];
         $this->view('stock/index', $data);
     }
@@ -28,11 +28,28 @@ class Stock extends Controller{
 
     public function process(){
         if(isset($_POST['stock_in_add'])){
-            $this->stockModel->add_stock_in($_POST);
-            $this->itemModel->update_stock_in($_POST);
-            header('Location: ' . BASEURL . '/item');
+            $this->stockModel->addStockIn($_POST);
+            $this->itemModel->updateStockIn($_POST);
+            header('Location: ' . BASEURL . '/stock/list');
             exit;  
         }
     }
 
+    public function stockInDelete($stockId, $itemId){
+        if($this->stockModel->getStockInById($stockId) !== null){
+            $qty = $this->stockModel->getStockInById($stockId)['qty'];
+            $data = [
+                'qty' => $qty,
+                'id_barang' => $itemId
+            ];
+            $this->itemModel->deleteStockIn($data);
+            $this->stockModel->deleteStockIn($stockId);
+            header('Location: ' . BASEURL . '/stock/list');
+            exit;
+        }
+    }
+
+    public function getStockIn(){
+        echo json_encode($this->stockModel->getStockInDetail($_POST['stockId']));
+    }
 }

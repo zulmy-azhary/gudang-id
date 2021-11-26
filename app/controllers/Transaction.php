@@ -1,6 +1,6 @@
 <?php
 
-class Item extends Controller{
+class Transaction extends Controller{
     public function __construct()
     {
         $this->itemModel = $this->model("itemModel");
@@ -9,8 +9,7 @@ class Item extends Controller{
     // view for transaction
     public function index() {
         $data = [
-            'title' => 'Transaction',
-            'title' => $this->itemModel->getData()
+            'title' => 'Transaction'
         ];
         $this->view('transaction/index', $data);
     }
