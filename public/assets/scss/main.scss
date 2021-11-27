@@ -53,7 +53,7 @@ body {
             display: flex;
             gap: 0.5rem;
             cursor: pointer;
-            margin: 0.4rem 0rem;
+            margin: 0rem 0rem;
             .bx {
                 font-size: 1.5rem;
             }
@@ -183,7 +183,10 @@ body {
     .modal-dialog {
         .modal-content {
             .modal-header {
+                justify-content: center;
+                align-items: center;
                 color: $fontSecond;
+                display: flex;
                 .btn {
                     color: $fontSecond;
                     font-weight: 600;
@@ -193,6 +196,11 @@ body {
                     }
                 }
             }
+            .modal-footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 }
@@ -200,6 +208,7 @@ body {
 //* component custom for data tables
 .dataTables_wrapper * {
     #itemList_length,
+    #stockInHistoryList_length,
     #customerList_length {
         label {
             align-items: center;
@@ -216,6 +225,7 @@ body {
         }
     }
     #stockInList_filter,
+    #stockInHistoryList_filter,
     #itemList_filter,
     #customerList_filter,
     #transaction_filter {
@@ -231,6 +241,7 @@ body {
         }
     }
     #stockInList_paginate,
+    #stockInHistoryList_paginate,
     #itemList_paginate,
     #customerList_paginate,
     #transaction_paginate {
@@ -351,12 +362,6 @@ body {
                             font-weight: bold;
                             color: $fontPrimary;
                         }
-                        
-                        .bxs-data           {color: $elementColorFour;} 
-                        .bx-up-arrow-alt    {color: $elementColorTwo;} 
-                        .bxs-dollar-circle  {color: $elementColorThree;} 
-                        .bxs-user-account   {color: $elementColorOne;}
-                        
                     }
                 }
                 .connectedSortable {
@@ -366,7 +371,7 @@ body {
                             border: none;
                             color: $fontSecond;
                             h3 {
-                                font-weight: 600;
+                                font-weight: bolder;
                             }
                         }
                         .card-body {

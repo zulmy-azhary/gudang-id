@@ -12,13 +12,13 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- User Details -->
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-                <li class="nav-item">
+                <li class="nav-item mb-2">
                     <a href="<?= BASEURL; ?>/home" class="nav-link <?= $data['title'] == 'Home' ? 'active' : ''; ?>">
                         <i class='bx bx-grid-alt'></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'menu-open' : ''; ?>">
+                <li class="nav-item mb-2 <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'menu-open' : ''; ?>">
                     <a class="nav-link <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
                         <i class="bx bx-layer"></i>
                         <p>
@@ -28,38 +28,67 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= BASEURL; ?>/item" class="nav-link <?= $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
+                            <a href="<?= BASEURL; ?>/item" class="nav-link mb-1 <?= $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
                                 <i class='bx bx-radio-circle-marked'></i>
                                 <p>List Item</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= BASEURL; ?>/stock/list" class="nav-link <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' ? 'active' : ''; ?>">
+                            <a href="<?= BASEURL; ?>/stock/list" class="nav-link mb-1 <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' ? 'active' : ''; ?>">
                                 <i class='bx bx-radio-circle-marked'></i>
                                 <p>Stock In</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link mb-1">
+                                <i class='bx bx-radio-circle-marked'></i>
+                                <p>Stock Out</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/customer" class="nav-link <?= $data['title'] == 'Customer List' ? 'active' : ''; ?>">
                         <i class='bx bx-group' ></i>
                         <p>Customer</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/transaction" class="nav-link <?= $data['title'] == 'Transaction' ? 'active' : ''; ?>">
                         <i class='bx bx-dollar-circle' ></i>
                         <p>Transaction</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class='bx bx-receipt' ></i>
-                        <p>Report</p>
+                <li class="nav-item mb-2">
+                    <a href="<?= BASEURL ?>/transaction" class="nav-link <?= $data['title'] == 'none' ? 'active' : ''; ?>">
+                        <i class='bx bx-user-circle'></i>
+                        <p>User</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mb-2">
+                    <a class="nav-link">
+                        <i class='bx bx-receipt' ></i>
+                        <p>
+                            Report
+                            <i class="right bx bx-chevron-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link mb-1">
+                                <i class='bx bx-radio-circle-marked'></i>
+                                <p>Data Item</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link mb-1">
+                                <i class='bx bx-radio-circle-marked'></i>
+                                <p>Data Transaction</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/about" class="nav-link <?= $data['title'] == 'About' ? 'active' : ''; ?>">
                         <i class='bx bx-help-circle' ></i>
                         <p>About</p>

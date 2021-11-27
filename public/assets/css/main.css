@@ -59,7 +59,7 @@ body::-webkit-scrollbar {
   display: flex;
   gap: 0.5rem;
   cursor: pointer;
-  margin: 0.4rem 0rem;
+  margin: 0rem 0rem;
 }
 
 .main-sidebar .sidebar *.nav-link .bx {
@@ -176,104 +176,104 @@ body::-webkit-scrollbar {
 }
 
 .btn-login, .btn-add {
+  border-radius: 0.3rem !important;
+  color: #fef5f2 !important;
+  font-size: 0.8rem !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+  font-weight: 500 !important;
   outline: none !important;
   border: none !important;
   background: #6b55fa !important;
   padding: 0.5rem 0.7rem;
-  border-radius: 0.3rem !important;
-  color: #fef5f2 !important;
-  font-size: 0.8rem !important;
-  font-weight: 500 !important;
-}
-
-.btn-login i, .btn-add i {
-  font-size: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.btn-login i, .btn-add i {
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .btn-cancel, .btn-delete {
+  border-radius: 0.3rem !important;
+  color: #fef5f2 !important;
+  font-size: 0.8rem !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+  font-weight: 500 !important;
   outline: none !important;
   border: none !important;
   background: #f17040 !important;
   padding: 0.5rem 0.7rem;
-  border-radius: 0.3rem !important;
-  color: #fef5f2 !important;
-  font-size: 0.8rem !important;
-  font-weight: 500 !important;
-}
-
-.btn-cancel i, .btn-delete i {
-  font-size: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.btn-cancel i, .btn-delete i {
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .btn-accept {
+  border-radius: 0.3rem !important;
+  color: #fef5f2 !important;
+  font-size: 0.8rem !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+  font-weight: 500 !important;
   outline: none !important;
   border: none !important;
   background: #37ce55 !important;
   padding: 0.5rem 0.7rem;
-  border-radius: 0.3rem !important;
-  color: #fef5f2 !important;
-  font-size: 0.8rem !important;
-  font-weight: 500 !important;
-}
-
-.btn-accept i {
-  font-size: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.btn-accept i {
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .btn-edit {
+  border-radius: 0.3rem !important;
+  color: #fef5f2 !important;
+  font-size: 0.8rem !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+  font-weight: 500 !important;
   outline: none !important;
   border: none !important;
   background: #538aec !important;
   padding: 0.5rem 0.7rem;
-  border-radius: 0.3rem !important;
-  color: #fef5f2 !important;
-  font-size: 0.8rem !important;
-  font-weight: 500 !important;
-}
-
-.btn-edit i {
-  font-size: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.btn-edit i {
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -296,7 +296,16 @@ body::-webkit-scrollbar {
 }
 
 .modal .modal-dialog .modal-content .modal-header {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #9eacbe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .modal .modal-dialog .modal-content .modal-header .btn {
@@ -309,7 +318,20 @@ body::-webkit-scrollbar {
   color: #f17040;
 }
 
+.modal .modal-dialog .modal-content .modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .dataTables_wrapper * #itemList_length label,
+.dataTables_wrapper * #stockInHistoryList_length label,
 .dataTables_wrapper * #customerList_length label {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -323,6 +345,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #itemList_length label .custom-select,
+.dataTables_wrapper * #stockInHistoryList_length label .custom-select,
 .dataTables_wrapper * #customerList_length label .custom-select {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -332,6 +355,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #itemList_length label .custom-select option,
+.dataTables_wrapper * #stockInHistoryList_length label .custom-select option,
 .dataTables_wrapper * #customerList_length label .custom-select option {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -341,6 +365,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #stockInList_filter label,
+.dataTables_wrapper * #stockInHistoryList_filter label,
 .dataTables_wrapper * #itemList_filter label,
 .dataTables_wrapper * #customerList_filter label,
 .dataTables_wrapper * #transaction_filter label {
@@ -358,6 +383,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #stockInList_filter label input,
+.dataTables_wrapper * #stockInHistoryList_filter label input,
 .dataTables_wrapper * #itemList_filter label input,
 .dataTables_wrapper * #customerList_filter label input,
 .dataTables_wrapper * #transaction_filter label input {
@@ -369,6 +395,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #stockInList_paginate ul,
+.dataTables_wrapper * #stockInHistoryList_paginate ul,
 .dataTables_wrapper * #itemList_paginate ul,
 .dataTables_wrapper * #customerList_paginate ul,
 .dataTables_wrapper * #transaction_paginate ul {
@@ -385,6 +412,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #stockInList_paginate ul li a,
+.dataTables_wrapper * #stockInHistoryList_paginate ul li a,
 .dataTables_wrapper * #itemList_paginate ul li a,
 .dataTables_wrapper * #customerList_paginate ul li a,
 .dataTables_wrapper * #transaction_paginate ul li a {
@@ -407,6 +435,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #stockInList_paginate ul .active a,
+.dataTables_wrapper * #stockInHistoryList_paginate ul .active a,
 .dataTables_wrapper * #itemList_paginate ul .active a,
 .dataTables_wrapper * #customerList_paginate ul .active a,
 .dataTables_wrapper * #transaction_paginate ul .active a {
@@ -536,22 +565,6 @@ body::-webkit-scrollbar {
   color: #fef5f2;
 }
 
-.content-wrapper .content .container-fluid .row-content .box-wrapper .small-box .bxs-data {
-  color: #538aec;
-}
-
-.content-wrapper .content .container-fluid .row-content .box-wrapper .small-box .bx-up-arrow-alt {
-  color: #f17040;
-}
-
-.content-wrapper .content .container-fluid .row-content .box-wrapper .small-box .bxs-dollar-circle {
-  color: #37ce55;
-}
-
-.content-wrapper .content .container-fluid .row-content .box-wrapper .small-box .bxs-user-account {
-  color: #6b55fa;
-}
-
 .content-wrapper .content .container-fluid .row-content .connectedSortable .card {
   background: #2a2e3f !important;
   -webkit-box-shadow: none !important;
@@ -571,7 +584,7 @@ body::-webkit-scrollbar {
 }
 
 .content-wrapper .content .container-fluid .row-content .connectedSortable .card .card-header h3 {
-  font-weight: 600;
+  font-weight: bolder;
 }
 
 .content-wrapper .content .container-fluid .row-content .connectedSortable .card .card-body .form-group .col-sm-10 .input-group .form-control {

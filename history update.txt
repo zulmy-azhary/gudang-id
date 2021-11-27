@@ -1,13 +1,18 @@
 [***] GUDANG.ID [***]
-aplikasi manajemen data gudang dan data penjualan
+aplikasi manajemen data gudang dan data penjualan.
+
+assalamualaikum wr. wb.
+selamat malam
 
 [v0.0] analisa dan perancangan fitur-fitur awal dan siapa yang akan menggunakannya.
-[*] level user yang akan mengakses aplikasi
-    1. Manager
-    2. Super Admin
-    3. Admin
+[*] pembahasan mengenai jenis aplikasi apa yang mau dibuat oleh si client.
+[*] pembahasan rekomendasi bentuk layout.
+[*] level user yang akan mengakses aplikasi di perusahaan anda.
+    1. Manager.
+    2. Super Admin.
+    3. Admin.
 
-[*] Fitur-fitur (halaman apa saja yang akan ada didalam sistem)
+[*] Fitur-fitur (halaman apa saja yang akan ada didalam sistem).
     1. Monitoring
     2. Data Item
         - spesifikasi tabel untuk list item
@@ -30,18 +35,18 @@ aplikasi manajemen data gudang dan data penjualan
         - Quantitas
         - Diskon
         - Total
-    5. Data Admin (Admin level pengelola gudang)
+    5. Data Admin (Admin level pengelola cabang).
     6. Report
 
 
-[v0.1] (Penambahan fitur)
+[v0.1] (Penambahan fitur).
     1. Fitur Multiuser pada halaman login
         - Manager
         - Super Admin	= Akses data Admin, transaksi, barang, laporan.
-        - User		    = Akses transaksi, barang, laporan.
+        - Admin		    = Akses transaksi, barang, laporan.
 
 
-[v0.2] (update Crud untuk halaman item)
+[v0.2] (update Crud untuk halaman item).
     1. Data Item
         - Menambah halaman form untuk input item baru (non stock) kedalam tabel list item
         - Menambah halaman baru untuk stock-in (update stock untuk barang yang sudah ada di list).
@@ -51,13 +56,13 @@ aplikasi manajemen data gudang dan data penjualan
         - Memanmbahkan halaman baru untuk slot transaksi.
 
 
-[v0.3] (update Crud untuk halaman item)
+[v0.3] (update Crud untuk halaman item).
     1. Data Item
         - menambahkan fitur update data barang di bagian tabel list item.
         - menambhakan fitur hapus data barang di bagian tabel list item.
 
 
-[v0.4] (update crud pada halaman transaksi dan halaman stok barang)
+[v0.4] (update crud pada halaman transaksi dan halaman stok barang).
     1. Data item
         - menambah halaman untuk data stok-barang.
         - form input untuk data stok barang.

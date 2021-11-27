@@ -51,19 +51,19 @@ $fontSecond : #9eacbe;
 }
 
 @mixin Buttons($background){
+    border-radius: 0.3rem !important;
+    color: $fontPrimary !important;
+    font-size: 0.8rem !important;
     box-shadow: none !important;
+    font-weight: 500 !important;
     outline: none !important;
     border: none !important;
     background: $background;
     padding: 0.5rem 0.7rem;
-    border-radius: 0.3rem !important;
-    color: $fontPrimary !important;
-    font-size: 0.8rem !important;
-    font-weight: 500 !important;
+    justify-content: center;
     i {
-        font-size: 1rem;
+        font-size: 1.2rem;
         display: flex;
-        justify-content: center;
         align-items: center;
     }
 }

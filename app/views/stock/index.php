@@ -24,7 +24,9 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <div class="card-tools">
-                                            <a class="btn btn-info btn-flat" href="<?= BASEURL ?>/stock/in"><i class='bx bx-plus' ></i> Add Stock</a>
+                                            <div class="col-sm-12">
+                                                <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/stock/in"><i class='bx bx-plus' ></i>Tambah</a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -73,7 +75,7 @@
                         <div class="modal-content card">
                             <div class="modal-header border-0 d-flex align-items-center">
                                 <h4 class="modal-title" id="modalLabel">Detail Barang Masuk</h4>
-                                <button class="btn" type="button" data-dismiss="modal">x</button>
+                                <!-- <button class="btn" type="button" data-dismiss="modal">x</button> -->
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid">
@@ -121,8 +123,8 @@
                             </div>
                             <div class="modal-footer border-0">
                                 <div class="col-md-12">
-                                    <div class="row-action justify-content-end" style="gap: 1rem;">
-                                        <button class="btn btn-cancel px-3 py-2" data-dismiss="modal">Kembali</button>
+                                    <div class="row row-action justify-content-center" style="gap: 1rem;">
+                                        <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
                                     </div>
                                 </div>
                             </div>

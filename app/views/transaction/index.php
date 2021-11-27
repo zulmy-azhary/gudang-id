@@ -123,8 +123,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row-action col-sm-12" style="padding-top: 2.1rem;">
-                                            <button class="btn btn-add w-100">add</button>
+                                        <div class="row-action col-sm-12 justify-content-center" style="padding-top: 2.1rem;">
+                                            <button class="btn btn-add d-flex justify-content-center align-items-center"><i class='bx bx-plus' ></i>Tambah</button>
                                         </div>
                                     </div>
                                 </form>
@@ -146,7 +146,7 @@
                         <div class="col-12 table-row">
                             <div class="card">
                                 <div class="card-body">
-                                    <table id="transaction" class="table table-striped table-valign-middle"">
+                                    <table id="transactionPage" class="table table-dark table-striped table-valign-middle"">
                                         <thead>
                                             <tr>
                                                 <th>Code</th>
@@ -193,9 +193,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row-action d-flex justify-content-between" style="gap: 0.5rem;">
-                                <button class="btn btn-accept col-sm-6">process</button>
-                                <button class="btn btn-cancel col-sm-6">clear</button>
+                            <div class="row-action d-flex justify-content-end" style="gap: 0.5rem;">
+                                <button class="btn btn-cancel d-flex justify-content-center align-items-center"><i class='bx bx-trash'></i>Hapus</button>
+                                <button class="btn btn-accept d-flex justify-content-center align-items-center"><i class='bx bx-check'></i>process</button>
                             </div>
                         </div>
                     </div>

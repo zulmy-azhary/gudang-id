@@ -28,7 +28,7 @@
                                 <!-- ?items out -->
                                 <div class="box-wrapper col-sm-4">
                                     <div class="small-box shadow-none">
-                                        <i class='bx bx-up-arrow-alt'></i>
+                                        <i class='bx bx-export'></i>
                                         <span>Items Out</span>
                                         <h5>---</h5>
                                     </div>
@@ -45,7 +45,7 @@
 
                                 <div class="box-wrapper col-sm-4">
                                     <div class="small-box shadow-none">
-                                    <i class='bx bx-down-arrow-alt'></i>
+                                        <i class='bx bx-import'></i>
                                         <span>Items In</span>
                                         <h5>---</h5>
                                     </div>
@@ -103,17 +103,14 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <table class="table table-striped table-valign-middle">
+                                            <table class="table table-valign-middle">
                                                 <tbody>
                                                     <tr>
-                                                        <td>
-                                                            <img src="" class="img-circle img-size-32 mr-2">
-                                                        </td>
                                                         <td class="text-left">
                                                             Admin 1
                                                         </td>
                                                         <td class="text-right">
-                                                            role
+                                                            <span class="badge badge-info">role</span>
                                                         </td>
                                                     </tr>
                                                 </tbody>

@@ -21,6 +21,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-tools">
+                                            <div class="col-sm-12">
+                                                <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/item/create"><i class='bx bx-plus' ></i>Tambah</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="card-body">
                                         <table id="itemList" class="table table-dark table-striped text-center">
                                             <thead id="itemListHeader">
@@ -53,11 +60,6 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="col-md-12 button-group">
-                                    <div class="row row-action">
-                                        <a class="btn btn-accept" href="<?= BASEURL ?>/item/create">Tambah</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,9 +71,9 @@
                 <form action="<?= BASEURL ?>/item/update" method="POST" id="updateModalForm">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content card">
-                            <div class="modal-header border-0 d-flex align-items-center">
+                            <div class="modal-header border-0">
                                 <h4 class="modal-title" id="modalLabel">Update Data Barang</h4>
-                                <button class="btn" type="button" data-dismiss="modal">x</button>
+                                <!-- <button class="btn" type="button" data-dismiss="modal">x</button> -->
                             </div>
                             <div class="modal-body">
                                 <div class="form-horizontal d-flex justify-content-center">
@@ -136,8 +138,8 @@
                             <div class="modal-footer border-0">
                                 <div class="col-md-12">
                                     <div class="row-action justify-content-center" style="gap: 1rem;">
-                                        <button class="btn btn-cancel px-3 py-2" data-dismiss="modal">Kembali</button>
-                                        <button type="submit" class="btn btn-accept update-button px-3 py-2">Update</button>
+                                        <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+                                        <button type="submit" class="btn btn-accept update-button d-flex"><i class='bx bx-save'></i>Update</button>
                                     </div>
                                 </div>
                             </div>

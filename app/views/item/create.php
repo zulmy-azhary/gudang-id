@@ -22,6 +22,13 @@
                         <div class="row row-content">
                             <div class="col-md-12">
                                 <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-tools">
+                                            <div class="col-sm-12">
+                                                <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/stock/list"><i class='bx bx-undo'></i>Kembali</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <form action="<?= BASEURL ?>/item/add" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
                                         <div class="card-body col-md-6">
 
@@ -86,11 +93,10 @@
                                             </div>
                                             <div class="col-md-12 d-flex justify-content-end">
                                                 <div class="row-action justify-content-end">
-                                                        <a class="btn btn-cancel px-3 py-2" href="<?= BASEURL ?>/item">Kembali</a>
-                                                        <button type="submit" class="btn btn-accept create-button px-3 py-2">Simpan</button>
+                                                    <button type="reset" class="btn btn-cancel d-flex"><i class='bx bx-reset'></i>Reset</button>
+                                                    <button type="submit" class="btn btn-accept create-button d-flex"><i class='bx bx-save' ></i>Simpan</button>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </form>
                                 </div>

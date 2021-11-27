@@ -36,7 +36,7 @@
                     </div>
                 </form>
                 <div class="card-footer">
-                    <p>Not registered yet? Sign up <a href="<?= BASEURL ?>/users/register">here</a></p>
+                    
                 </div>
             </div>
         </div>
