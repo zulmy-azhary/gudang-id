@@ -137,7 +137,6 @@
                         <div class="modal-content card">
                                 <div class="modal-header border-0 d-flex align-items-center">
                                     <h4 class="modal-title" id="modalLabel">List Barang</h4>
-                                    <button class="btn" type="button" data-dismiss="modal">x</button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="modal-wrapper table-responsive">
@@ -174,6 +173,13 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div class="modal-footer border-0">
+                                <div class="col-md-12">
+                                    <div class="row-action justify-content-center" style="gap: 1rem;">
+                                        <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.modal-content -->
                     </div>

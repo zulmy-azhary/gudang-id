@@ -95,7 +95,26 @@ $(function () {
 				last: '<i class="fas fa-angle-double-right"></i>',
 			},
 		},
-	});
+    });
+    
+    $("#detailTrans").DataTable({
+		responsive: true,
+        paging: false,
+        filter: false,
+		lengthChange: false,
+		autoWidth: false,
+		ordering: false,
+		info: false,
+		language: {
+			paginate: {
+				first: '<i class="fas fa-angle-double-left"></i>',
+				previous: '<i class="fas fa-angle-left"></i>',
+				next: '<i class="fas fa-angle-right"></i>',
+				last: '<i class="fas fa-angle-double-right"></i>',
+			},
+		},
+    });
+    
 });
 
 // ! Event
@@ -159,25 +178,25 @@ $(document).ready(function () {
 	});
 
 	// Stock-In History Button from Stock-In
-	$(document).on("click", "#stockInHistoryModalButton", function () {
-		let stockId = $(this).data("id");
+    $(document).on("click", "#stockInHistoryModalButton", function () {
+        let stockId = $(this).data("id");
 
-		$.ajax({
-			url: "http://localhost/gudang-id/public/stock/getstockin",
-			data: { stockId: JSON.stringify(stockId) },
-			method: "POST",
-			success: function (result) {
-				let data = JSON.parse(result);
+        $.ajax({
+            url: "http://localhost/gudang-id/public/stock/getstockin",
+            data: { stockId: JSON.stringify(stockId) },
+            method: "POST",
+            success: function (result) {
+                let data = JSON.parse(result);
 
-				console.log(data);
-				$("#stockInDateDetail").text(data.date);
-				$("#stockInItemCodeDetail").text(data.kd_barang);
-				$("#stockInItemNameDetail").text(data.nm_barang);
-				$("#stockInCategoryDetail").text(data.nm_kat);
-				$("#stockInQtyDetail").text(data.qty);
-				$("#stockInFullNameDetail").text(data.fullname);
-				$("#stockInRoleDetail").text(data.nm_role);
-			},
-		});
-	});
+                console.log(data);
+                $("#stockInDateDetail").text(data.date);
+                $("#stockInItemCodeDetail").text(data.kd_barang);
+                $("#stockInItemNameDetail").text(data.nm_barang);
+                $("#stockInCategoryDetail").text(data.nm_kat);
+                $("#stockInQtyDetail").text(data.qty);
+                $("#stockInFullNameDetail").text(data.fullname);
+                $("#stockInRoleDetail").text(data.nm_role);
+            },
+        });
+    });
 });

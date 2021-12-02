@@ -318,6 +318,69 @@ body::-webkit-scrollbar {
   color: #f17040;
 }
 
+.modal .modal-dialog .modal-content .modal-body {
+  color: #9eacbe;
+}
+
+.modal .modal-dialog .modal-content .modal-body .row-content .brand-logo {
+  gap: 0.5rem;
+}
+
+.modal .modal-dialog .modal-content .modal-body .row-content .brand-logo .brand-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal .modal-dialog .modal-content .modal-body .row-content .detail-cust {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal .modal-dialog .modal-content .modal-body .row-content .detail-cust .sub-head {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.modal .modal-dialog .modal-content .modal-body .row-content .detail-cust .sub-detail {
+  font-size: 0.85rem;
+  color: #fef5f2;
+}
+
+.modal .modal-dialog .modal-content .modal-body .row-content .detail-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+}
+
+.modal .modal-dialog .modal-content .modal-body .row-content .detail-total .sub-head {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.modal .modal-dialog .modal-content .modal-body .row-content .detail-total .sub-detail {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fef5f2;
+}
+
 .modal .modal-dialog .modal-content .modal-footer {
   display: -webkit-box;
   display: -ms-flexbox;

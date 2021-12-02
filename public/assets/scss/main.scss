@@ -196,6 +196,48 @@ body {
                     }
                 }
             }
+            .modal-body {
+                color: $fontSecond;
+                .row-content {
+                    .brand-logo {
+                        gap: 0.5rem;
+                        .brand-text {
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                        }
+                    }
+                    .detail-cust{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                        .sub-head {
+                            font-size: 0.9rem;
+                            font-weight: 700;
+                        }
+                        .sub-detail {
+                            font-size: 0.85rem;
+                            color: $fontPrimary;
+                        }
+                    }
+                    .detail-total{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        margin-top: 1rem;
+                        .sub-head {
+                            font-size: 0.9rem;
+                            font-weight: 700;
+                        }
+                        .sub-detail {
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                            color: $fontPrimary;
+                        }
+                    }
+                }
+            }
             .modal-footer {
                 display: flex;
                 justify-content: center;

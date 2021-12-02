@@ -25,7 +25,7 @@
                                     <div class="card-header">
                                         <div class="card-tools">
                                             <div class="col-sm-12">
-                                                <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/stock/list"><i class='bx bx-undo'></i>Kembali</a>
+                                                <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/item/index"><i class='bx bx-undo'></i>Kembali</a>
                                             </div>
                                         </div>
                                     </div>

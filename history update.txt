@@ -1,8 +1,6 @@
 [***] GUDANG.ID [***]
 aplikasi manajemen data gudang dan data penjualan.
 
-assalamualaikum wr. wb.
-selamat malam
 
 [v0.0] analisa dan perancangan fitur-fitur awal dan siapa yang akan menggunakannya.
 [*] pembahasan mengenai jenis aplikasi apa yang mau dibuat oleh si client.
@@ -63,13 +61,15 @@ selamat malam
 
 
 [v0.4] (update crud pada halaman transaksi dan halaman stok barang).
-    1. Data item
-        - menambah halaman untuk data stok-barang.
-        - form input untuk data stok barang.
-        - tabel history untuk stok barang.
-    2. Data Transaksi
-        - Form transaksi
-        - update untuk form data pelanggan.
+
+    1. Penentuan interface untuk masing-masing peran role.
+        - Super admin = mengakses segala halaman di aplikasi.
+        - Branch manager = (Mengakses menu report, monitoring list barang).
+        - Admin (akses menu-menu didalam aplikasi kecuali user menu & report).
+
+    2. Data User
+        - Form tambah data user.
+        - list user.
 
 
 

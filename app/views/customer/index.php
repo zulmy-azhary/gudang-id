@@ -23,12 +23,12 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                        <div class="card-tools">
-                                            <div class="col-sm-12">
-                                                <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/customer/add"><i class='bx bx-plus' ></i>Tambah</a>
-                                            </div>
+                                    <div class="card-tools">
+                                        <div class="col-sm-12">
+                                            <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/customer/add"><i class='bx bx-plus' ></i>Tambah</a>
                                         </div>
                                     </div>
+                                </div>
                                 <div class="card-body">
                                     <table id="customerList" class="table table-dark table-striped">
                                         <thead id="customerListHeader">
