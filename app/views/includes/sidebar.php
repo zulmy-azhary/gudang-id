@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= BASEURL; ?>/stock/list" class="nav-link mb-1 <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' ? 'active' : ''; ?>">
+                            <a href="<?= BASEURL; ?>/stock" class="nav-link mb-1 <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' ? 'active' : ''; ?>">
                                 <i class='bx bx-radio-circle-marked'></i>
                                 <p>Stock In</p>
                             </a>
@@ -48,23 +48,27 @@
                     </ul>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="<?= BASEURL ?>/customer" class="nav-link <?= $data['title'] == 'Customer List' ? 'active' : ''; ?>">
+                    <a href="<?= BASEURL ?>/customer" class="nav-link <?= $data['title'] == 'Customer List' || $data['title'] == 'Add Customer' ? 'active' : ''; ?>">
                         <i class='bx bx-group' ></i>
                         <p>Customer</p>
                     </a>
                 </li>
+                <?php if($_SESSION['user_id'] != 3) : ?>
                 <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/transaction" class="nav-link <?= $data['title'] == 'Transaction' ? 'active' : ''; ?>">
                         <i class='bx bx-dollar-circle' ></i>
                         <p>Transaction</p>
                     </a>
                 </li>
+                <?php endif; ?>
+                <?php if($_SESSION['user_id'] == 1) : ?>
                 <li class="nav-item mb-2">
-                    <a href="<?= BASEURL ?>/transaction" class="nav-link <?= $data['title'] == 'none' ? 'active' : ''; ?>">
+                    <a href="<?= BASEURL ?>/manageuser" class="nav-link <?= $data['title'] == 'User Management' ? 'active' : ''; ?>">
                         <i class='bx bx-user-circle'></i>
                         <p>User</p>
                     </a>
                 </li>
+                <?php endif; ?>
                 <li class="nav-item mb-2">
                     <a class="nav-link">
                         <i class='bx bx-receipt' ></i>

@@ -12,8 +12,6 @@
 <script src="<?= BASEURL; ?>/plugins/sparklines/sparkline.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= BASEURL; ?>/dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?= BASEURL; ?>/dist/js/demo.js"></script>
 <!-- Sweet Alert -->
 <script src="<?= BASEURL; ?>/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <!-- This is Alert for validation -->
@@ -22,7 +20,6 @@
 <script src="<?= BASEURL; ?>/assets/js/data.js"></script>
 
 <!-- Tables -->
-<script src="<?= BASEURL; ?>/dist/js/demo.js"></script>
 <script src="<?= BASEURL; ?>/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= BASEURL; ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="<?= BASEURL; ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>

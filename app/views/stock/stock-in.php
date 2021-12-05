@@ -24,7 +24,7 @@
                                     <div class="card-header">
                                         <div class="card-tools">
                                             <div class="col-sm-12">
-                                                <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/stock/list"><i class='bx bx-undo'></i>Kembali</a>
+                                                <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/stock"><i class='bx bx-undo'></i>Kembali</a>
                                             </div>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@
                                                                 <i class='bx bx-calendar'></i>
                                                                 </span>
                                                             </div>
-                                                            <input type="text" class="form-control" id="stockIn-date" name="date_in" value="<?= date('Y-m-d') ?>" readonly>
+                                                            <input type="text" class="form-control" id="stockIn-date" name="date_in" value="<?= date('d-m-Y') ?>" readonly>
                                                         </div>
                                                     </div>
                                                 </div>

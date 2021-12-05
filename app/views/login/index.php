@@ -8,11 +8,11 @@
                     <h1>Gudang ID</p>
                 </div>
                 
-                <form action="<?= BASEURL ?>/users" method="POST" class="form-horizontal">
+                <form action="<?= BASEURL ?>/login" method="POST" class="form-horizontal">
                     <div class="card-body">
                         <div class="col-sm-12 input-group">
                             <div class="input-box mb-4 mt-4">
-                                <input type="text" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="username" autocomplete="off">
+                                <input type="text" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="username" autocomplete="off" required>
                                 <span class="label">Username</span>
                                 <span class="floating-component"></span>
                                 <div class="invalid-feedback">
@@ -21,7 +21,7 @@
                             </div>
 
                             <div class="input-box mb-5 mt-2">
-                                <input type="password" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="password">
+                                <input type="password" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="password" required>
                                 <span class="label">Password</span>
                                 <span class="floating-component"></span>
                                 <div class="invalid-feedback">

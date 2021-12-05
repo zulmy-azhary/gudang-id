@@ -21,13 +21,15 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
+                                    <?php if($_SESSION['user_id'] != 3) : ?> 
                                     <div class="card-header">
                                         <div class="card-tools">
                                             <div class="col-sm-12">
-                                                <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/item/create"><i class='bx bx-plus' ></i>Tambah</a>
+                                                <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/item/add"><i class='bx bx-plus' ></i>Tambah</a>
                                             </div>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
                                     <div class="card-body">
                                         <table id="itemList" class="table table-dark table-striped text-center">
                                             <thead id="itemListHeader">
@@ -37,7 +39,9 @@
                                                     <th>Kategori</th>
                                                     <th>Harga</th>
                                                     <th>Stok</th>
+                                                    <?php if($_SESSION['user_id'] != 3) : ?> 
                                                     <th>Aksi</th>
+                                                    <?php endif; ?>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -48,12 +52,14 @@
                                                     <td><?= $item['nm_kat']; ?></td>
                                                     <td><?= $item['harga']; ?></td>
                                                     <td><?= $item['stok']; ?></td>
+                                                    <?php if($_SESSION['user_id'] != 3) : ?> 
                                                     <td>
-                                                        <a href="<?= BASEURL ?>/item/update/<?= $item['id_barang']; ?>" class="btn btn-edit" data-toggle="modal" data-target="#itemUpdateModal" id="itemUpdateModalButton" data-id="<?= $item['id_barang']; ?>">
+                                                        <a class="btn btn-edit" data-toggle="modal" data-target="#itemUpdateModal" id="itemUpdateModalButton" data-id="<?= $item['id_barang']; ?>">
                                                             <i class='bx bx-edit' ></i>
                                                         </a>
                                                         <a class="btn btn-delete delete-button" href="<?= BASEURL ?>/item/delete/<?= $item['id_barang']; ?>"><i class='bx bx-trash'></i></a>
                                                     </td>
+                                                    <?php endif; ?>
                                                 </tr>
                                                 <?php endforeach; ?>
                                             </tbody>

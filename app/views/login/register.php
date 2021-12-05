@@ -61,7 +61,7 @@
                     </form>
                 </div>
                 <div class="card-footer">
-                    <p>Already registered? <a href="<?= BASEURL ?>/users">Login</a></p>
+                    <p>Already registered? <a href="<?= BASEURL ?>/login">Login</a></p>
                 </div>
             </div>
         </div>

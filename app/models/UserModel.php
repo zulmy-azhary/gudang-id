@@ -5,8 +5,7 @@ class UserModel {
     private $tableRole = 'u_role';
     private $db;
     
-    public function __construct()
-    {
+    public function __construct(){
         $this->db = new Database;
     }
 
@@ -18,7 +17,7 @@ class UserModel {
         $this->db->bind(':username', $username);
 
         // Check if username is already registered
-        if($this->db->rowCounting() > 0){
+        if($this->db->rowCount() > 0){
             return true;
         }else{
             return false;
@@ -38,7 +37,7 @@ class UserModel {
         $this->db->bind(':password', $data['password']);
 
         $this->db->execute();
-        return $this->db->rowCounting();
+        return $this->db->rowCount();
     }
 
     // login

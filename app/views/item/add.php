@@ -29,7 +29,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="<?= BASEURL ?>/item/add" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
+                                    <form action="<?= BASEURL ?>/item/create" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
                                         <div class="card-body col-md-6">
 
                                             <div class="form-group">

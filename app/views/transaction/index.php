@@ -284,7 +284,8 @@
                                         <!-- Detail cart -->
                                         <div class="row row-content">
                                             <div class="col-12 table-row">
-                                                <table id="detailTrans" class="table table-dark table-striped table-valign-middle"">
+                                                <div class="modal-wrapper table-responsive">
+                                                <table id="detailTrans" class="table table-dark table-striped table-valign-middle">
                                                     <thead>
                                                         <tr>
                                                             <th>Kode</th>
@@ -314,23 +315,20 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row row-content" style="padding-left: 3rem; padding-right: 3rem;">
+                                        <div class="row row-content mb-5" style="padding-left: 3rem; padding-right: 3rem;">
                                             <div class="col-sm-6">
                                                 <div class="detail-total">
-                                                        <span class="sub-head">Total Barang</span>
-                                                        <span class="sub-detail">400</span>
+                                                    <span class="sub-head">Terbilang</span>
+                                                    <span class="sub-detail">Empat Ribu Dollar</span>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6" style="text-align: end;">
                                                 <div class="detail-total">
                                                     <span class="sub-head">Total Bayar</span>
                                                     <span class="sub-detail">$4000</span>
-                                                </div>
-                                                <div class="detail-total">
-                                                    <span class="sub-head">Terbilang</span>
-                                                    <span class="sub-detail">Empat Ribu Dollar</span>
                                                 </div>
                                             </div>
                                         </div>

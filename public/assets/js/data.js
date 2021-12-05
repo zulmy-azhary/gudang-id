@@ -127,7 +127,7 @@ $(document).ready(function () {
 			key: key,
 		};
 		$.ajax({
-			url: "http://localhost/gudang-id/public/json/itemjson",
+			url: "http://localhost/gudang-id/public/item/getitemcode",
 			method: "post",
 			data: { data: JSON.stringify(data) },
 			success: function (data) {
@@ -161,7 +161,7 @@ $(document).ready(function () {
 		let id = $(this).data("id");
 
 		$.ajax({
-			url: "http://localhost/gudang-id/public/item/getdata",
+			url: "http://localhost/gudang-id/public/item/getmodalitem",
 			data: { id: JSON.stringify(id) },
 			method: "POST",
 			success: function (res) {
@@ -177,26 +177,23 @@ $(document).ready(function () {
 		});
 	});
 
-	// Stock-In History Button from Stock-In
-    $(document).on("click", "#stockInHistoryModalButton", function () {
-        let stockId = $(this).data("id");
+	// Update data barang from Item List
+	$(document).on("click", "#customerUpdateModalButton", function () {
+		let id = $(this).data("id");
 
-        $.ajax({
-            url: "http://localhost/gudang-id/public/stock/getstockin",
-            data: { stockId: JSON.stringify(stockId) },
-            method: "POST",
-            success: function (result) {
-                let data = JSON.parse(result);
+		$.ajax({
+			url: "http://localhost/gudang-id/public/customer/getmodalcustomer",
+			data: { id: JSON.stringify(id) },
+			method: "POST",
+			success: function (res) {
+				let data = JSON.parse(res);
 
-                console.log(data);
-                $("#stockInDateDetail").text(data.date);
-                $("#stockInItemCodeDetail").text(data.kd_barang);
-                $("#stockInItemNameDetail").text(data.nm_barang);
-                $("#stockInCategoryDetail").text(data.nm_kat);
-                $("#stockInQtyDetail").text(data.qty);
-                $("#stockInFullNameDetail").text(data.fullname);
-                $("#stockInRoleDetail").text(data.nm_role);
-            },
-        });
-    });
+				$("#updateCustomerId").val(data.cust_id);
+				$("#updateCustomerCode").val(data.kd_pelanggan);
+				$("#updateCustomerName").val(data.nm_pelanggan);
+				$("#updateCustomerAddress").val(data.alamat);
+				$("#updateCustomerPhoneNumber").val(data.no_telp);
+			},
+		});
+	});
 });

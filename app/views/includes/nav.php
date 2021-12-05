@@ -16,7 +16,7 @@
                 <li><h5 class="dropdown-item disabled"><?= $_SESSION['fullname']; ?></h5></li>
                 <li><p class="dropdown-item disabled p-0 mb-0 role-profile text-success"><?= $_SESSION['role']; ?></p></li>
                 <div class="dropdown-divider"></div>
-                <li><a class="dropdown-item btn btn-default text-muted" href="<?= BASEURL ?>/users/logout">Logout</a></li>
+                <li><a class="dropdown-item btn btn-default text-muted" href="<?= BASEURL ?>/login/logout">Logout</a></li>
             </ul>
         </li>
     </ul>

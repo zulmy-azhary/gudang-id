@@ -23,7 +23,7 @@ class ItemModel{
     }
 
     // Query for create data from items table
-    public function createData($data){
+    public function createItem($data){
         $query = "INSERT INTO $this->tableItems SET
                 kd_barang = :kd_barang,
                 nm_barang = :nm_barang,
@@ -51,7 +51,8 @@ class ItemModel{
         $this->db->bind(':id', $id);
         return $this->db->single();
     }
-    public function updateData($data){
+    
+    public function updateItem($data){
         $query = "UPDATE $this->tableItems SET
                 nm_barang = :nm_barang,
                 harga = :harga
@@ -67,7 +68,7 @@ class ItemModel{
     }
 
     // Query for delete data from items table
-    public function deleteData($id){
+    public function deleteItem($id){
         $query = "DELETE FROM $this->tableItems WHERE id_barang = :id";
         
         $this->db->query($query);
@@ -77,11 +78,11 @@ class ItemModel{
     }
 
     // Count data from items table based on id_kat
-    public function countData($param){
+    public function itemCount($category){
         $query = "SELECT COUNT(*) as count FROM $this->tableItems where id_kat = :kategori";
 
         $this->db->query($query);
-        $this->db->bind(':kategori', $param);
+        $this->db->bind(':kategori', $category);
         return $this->db->resultSet();
     }
 

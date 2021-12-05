@@ -25,11 +25,11 @@
                                 <div class="card-header">
                                         <div class="card-tools">
                                             <div class="col-sm-12">
-                                                <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/customer/index"><i class='bx bx-undo'></i>Kembali</a>
+                                                <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/customer"><i class='bx bx-undo'></i>Kembali</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="<?= BASEURL ?>/item/add" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
+                                    <form action="<?= BASEURL ?>/customer/create" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
                                         <div class="card-body col-md-6">
                                             <div class="form-group">
                                                 <label for="cust-code" class="col-sm-12 col-form-label">Kode Pelanggan</label>
@@ -40,7 +40,7 @@
                                                                 <i class="bx bx-barcode"></i>
                                                             </span>
                                                         </div>
-                                                        <input type="text" id="cust-code" class="form-control" name="kd_pelanggan" readonly value="-">
+                                                        <input type="text" id="cust-code" class="form-control" name="kd_pelanggan" readonly value="<?= $data['kd_pelanggan']; ?>">
                                                     </div>
                                                 </div>
                                             </div>
@@ -82,7 +82,7 @@
                                                                 <i class='bx bx-phone-call' ></i>
                                                             </span>
                                                         </div>
-                                                        <input type="text" id="cust-telp" class="form-control" name="tlp" autocomplete="off" required>
+                                                        <input type="number" id="cust-telp" class="form-control" name="tlp" autocomplete="off" required>
                                                     </div>
                                                 </div>
                                             </div>
