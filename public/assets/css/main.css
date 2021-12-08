@@ -394,6 +394,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #itemList_length label,
+.dataTables_wrapper * #userList_length label,
 .dataTables_wrapper * #stockInHistoryList_length label,
 .dataTables_wrapper * #customerList_length label {
   -webkit-box-align: center;
@@ -408,6 +409,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #itemList_length label .custom-select,
+.dataTables_wrapper * #userList_length label .custom-select,
 .dataTables_wrapper * #stockInHistoryList_length label .custom-select,
 .dataTables_wrapper * #customerList_length label .custom-select {
   -webkit-box-shadow: none !important;
@@ -418,6 +420,7 @@ body::-webkit-scrollbar {
 }
 
 .dataTables_wrapper * #itemList_length label .custom-select option,
+.dataTables_wrapper * #userList_length label .custom-select option,
 .dataTables_wrapper * #stockInHistoryList_length label .custom-select option,
 .dataTables_wrapper * #customerList_length label .custom-select option {
   -webkit-box-shadow: none !important;
@@ -427,6 +430,7 @@ body::-webkit-scrollbar {
   font-size: 0.9rem !important;
 }
 
+.dataTables_wrapper * #userList_filter label,
 .dataTables_wrapper * #stockInList_filter label,
 .dataTables_wrapper * #stockInHistoryList_filter label,
 .dataTables_wrapper * #itemList_filter label,
@@ -445,6 +449,7 @@ body::-webkit-scrollbar {
   font-weight: 500;
 }
 
+.dataTables_wrapper * #userList_filter label input,
 .dataTables_wrapper * #stockInList_filter label input,
 .dataTables_wrapper * #stockInHistoryList_filter label input,
 .dataTables_wrapper * #itemList_filter label input,
@@ -457,6 +462,7 @@ body::-webkit-scrollbar {
   font-size: 0.9rem !important;
 }
 
+.dataTables_wrapper * #userList_paginate ul,
 .dataTables_wrapper * #stockInList_paginate ul,
 .dataTables_wrapper * #stockInHistoryList_paginate ul,
 .dataTables_wrapper * #itemList_paginate ul,
@@ -474,6 +480,7 @@ body::-webkit-scrollbar {
   width: auto;
 }
 
+.dataTables_wrapper * #userList_paginate ul li a,
 .dataTables_wrapper * #stockInList_paginate ul li a,
 .dataTables_wrapper * #stockInHistoryList_paginate ul li a,
 .dataTables_wrapper * #itemList_paginate ul li a,
@@ -497,6 +504,7 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
+.dataTables_wrapper * #userList_paginate ul .active a,
 .dataTables_wrapper * #stockInList_paginate ul .active a,
 .dataTables_wrapper * #stockInHistoryList_paginate ul .active a,
 .dataTables_wrapper * #itemList_paginate ul .active a,
@@ -505,6 +513,7 @@ body::-webkit-scrollbar {
   color: #fef5f2;
 }
 
+.dataTables_wrapper * #userList_info,
 .dataTables_wrapper * #itemList_info,
 .dataTables_wrapper * #customerList_info,
 .dataTables_wrapper * #transaction_info {

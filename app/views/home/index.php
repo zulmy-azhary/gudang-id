@@ -29,7 +29,7 @@
                                 <div class="box-wrapper col-sm-4">
                                     <div class="small-box shadow-none">
                                         <i class='bx bx-export'></i>
-                                        <span>Items Out</span>
+                                        <span>Barang Keluar</span>
                                         <h5>---</h5>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                 <div class="box-wrapper col-sm-4">
                                     <div class="small-box shadow-none">
                                         <i class='bx bxs-user-account'></i>
-                                        <span>Total Customers</span>
+                                        <span>Total Pelanggan</span>
                                         <h5>---</h5>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                 <div class="box-wrapper col-sm-4">
                                     <div class="small-box shadow-none">
                                         <i class='bx bx-import'></i>
-                                        <span>Items In</span>
+                                        <span>Barang Masuk</span>
                                         <h5>---</h5>
                                     </div>
                             </div>
@@ -57,7 +57,7 @@
                                     <div class="connectedSortable">
                                         <div class="card shadow-none">
                                             <div class="card-header">
-                                                <h3 class="card-title">Categories</h3>
+                                                <h3 class="card-title">Kategori</h3>
                                                 
                                                 <div class="card-tools">
                                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -74,7 +74,7 @@
                                     <div class="connectedSortable">
                                         <div class="card shadow-none">
                                             <div class="card-header">
-                                                <h3 class="card-title">Recent Transaction</h3>
+                                                <h3 class="card-title">Transaksi Terakhir</h3>
                                                 <div class="card-tools">
                                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                                         <i class="fas fa-minus"></i>
@@ -94,7 +94,7 @@
                                 <div class="connectedSortable">
                                     <div class="card shadow-none">
                                         <div class="card-header">
-                                            <h3 class="card-title">User Online</h3>
+                                            <h3 class="card-title">Pengguna Online</h3>
                                             
                                             <div class="card-tools">
                                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">

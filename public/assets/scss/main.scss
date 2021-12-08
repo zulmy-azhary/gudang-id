@@ -250,6 +250,7 @@ body {
 //* component custom for data tables
 .dataTables_wrapper * {
     #itemList_length,
+    #userList_length,
     #stockInHistoryList_length,
     #customerList_length {
         label {
@@ -266,6 +267,8 @@ body {
             }
         }
     }
+
+    #userList_filter,
     #stockInList_filter,
     #stockInHistoryList_filter,
     #itemList_filter,
@@ -282,6 +285,8 @@ body {
             }
         }
     }
+
+    #userList_paginate,
     #stockInList_paginate,
     #stockInHistoryList_paginate,
     #itemList_paginate,
@@ -313,6 +318,7 @@ body {
         }
     }
     
+    #userList_info,
     #itemList_info,
     #customerList_info,
     #transaction_info {

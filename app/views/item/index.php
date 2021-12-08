@@ -10,7 +10,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6 col-title">
-                                <h1 class="m-0">List Data Barang</h1>
+                                <h1 class="m-0">Daftar Barang</h1>
                             </div>
                         </div>
                     </div>

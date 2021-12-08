@@ -22,7 +22,7 @@
                     <a class="nav-link <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' || $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
                         <i class="bx bx-layer"></i>
                         <p>
-                            Item
+                            Data Barang
                             <i class="right bx bx-chevron-left"></i>
                         </p>
                     </a>
@@ -30,19 +30,19 @@
                         <li class="nav-item">
                             <a href="<?= BASEURL; ?>/item" class="nav-link mb-1 <?= $data['title'] == 'Item List' || $data['title'] == 'Add Item' ? 'active' : ''; ?>">
                                 <i class='bx bx-radio-circle-marked'></i>
-                                <p>List Item</p>
+                                <p>Daftar Barang</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?= BASEURL; ?>/stock" class="nav-link mb-1 <?= $data['title'] == 'Stock List' || $data['title'] == 'Stock In' ? 'active' : ''; ?>">
                                 <i class='bx bx-radio-circle-marked'></i>
-                                <p>Stock In</p>
+                                <p>Barang Masuk</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link mb-1">
                                 <i class='bx bx-radio-circle-marked'></i>
-                                <p>Stock Out</p>
+                                <p>Barang Keluar</p>
                             </a>
                         </li>
                     </ul>
@@ -50,14 +50,14 @@
                 <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/customer" class="nav-link <?= $data['title'] == 'Customer List' || $data['title'] == 'Add Customer' ? 'active' : ''; ?>">
                         <i class='bx bx-group' ></i>
-                        <p>Customer</p>
+                        <p>Pelanggan</p>
                     </a>
                 </li>
                 <?php if($_SESSION['user_id'] != 3) : ?>
                 <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/transaction" class="nav-link <?= $data['title'] == 'Transaction' ? 'active' : ''; ?>">
                         <i class='bx bx-dollar-circle' ></i>
-                        <p>Transaction</p>
+                        <p>Transaksi</p>
                     </a>
                 </li>
                 <?php endif; ?>
@@ -65,7 +65,7 @@
                 <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/manageuser" class="nav-link <?= $data['title'] == 'User Management' ? 'active' : ''; ?>">
                         <i class='bx bx-user-circle'></i>
-                        <p>User</p>
+                        <p>Pengguna</p>
                     </a>
                 </li>
                 <?php endif; ?>
@@ -73,7 +73,7 @@
                     <a class="nav-link">
                         <i class='bx bx-receipt' ></i>
                         <p>
-                            Report
+                            Laporan
                             <i class="right bx bx-chevron-left"></i>
                         </p>
                     </a>
@@ -81,13 +81,13 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link mb-1">
                                 <i class='bx bx-radio-circle-marked'></i>
-                                <p>Data Item</p>
+                                <p>Data Barang</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link mb-1">
                                 <i class='bx bx-radio-circle-marked'></i>
-                                <p>Data Transaction</p>
+                                <p>Data Transaksi</p>
                             </a>
                         </li>
                     </ul>
@@ -95,7 +95,7 @@
                 <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/about" class="nav-link <?= $data['title'] == 'About' ? 'active' : ''; ?>">
                         <i class='bx bx-help-circle' ></i>
-                        <p>About</p>
+                        <p>Tentang</p>
                     </a>
                 </li>
             </ul>

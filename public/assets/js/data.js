@@ -114,6 +114,29 @@ $(function () {
 			},
 		},
     });
+
+    $("#userList").DataTable({
+		responsive: true,
+        paging: true,
+		lengthChange: true,
+		autoWidth: false,
+		ordering: false,
+		info: false,
+		language: {
+			paginate: {
+				first: '<i class="fas fa-angle-double-left"></i>',
+				previous: '<i class="fas fa-angle-left"></i>',
+				next: '<i class="fas fa-angle-right"></i>',
+				last: '<i class="fas fa-angle-double-right"></i>',
+			},
+		},
+		columnDefs: [
+			{
+				targets: 3,
+				render: $.fn.dataTable.render.number(".", ",", 0, "Rp. "),
+			},
+		],
+	});
     
 });
 

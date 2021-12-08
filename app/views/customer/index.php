@@ -10,7 +10,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6 col-title">
-                                <h1 class="m-0">List Pelanggan</h1>
+                                <h1 class="m-0">Daftar Pelanggan</h1>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content card">
                             <div class="modal-header border-0">
-                                <h4 class="modal-title" id="modalLabel">Update Data Customer</h4>
+                                <h4 class="modal-title" id="modalLabel">Update Data Pelanggan</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="form-horizontal d-flex justify-content-center">

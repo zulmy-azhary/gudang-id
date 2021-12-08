@@ -13,4 +13,12 @@ class ManageUser extends Controller{
 
         $this->view('manageuser/index', $data);
     }
+    
+    public function add(){
+        $data = [
+            'title' => 'User Management'
+        ];
+
+        $this->view('manageuser/add', $data);
+    }
 }

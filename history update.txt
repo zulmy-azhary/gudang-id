@@ -60,16 +60,16 @@ aplikasi manajemen data gudang dan data penjualan.
         - menambhakan fitur hapus data barang di bagian tabel list item.
 
 
-[v0.4] (update crud pada halaman transaksi dan halaman stok barang).
-
+[v0.4] (Update halaman).
     1. Penentuan interface untuk masing-masing peran role.
-        - Super admin = mengakses segala halaman di aplikasi.
-        - Branch manager = (Mengakses menu report, monitoring list barang).
-        - Admin (akses menu-menu didalam aplikasi kecuali user menu & report).
+        - Super admin       = mengakses segala halaman di aplikasi.
+        - Branch manager    = hanya mengakses menu report, monitoring list barang.
+        - Admin             = hanya mengakses menu barang dan menu transaksi.
 
-    2. Data User
-        - Form tambah data user.
-        - list user.
-
+[v0.5] (Update halaman)
+    1. Data customer
+        - menambahkan halaman untuk data pelanggan (tampilan data pelanggan dalam bentuk tabel)
+        - menambah fitur CRUD pada halaman data pelanggan (diarea tabel).
+        - menambahkan fitur untuk mengisi data pelanggan (form tambah data pelanggan).
 
 
