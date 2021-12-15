@@ -30,99 +30,98 @@
                                     </div>
                                     <form action="<?= BASEURL ?>/stock/process" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
                                         <div class="card-body col-md-6">
-
-                                                <div class="form-group">
-                                                    <label for="stockIn-date" class="col-sm-12 col-form-label">Tanggal</label>
-                                                    <div class="col-sm-12">
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text">
-                                                                <i class='bx bx-calendar'></i>
-                                                                </span>
-                                                            </div>
-                                                            <input type="text" class="form-control" id="stockIn-date" name="date_in" value="<?= date('d-m-Y') ?>" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="stockIn-code" class="col-sm-12 col-form-label">Kode Barang</label>
-                                                    <div class="input-group col-sm-12">
+                                            <div class="form-group">
+                                                <label for="stockIn-date" class="col-sm-12 col-form-label">Tanggal</label>
+                                                <div class="col-sm-12">
+                                                    <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
-                                                                <i class="bx bx-barcode"></i>
+                                                            <i class='bx bx-calendar'></i>
                                                             </span>
                                                         </div>
-
-                                                        <input type="hidden" name="id_barang_in" id="stockIn-id">
-                                                        <input type="text" class="form-control rounded-right" id="stockIn-code" name="kd_barang_in" placeholder="Pilih kode barang..." readonly>
-
-                                                        <button class="btn btn-add ml-2 d-flex align-items-center" type="button" data-toggle="modal" data-target="#buttonModal">
-                                                            <i class='bx bx-search-alt mr-1'></i>Search
-                                                        </button>
+                                                        <input type="text" class="form-control" id="stockIn-date" name="date_in" value="<?= date('d-m-Y') ?>" readonly>
                                                     </div>
                                                 </div>
+                                            </div>
 
-                                                <div class="form-group">
-                                                    <label for="stockIn-name" class="col-sm-12 col-form-label">Nama barang</label>
-                                                    <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="stockIn-code" class="col-sm-12 col-form-label">Kode Barang</label>
+                                                <div class="input-group col-sm-12">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="bx bx-barcode"></i>
+                                                        </span>
+                                                    </div>
+
+                                                    <input type="hidden" name="id_barang_in" id="stockIn-id">
+                                                    <input type="text" class="form-control rounded-right" id="stockIn-code" name="kd_barang_in" placeholder="Pilih kode barang..." readonly>
+
+                                                    <button class="btn btn-add ml-2 d-flex align-items-center" type="button" data-toggle="modal" data-target="#buttonModal">
+                                                        <i class='bx bx-search-alt mr-1'></i>Search
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="stockIn-name" class="col-sm-12 col-form-label">Nama barang</label>
+                                                <div class="col-sm-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                            <i class='bx bx-purchase-tag-alt' ></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="stockIn-name" name="nm_barang_in" value="-" readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="stockIn-category" class="col-sm-12 col-form-label">Kategori</label>
+                                                <div class="col-sm-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                            <i class='bx bx-category-alt'></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="stockIn-category" name="nm_kat_in" value="-" readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row col-sm-12 col-md-12 col-lg-12 m-0 p-0">
+                                                    <div class="col-sm-12 col-md-6 col-lg-6">
+                                                        <label for="initial-stock" class="col-form-label">Stok Awal</label>
                                                         <div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text">
-                                                                <i class='bx bx-purchase-tag-alt' ></i>
+                                                                <i class='bx bx-archive' ></i>
                                                                 </span>
                                                             </div>
-                                                            <input type="text" class="form-control" id="stockIn-name" name="nm_barang_in" value="-" readonly>
+                                                            <input type="text" class="form-control" id="initial-stock" name="stok_in" value="-" readonly>
                                                         </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="stockIn-category" class="col-sm-12 col-form-label">Kategori</label>
-                                                    <div class="col-sm-12">
+                                                    <div class="col-sm-12 col-md-6 col-lg-6">
+                                                        <label for="stockIn-stock" class="col-form-label">Tambah Stok</label>
                                                         <div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text">
-                                                                <i class='bx bx-category-alt'></i>
+                                                                <i class='bx bx-archive-in'></i>
                                                                 </span>
                                                             </div>
-                                                            <input type="text" class="form-control" id="stockIn-category" name="nm_kat_in" value="-" readonly>
+                                                            <input type="number" class="form-control" id="set-stockIn-stock" name="set_stok_in" min="1" required>
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="form-group">
-                                                    <div class="row col-sm-12 col-md-12 col-lg-12 m-0 p-0">
-                                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                                            <label for="initial-stock" class="col-form-label">Stok Awal</label>
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                    <i class='bx bx-archive' ></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input type="text" class="form-control" id="initial-stock" name="stok_in" value="-" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                                            <label for="stockIn-stock" class="col-form-label">Tambah Stok</label>
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                    <i class='bx bx-archive-in'></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input type="number" class="form-control" id="set-stockIn-stock" name="set_stok_in" min="1" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                            </div>
+                                            <div class="col-md-12 button-group d-flex justify-content-end">
+                                                <div class="row-action justify-content-end">
+                                                    <button type="reset" class="btn btn-cancel d-flex"><i class='bx bx-reset'></i>Reset</button>
+                                                    <button type="submit" name="stock_in_add" class="btn btn-accept d-flex"><i class='bx bx-save' ></i>Simpan</button>
                                                 </div>
-                                                <div class="col-md-12 button-group d-flex justify-content-end">
-                                                    <div class="row-action justify-content-end">
-                                                        <button type="reset" class="btn btn-cancel d-flex"><i class='bx bx-reset'></i>Reset</button>
-                                                        <button type="submit" name="stock_in_add" class="btn btn-accept d-flex"><i class='bx bx-save' ></i>Simpan</button>
-                                                    </div>
-                                                </div>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>

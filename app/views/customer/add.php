@@ -22,7 +22,7 @@
                         <div class="row row-content">
                             <div class="col-md-12">
                                 <div class="card">
-                                <div class="card-header">
+                                    <div class="card-header">
                                         <div class="card-tools">
                                             <div class="col-sm-12">
                                                 <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/customer"><i class='bx bx-undo'></i>Kembali</a>

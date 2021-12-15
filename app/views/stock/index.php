@@ -10,7 +10,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6 col-title">
-                                <h1 class="m-0">Catatan Barang Masuk</h1>
+                                <h1 class="m-0">Riwayat Barang Masuk</h1>
                             </div>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                         <div class="row row-content">
                             <div class="col-12">
                                 <div class="card">
-                                    <?php if($_SESSION['user_id'] != 3) : ?> 
+                                    <?php if($_SESSION['id_role'] != 3) : ?> 
                                     <div class="card-header">
                                         <div class="card-tools">
                                             <div class="col-sm-12">
@@ -40,7 +40,7 @@
                                                     <th>Nama Barang</th>
                                                     <th>Qty</th>
                                                     <th>Admin</th>
-                                                    <?php if($_SESSION['user_id'] != 3) : ?> 
+                                                    <?php if($_SESSION['id_role'] != 3) : ?> 
                                                     <th>Aksi</th>
                                                     <?php endif; ?>
                                                 </tr>
@@ -53,7 +53,7 @@
                                                     <td><?= $stockIn['nm_barang']; ?></td>
                                                     <td><?= $stockIn['qty']; ?></td>
                                                     <td data-toggle="tooltip" data-placement="right" title="<?= $stockIn['nm_role']; ?>"><?= $stockIn['fullname']; ?></td>
-                                                    <?php if($_SESSION['user_id'] != 3) : ?> 
+                                                    <?php if($_SESSION['id_role'] != 3) : ?> 
                                                     <td>
                                                         <a class="btn btn-delete delete-button" href="<?= BASEURL ?>/stock/stockInDelete/<?= $stockIn['stock_id']; ?>/<?= $stockIn['id_barang']; ?>"><i class='bx bx-trash'></i></a>
                                                     </td>

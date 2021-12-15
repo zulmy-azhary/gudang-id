@@ -18,56 +18,60 @@
 
                 <!-- !main content -->
                 <section class="content">
-                <div class="container-fluid">
-                    <div class="row row-content">
-                        <div class="col-12">
-                            <div class="card">
-                                <?php if($_SESSION['user_id'] != 3) : ?>
-                                <div class="card-header">
-                                    <div class="card-tools">
-                                        <div class="col-sm-12">
-                                            <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/manageuser/add"><i class='bx bx-plus' ></i>Tambah</a>
+                    <div class="container-fluid">
+                        <div class="row row-content">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-tools">
+                                            <div class="col-sm-12">
+                                                <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/manageuser/add"><i class='bx bx-plus' ></i>Tambah</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <?php endif; ?>
-                                <div class="card-body">
-                                    <table id="userList" class="table table-dark table-striped">
-                                        <thead id="userListHeader">
-                                            <tr>
-                                                <th>Kode Pengguna</th>
-                                                <th>Nama lengkap</th>
-                                                <th>Username</th>
-                                                <th>Password</th>
-                                                <th>Role</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>USR212</td>
-                                                <td>Fahrizal</td>
-                                                <td>rizal</td>
-                                                <td>blablabla</td>
-                                                <td>Branch Manager</td>
-                                                <td>
-                                                    <a class="btn btn-edit" data-toggle="modal" data-target="#userUpdateModal" id="userUpdateModalButton" data-id="">
-                                                        <i class='bx bx-edit'></i>
-                                                    </a>
-                                                    <a class="btn btn-delete delete-button" href="#">
-                                                        <i class='bx bx-trash'></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="card-body">
+                                        <table id="userList" class="table table-dark table-striped">
+                                            <thead id="userListHeader">
+                                                <tr>
+                                                    <th>Nama lengkap</th>
+                                                    <th>Username</th>
+                                                    <th>Cabang</th>
+                                                    <th>Role</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach($data['items'] as $users) : ?>
+                                                <tr>
+                                                    <td><?= $users['fullname']; ?></td>
+                                                    <td><?= $users['username']; ?></td>
+                                                    <?php if($users['id_role'] == 1): ?>
+                                                        <td>-</td>
+                                                    <?php else : ?>
+                                                        <td><?= $users['nm_cabang']; ?></td>
+                                                    <?php endif; ?>
+                                                    <td><?= $users['nm_role']; ?></td>
+                                                    <td>
+                                                        <a class="btn btn-edit" data-toggle="modal" data-target="#userUpdateModal" id="userUpdateModalButton" data-id="<?= $users['user_id']; ?>">
+                                                            <i class='bx bx-edit'></i>
+                                                        </a>
+                                                        <?php if($users['id_role'] != 1) : ?>
+                                                        <a class="btn btn-delete delete-button" href="<?= BASEURL ?>/manageuser/delete/<?= $users['user_id']; ?>">
+                                                            <i class='bx bx-trash'></i>
+                                                        </a>
+                                                        <?php endif; ?>
+                                                    </td>
+                                                </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <!-- !end of main content -->
-            </div>
             </div>
 
             <div class="modal fade" id="userUpdateModal" aria-labelledby="modalLabel" aria-hidden="true">
@@ -91,7 +95,7 @@
                                                         <i class='bx bx-rename'></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="" id="updateFname">
+                                                    <input type="text" class="form-control" name="" id="updateFullName">
                                                     <!-- <input type="hidden" name="kategori" id="updateCategory"> -->
                                                 </div>
                                             </div>
@@ -105,7 +109,7 @@
                                                             <i class='bx bx-user-circle'></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="" id="updateUsername">
+                                                    <input type="text" class="form-control" name="" id="updateUsername" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -118,12 +122,30 @@
                                                             <i class='bx bx-key'></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="" id="updatePassword" autocomplete="off">
+                                                    <input type="password" class="form-control" name="" id="updatePassword" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="changeRole" class="col-sm-12 col-form-label">Role</label>
+                                            <label for="updateUserCabang" class="col-sm-12 col-form-label">Cabang</label>
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="bx bx-barcode"></i>
+                                                        </span>
+                                                    </div>
+                                                    <select class="custom-select" id="updateUserCabang" name="id_role" required>
+                                                        <option selected value="">Pilih Cabang</option>
+                                                        <option value="1" >Cabang A</option>
+                                                        <option value="2" >Cabang B</option>
+                                                        <option value="3" >Cabang C</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateUserRole" class="col-sm-12 col-form-label">Role</label>
                                             <div class="col-sm-12">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
@@ -131,11 +153,10 @@
                                                             <i class='bx bx-network-chart' ></i>
                                                         </span>
                                                     </div>
-                                                    <select class="custom-select" id="changeRole" name="kategori" required>
-                                                        <option selected data-value="-" value="">Pilih Role</option>
-                                                        <option value="1" >Super Admin</option>
-                                                        <option value="2" >Branch Manager</option>
-                                                        <option value="3" >Admin</option>
+                                                    <select class="custom-select" id="updateUserRole" name="kategori" required>
+                                                        <option selected value="">Pilih Role</option>
+                                                        <option value="2" >Admin</option>
+                                                        <option value="3" >Branch Manager</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -152,9 +173,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /.modal-content -->
                     </div>
-                    <!-- /.modal-dialog -->
                 </form>
             </div>
             <?php require APPROOT . '/views/includes/footer.php' ?>

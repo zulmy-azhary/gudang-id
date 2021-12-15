@@ -53,19 +53,11 @@
                         <p>Pelanggan</p>
                     </a>
                 </li>
-                <?php if($_SESSION['user_id'] != 3) : ?>
+                <?php if($_SESSION['id_role'] != 3) : ?>
                 <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/transaction" class="nav-link <?= $data['title'] == 'Transaction' ? 'active' : ''; ?>">
                         <i class='bx bx-dollar-circle' ></i>
                         <p>Transaksi</p>
-                    </a>
-                </li>
-                <?php endif; ?>
-                <?php if($_SESSION['user_id'] == 1) : ?>
-                <li class="nav-item mb-2">
-                    <a href="<?= BASEURL ?>/manageuser" class="nav-link <?= $data['title'] == 'User Management' ? 'active' : ''; ?>">
-                        <i class='bx bx-user-circle'></i>
-                        <p>Pengguna</p>
                     </a>
                 </li>
                 <?php endif; ?>
@@ -92,6 +84,14 @@
                         </li>
                     </ul>
                 </li>
+                <?php if($_SESSION['id_role'] == 1) : ?>
+                <li class="nav-item mb-2">
+                    <a href="<?= BASEURL ?>/manageuser" class="nav-link <?= $data['title'] == 'User Management' ? 'active' : ''; ?>">
+                        <i class='bx bx-user-circle'></i>
+                        <p>Pengguna</p>
+                    </a>
+                </li>
+                <?php endif; ?>
                 <li class="nav-item mb-2">
                     <a href="<?= BASEURL ?>/about" class="nav-link <?= $data['title'] == 'About' ? 'active' : ''; ?>">
                         <i class='bx bx-help-circle' ></i>

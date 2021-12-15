@@ -14,7 +14,7 @@
             
             <ul class="dropdown-menu dropdown-menu-right dropdown-menu-dark text-center">
                 <li><h5 class="dropdown-item disabled"><?= $_SESSION['fullname']; ?></h5></li>
-                <li><p class="dropdown-item disabled p-0 mb-0 role-profile text-success"><?= $_SESSION['role']; ?></p></li>
+                <li><p class="dropdown-item disabled p-0 mb-0 role-profile text-success"><?= $_SESSION['nm_role']; ?></p></li>
                 <div class="dropdown-divider"></div>
                 <li><a class="dropdown-item btn btn-default text-muted" href="<?= BASEURL ?>/login/logout">keluar</a></li>
             </ul>

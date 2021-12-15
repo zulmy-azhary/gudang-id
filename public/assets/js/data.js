@@ -3,7 +3,7 @@ $(function () {
 	// Table for item list
 	$("#itemList").DataTable({
 		responsive: true,
-        paging: true,
+		paging: true,
 		lengthChange: true,
 		autoWidth: false,
 		ordering: false,
@@ -76,13 +76,13 @@ $(function () {
 				last: '<i class="fas fa-angle-double-right"></i>',
 			},
 		},
-    });
-    
-    //transaction page
-    $("#transactionPage").DataTable({
+	});
+
+	//transaction page
+	$("#transactionPage").DataTable({
 		responsive: true,
-        paging: false,
-        filter: false,
+		paging: false,
+		filter: false,
 		lengthChange: true,
 		autoWidth: false,
 		ordering: false,
@@ -95,12 +95,12 @@ $(function () {
 				last: '<i class="fas fa-angle-double-right"></i>',
 			},
 		},
-    });
-    
-    $("#detailTrans").DataTable({
+	});
+
+	$("#detailTrans").DataTable({
 		responsive: true,
-        paging: false,
-        filter: false,
+		paging: false,
+		filter: false,
 		lengthChange: false,
 		autoWidth: false,
 		ordering: false,
@@ -113,11 +113,11 @@ $(function () {
 				last: '<i class="fas fa-angle-double-right"></i>',
 			},
 		},
-    });
+	});
 
-    $("#userList").DataTable({
+	$("#userList").DataTable({
 		responsive: true,
-        paging: true,
+		paging: true,
 		lengthChange: true,
 		autoWidth: false,
 		ordering: false,
@@ -130,14 +130,7 @@ $(function () {
 				last: '<i class="fas fa-angle-double-right"></i>',
 			},
 		},
-		columnDefs: [
-			{
-				targets: 3,
-				render: $.fn.dataTable.render.number(".", ",", 0, "Rp. "),
-			},
-		],
 	});
-    
 });
 
 // ! Event
@@ -216,6 +209,37 @@ $(document).ready(function () {
 				$("#updateCustomerName").val(data.nm_pelanggan);
 				$("#updateCustomerAddress").val(data.alamat);
 				$("#updateCustomerPhoneNumber").val(data.no_telp);
+			},
+		});
+	});
+
+	$(document).on("click", "#userUpdateModalButton", function () {
+		let id = $(this).data("id");
+
+		$.ajax({
+			url: "http://localhost/gudang-id/public/manageuser/getmodalusers",
+			data: { id: JSON.stringify(id) },
+			method: "POST",
+			success: function (res) {
+				let data = JSON.parse(res);
+				console.log(data);
+
+				$("#updateFullName").val(data.fullname);
+				$("#updateUsername").val(data.username);
+				$("#updateUserCabang").val(data.id_cabang);
+				$("#updateUserRole").val(data.id_role);
+				if (data.id_role == 1) {
+					$("#updateUserRole").prop("disabled", true)
+						.append($("<option selected>").val(1).text(data.nm_role));
+					$("#updateUserCabang").prop("disabled", true)
+						.append($("<option selected>").val(0).text("-"));
+					// $("#updateUserCabang").append($("<option>").text("-"));
+				} else {
+					$("#updateUserRole")
+						.prop("disabled", false).find(`option[value=${1}]`).remove();
+					$("#updateUserCabang")
+						.prop("disabled", false).find(`option[value=${0}]`).remove();
+				}
 			},
 		});
 	});

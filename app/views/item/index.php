@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <?php if($_SESSION['user_id'] != 3) : ?> 
+                                    <?php if($_SESSION['id_role'] != 3) : ?> 
                                     <div class="card-header">
                                         <div class="card-tools">
                                             <div class="col-sm-12">
@@ -39,7 +39,7 @@
                                                     <th>Kategori</th>
                                                     <th>Harga</th>
                                                     <th>Stok</th>
-                                                    <?php if($_SESSION['user_id'] != 3) : ?> 
+                                                    <?php if($_SESSION['id_role'] != 3) : ?> 
                                                     <th>Aksi</th>
                                                     <?php endif; ?>
                                                 </tr>
@@ -52,7 +52,7 @@
                                                     <td><?= $item['nm_kat']; ?></td>
                                                     <td><?= $item['harga']; ?></td>
                                                     <td><?= $item['stok']; ?></td>
-                                                    <?php if($_SESSION['user_id'] != 3) : ?> 
+                                                    <?php if($_SESSION['id_role'] != 3) : ?> 
                                                     <td>
                                                         <a class="btn btn-edit" data-toggle="modal" data-target="#itemUpdateModal" id="itemUpdateModalButton" data-id="<?= $item['id_barang']; ?>">
                                                             <i class='bx bx-edit' ></i>
@@ -79,7 +79,6 @@
                         <div class="modal-content card">
                             <div class="modal-header border-0">
                                 <h4 class="modal-title" id="modalLabel">Update Data Barang</h4>
-                                <!-- <button class="btn" type="button" data-dismiss="modal">x</button> -->
                             </div>
                             <div class="modal-body">
                                 <div class="form-horizontal d-flex justify-content-center">
@@ -150,9 +149,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /.modal-content -->
                     </div>
-                    <!-- /.modal-dialog -->
                 </form>
             </div>
             <?php require APPROOT . '/views/includes/footer.php' ?>

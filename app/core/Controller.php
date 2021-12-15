@@ -22,13 +22,13 @@ class Controller{
 
     // Checking role
     public function checkNotRoleUser($id){
-        if($_SESSION['user_id'] != $id){
+        if($_SESSION['id_role'] != $id){
             header('Location: ' . BASEURL . '/home');
         }
     }
 
     public function checkRoleUser($id){
-        if($_SESSION['user_id'] == $id){
+        if($_SESSION['id_role'] == $id){
             header('Location: ' . BASEURL . '/home');
         }
     }
