@@ -2,6 +2,14 @@
 <script src="<?= BASEURL; ?>/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="<?= BASEURL; ?>/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- MomentJS -->
+<script src="<?= BASEURL; ?>/plugins/moment/moment.min.js"></script>
+<!-- Select2 -->
+<script src="<?= BASEURL; ?>/plugins/select2/js/select2.full.min.js"></script>
+<!-- Daterange Picker -->
+<script src="<?= BASEURL; ?>/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- tempusdominus bootstrap 4 -->
+<script src="<?= BASEURL; ?>/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>$.widget.bridge('uibutton', $.ui.button)</script>
 <!-- Bootstrap 4 -->

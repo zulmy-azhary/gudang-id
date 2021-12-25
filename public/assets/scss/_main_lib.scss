@@ -1,69 +1,79 @@
-// !import poppins from google font
+//import poppins from google font
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
-//! *** background color ***
-$backgroundColorOne : #202332;
-$backgroundColorTwo : #2a2e3f;
+//background color
+$backgroundColorOne   : #202332;
+$backgroundColorTwo   : #2a2e3f;
+$backgroundColorThree : #3f4664;
 
-//! *** element color ***
+//element color
 $elementColorOne    : #6b55fa;
 $elementColorTwo    : #f17040;
 $elementColorThree  : #37ce55;
 $elementColorFour   : #538aec;
 $elementColorFive   : #9eacbe;
 
-//! *** font color ***
+//font color
 $fontPrimary : #fef5f2;
-$fontSecond : #9eacbe;
+$fontSecond  : #9eacbe;
 
+//style for cards
 @mixin Cards {
-    background: $backgroundColorTwo !important;
-    box-shadow: none !important;
-    flex-direction: column;
-    display: flex;
+    background      : $backgroundColorTwo !important;
+    box-shadow      : none !important;
+    flex-direction  : column;
+    display         : flex;
 }
 
+//style for input at all form
 @mixin Inputs{
-    box-shadow: none !important;
-    outline: none !important;
-    border: none !important;
-    font-size: 0.9rem !important;
+    box-shadow      : none !important;
+    outline         : none !important;
+    border          : none !important;
+    font-size       : 0.9rem !important;
 }
 
+//style for floating input
 @mixin AnimatedForm {
-    
-    // !jika si user ngeklik kolom inputannya
     &:focus + .label,
     &:valid + .label {
-        color: $elementColorOne;
-        font-size: 0.9rem;
-        top: -1.5rem;
+        color       : $elementColorOne;
+        font-size   : 0.9rem;
+        top         : -1.5rem;
     }
     &:focus ~ .floating-component,
     &:valid ~ .floating-component {
-        height: 2.5rem;
+        height      : 2.5rem;
     }
-    
-    // !jika inputan tersebut valid
-    
-    
-    
 }
 
+//style for button
 @mixin Buttons($background){
-    border-radius: 0.3rem !important;
-    color: $fontPrimary !important;
-    font-size: 0.8rem !important;
-    box-shadow: none !important;
-    font-weight: 500 !important;
-    outline: none !important;
-    border: none !important;
-    background: $background;
-    padding: 0.5rem 0.7rem;
-    justify-content: center;
+    border-radius   : 0.3rem !important;
+    color           : $fontPrimary !important;
+    font-size       : 0.8rem !important;
+    box-shadow      : none !important;
+    font-weight     : 500 !important;
+    outline         : none !important;
+    border          : none !important;
+    background      : $background;
+    padding         : 0.5rem 0.7rem;
+    justify-content : center;
     i {
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
+        font-size   : 1.2rem;
+        display     : flex;
+        align-items : center;
     }
+}
+
+//style for bubbles dropdown
+@mixin Bubbles($Background, $Right, $Top) {
+    width           : 1.5rem;
+    height          : 1.5rem;
+    transform       : rotate(45deg);
+    border-radius   : 0.2rem;
+    position        : absolute;
+    background      : $Background;
+    right           : $Right;
+    top             : $Top;
 }

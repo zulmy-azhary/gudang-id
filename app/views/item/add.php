@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php require APPROOT . '/views/includes/head.php' ?>
-    <body class="hold-transition sidebar-mini layout-fixed">
+    <body class="sidebar-mini layout-fixed">
         <div class="wrapper">
             <?php require APPROOT . '/views/includes/nav.php' ?>
             <?php require APPROOT . '/views/includes/sidebar.php' ?>
             <div class="content-wrapper">
-                <!-- !  -->
                 <section class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">

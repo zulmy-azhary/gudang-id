@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-navy navbar-dark">
+<nav class="main-header navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -12,11 +12,19 @@
                 <img class="brand-image img-circle elevation-3" src="<?= BASEURL ?>/dist/img/avatar5.png" width="30" height="30">
             </span>
             
-            <ul class="dropdown-menu dropdown-menu-right dropdown-menu-dark text-center">
-                <li><h5 class="dropdown-item disabled"><?= $_SESSION['fullname']; ?></h5></li>
-                <li><p class="dropdown-item disabled p-0 mb-0 role-profile text-success"><?= $_SESSION['nm_role']; ?></p></li>
-                <div class="dropdown-divider"></div>
-                <li><a class="dropdown-item btn btn-default text-muted" href="<?= BASEURL ?>/login/logout">keluar</a></li>
+            <ul class="dropdown-menu dropdown-menu-right dropdown-menu-dark">
+                <div class="bubbles"></div>
+                <div class="cover">
+                    <img class="user-avatar" src="<?= BASEURL ?>/dist/img/avatar5.png">
+                </div>
+                <div class="user">
+                    <span class="user-name"><?= $_SESSION['fullname']; ?></span>
+                    <span class="role-profile"><?= $_SESSION['nm_role']; ?></span>
+                </div>
+                <div class="action">
+                    <a class="btn btn-logout" href="<?= BASEURL ?>/login/logout">
+                        <i class='bx bx-log-out'></i>
+                    </a>
             </ul>
         </li>
     </ul>

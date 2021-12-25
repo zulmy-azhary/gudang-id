@@ -9,17 +9,19 @@
 	<link rel="stylesheet" href="<?= BASEURL; ?>/plugins/fontawesome-free/css/all.min.css">
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Daterange Picker -->
+    <link rel="stylesheet" href="<?= BASEURL; ?>/plugins/daterangepicker/daterangepicker.css">
 	<!-- Tempusdominus Bootstrap 4 -->
 	<link rel="stylesheet" href="<?= BASEURL; ?>/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="<?= BASEURL; ?>/plugins/select2/css/select2.min.css">
 	<!-- iCheck -->
 	<link rel="stylesheet" href="<?= BASEURL; ?>/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?= BASEURL; ?>/dist/css/adminlte.min.css">
 	<link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/main.css">
-
 	<!-- SweetAlert2 -->
 	<link rel="stylesheet" href="<?= BASEURL; ?>/plugins/sweetalert2/sweetalert2.min.css">
-	
 	<!-- Datatables -->
 	<link rel="stylesheet" href="<?= BASEURL; ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" href="<?= BASEURL; ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">

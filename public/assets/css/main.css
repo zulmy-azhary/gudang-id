@@ -23,6 +23,91 @@ body::-webkit-scrollbar {
   border: none;
 }
 
+.main-header .dropdown-menu {
+  background: #2a2e3f;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  width: 18rem;
+  margin-top: 1.3rem;
+  border: none;
+  padding: 0;
+}
+
+.main-header .dropdown-menu .bubbles {
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-radius: 0.2rem;
+  position: absolute;
+  background: #3f4664;
+  right: 1.2rem;
+  top: -0.5rem;
+}
+
+.main-header .dropdown-menu .cover {
+  border-radius: 0.18rem 0.18rem 0rem 0rem;
+  background: #3f4664;
+  height: 6rem;
+  width: 100%;
+}
+
+.main-header .dropdown-menu .cover .user-avatar {
+  border: 4px solid #2a2e3f;
+  border-radius: 100%;
+  position: absolute;
+  height: 6rem;
+  width: 6rem;
+  margin: auto;
+  left: 34%;
+  top: 15%;
+}
+
+.main-header .dropdown-menu .user {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+  padding: 0.3rem 0.5rem;
+  gap: 0.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-header .dropdown-menu .user .user-name {
+  font-size: 1.2rem;
+  color: #9eacbe;
+  font-weight: bold;
+}
+
+.main-header .dropdown-menu .user .role-profile {
+  padding: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+  color: #fef5f2;
+  background: #6b55fa;
+}
+
+.main-header .dropdown-menu .action {
+  padding: 0.5rem;
+}
+
+.main-header .dropdown-menu .action .btn-logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .main-sidebar {
   background: #2a2e3f;
 }
@@ -52,8 +137,8 @@ body::-webkit-scrollbar {
           align-items: center;
   border-radius: 0.3rem;
   font-size: 0.8rem;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,6 +232,17 @@ body::-webkit-scrollbar {
   font-size: 0.9rem;
 }
 
+.form-group .input-group > .select2-container {
+  width: auto !important;
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 1 auto !important;
+          flex: 1 1 auto !important;
+}
+
+.form-group .input-group > .select2-container .select2-selection--single {
+  line-height: inherit !important;
+}
+
 .form-group .input-group .input-group-prepend .input-group-text, .form-group .input-group .input-group-append .input-group-text {
   border: none !important;
   background: #6b55fa;
@@ -201,7 +297,7 @@ body::-webkit-scrollbar {
           align-items: center;
 }
 
-.btn-cancel, .btn-delete {
+.btn-cancel, .btn-delete, .btn-logout {
   border-radius: 0.3rem !important;
   color: #fef5f2 !important;
   font-size: 0.8rem !important;
@@ -217,7 +313,7 @@ body::-webkit-scrollbar {
           justify-content: center;
 }
 
-.btn-cancel i, .btn-delete i {
+.btn-cancel i, .btn-delete i, .btn-logout i {
   font-size: 1.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,6 +373,32 @@ body::-webkit-scrollbar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#action-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+#action-buttons .dt-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100% !important;
+  -ms-flex-pack: distribute !important;
+      justify-content: space-around !important;
+  margin: 0;
+}
+
+#action-buttons .dt-buttons .btn span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .row-action {
@@ -395,6 +517,8 @@ body::-webkit-scrollbar {
 
 .dataTables_wrapper * #itemList_length label,
 .dataTables_wrapper * #userList_length label,
+.dataTables_wrapper * #transStatus_length label,
+.dataTables_wrapper * #transHistory_length label,
 .dataTables_wrapper * #stockInHistoryList_length label,
 .dataTables_wrapper * #customerList_length label {
   -webkit-box-align: center;
@@ -410,6 +534,8 @@ body::-webkit-scrollbar {
 
 .dataTables_wrapper * #itemList_length label .custom-select,
 .dataTables_wrapper * #userList_length label .custom-select,
+.dataTables_wrapper * #transStatus_length label .custom-select,
+.dataTables_wrapper * #transHistory_length label .custom-select,
 .dataTables_wrapper * #stockInHistoryList_length label .custom-select,
 .dataTables_wrapper * #customerList_length label .custom-select {
   -webkit-box-shadow: none !important;
@@ -421,6 +547,8 @@ body::-webkit-scrollbar {
 
 .dataTables_wrapper * #itemList_length label .custom-select option,
 .dataTables_wrapper * #userList_length label .custom-select option,
+.dataTables_wrapper * #transStatus_length label .custom-select option,
+.dataTables_wrapper * #transHistory_length label .custom-select option,
 .dataTables_wrapper * #stockInHistoryList_length label .custom-select option,
 .dataTables_wrapper * #customerList_length label .custom-select option {
   -webkit-box-shadow: none !important;
@@ -434,7 +562,11 @@ body::-webkit-scrollbar {
 .dataTables_wrapper * #stockInList_filter label,
 .dataTables_wrapper * #stockInHistoryList_filter label,
 .dataTables_wrapper * #itemList_filter label,
+.dataTables_wrapper * #itemModalTable_filter label,
 .dataTables_wrapper * #customerList_filter label,
+.dataTables_wrapper * #custModalTable_filter label,
+.dataTables_wrapper * #transHistory_filter label,
+.dataTables_wrapper * #transStatus_filter label,
 .dataTables_wrapper * #transaction_filter label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -453,7 +585,11 @@ body::-webkit-scrollbar {
 .dataTables_wrapper * #stockInList_filter label input,
 .dataTables_wrapper * #stockInHistoryList_filter label input,
 .dataTables_wrapper * #itemList_filter label input,
+.dataTables_wrapper * #itemModalTable_filter label input,
 .dataTables_wrapper * #customerList_filter label input,
+.dataTables_wrapper * #custModalTable_filter label input,
+.dataTables_wrapper * #transHistory_filter label input,
+.dataTables_wrapper * #transStatus_filter label input,
 .dataTables_wrapper * #transaction_filter label input {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -466,7 +602,11 @@ body::-webkit-scrollbar {
 .dataTables_wrapper * #stockInList_paginate ul,
 .dataTables_wrapper * #stockInHistoryList_paginate ul,
 .dataTables_wrapper * #itemList_paginate ul,
+.dataTables_wrapper * #itemModalTable_paginate ul,
 .dataTables_wrapper * #customerList_paginate ul,
+.dataTables_wrapper * #custModalTable_paginate ul,
+.dataTables_wrapper * #transHistory_paginate ul,
+.dataTables_wrapper * #transStatus_paginate ul,
 .dataTables_wrapper * #transaction_paginate ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -484,7 +624,11 @@ body::-webkit-scrollbar {
 .dataTables_wrapper * #stockInList_paginate ul li a,
 .dataTables_wrapper * #stockInHistoryList_paginate ul li a,
 .dataTables_wrapper * #itemList_paginate ul li a,
+.dataTables_wrapper * #itemModalTable_paginate ul li a,
 .dataTables_wrapper * #customerList_paginate ul li a,
+.dataTables_wrapper * #custModalTable_paginate ul li a,
+.dataTables_wrapper * #transHistory_paginate ul li a,
+.dataTables_wrapper * #transStatus_paginate ul li a,
 .dataTables_wrapper * #transaction_paginate ul li a {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -508,7 +652,11 @@ body::-webkit-scrollbar {
 .dataTables_wrapper * #stockInList_paginate ul .active a,
 .dataTables_wrapper * #stockInHistoryList_paginate ul .active a,
 .dataTables_wrapper * #itemList_paginate ul .active a,
+.dataTables_wrapper * #itemModalTable_paginate ul .active a,
 .dataTables_wrapper * #customerList_paginate ul .active a,
+.dataTables_wrapper * #custModalTable_paginate ul .active a,
+.dataTables_wrapper * #transHistory_paginate ul .active a,
+.dataTables_wrapper * #transStatus_paginate ul .active a,
 .dataTables_wrapper * #transaction_paginate ul .active a {
   color: #fef5f2;
 }
@@ -637,6 +785,14 @@ body::-webkit-scrollbar {
   color: #fef5f2;
 }
 
+.content-wrapper .content .container-fluid .row-content #myData, .content-wrapper .content .container-fluid .row-content #dataAct {
+  display: none;
+}
+
+.content-wrapper .content .container-fluid .row-content #itemReport_filter {
+  display: none;
+}
+
 .content-wrapper .content .container-fluid .row-content .connectedSortable .card {
   background: #2a2e3f !important;
   -webkit-box-shadow: none !important;
@@ -669,18 +825,5 @@ body::-webkit-scrollbar {
 
 .content-wrapper .content .container-fluid .row-content .connectedSortable .card .card-footer .sign-up {
   color: #9eacbe !important;
-}
-
-.content-wrapper .content .container-fluid .row-content .col-sm-4 .card .invoice-serial, .content-wrapper .content .container-fluid .row-content .col-sm-4 .card .total {
-  font-weight: bold;
-  color: #9eacbe;
-}
-
-.content-wrapper .content .container-fluid .row-content .col-sm-4 .card .total {
-  font-size: 3rem;
-}
-
-.content-wrapper .content .container-fluid .row-content .col-sm-4 .row-action .btn-add, .content-wrapper .content .container-fluid .row-content .col-sm-4 .row-action .btn-accept, .content-wrapper .content .container-fluid .row-content .col-sm-4 .row-action .btn-cancel {
-  height: 2.5rem;
 }
 /*# sourceMappingURL=main.css.map */

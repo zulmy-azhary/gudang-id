@@ -66,10 +66,46 @@ aplikasi manajemen data gudang dan data penjualan.
         - Branch manager    = hanya mengakses menu report, monitoring list barang.
         - Admin             = hanya mengakses menu barang dan menu transaksi.
 
-[v0.5] (Update halaman)
+[v0.5] (Update halaman).
     1. Data customer
         - menambahkan halaman untuk data pelanggan (tampilan data pelanggan dalam bentuk tabel)
         - menambah fitur CRUD pada halaman data pelanggan (diarea tabel).
         - menambahkan fitur untuk mengisi data pelanggan (form tambah data pelanggan).
 
+[v0.6] (Update halaman).
+    1. Data ransaksi
+        - menambahkan tombol simpan(untuk menyimpat data transaksi ke halaman status transaksi).
+        - menambah tombol trigger modal (untuk menampilkan daftar pelanggan yang akan di proses).
+        - menambah tombol trigger modal (untuk menampilkan daftar barang yang akan di proses).
+        - repack beberapa elemen.
+
+[v0.7] (Update halaman).
+    1. Data Transaksi
+        - mengubah fitur pada menu transaksi di sidebar
+        - menambah halaman status transaksi.
+        - menambah riwayat transaksi.
+        - repack beberapa elemen di halaman lain.
+
+[v0.8] (Update halaman).
+    1. Data Laporan
+        - mengubah fitur pada menu laporan di sidebar
+        - menambah halaman laporan barang.
+        - menambah halaman laporan transaksi.
+        - repack beberapa elemen di halaman lain.
+
+[v0.9] (Update halaman).
+    1. Data Laporan Barang 
+        - menambah fitur untuk menampilkan data barang masuk atau barang keluar.
+        - menambah fitur baru untuk mencetak, export excel dan export pdf untuk data laporan.
+        - menambah fitur untuk melakukan sorting berdasarkan range tanggal pada data laporan.
+
+[v1.0] (Update halaman).
+    1. Data Laporan transaksi
+        - menambah tabel dihalaman transaksi untuk menampung data transaksi.
+    2. Data Pengguna
+        - Menambah halaman untuk pengelolaan data pengguna.
+        - mengubah fitur khusus untuk role super admin.
+        - update beberapa element pada tab user dibagian navbar
+
+[v1.1] (update halaman).
 

@@ -10,8 +10,20 @@ class Transaction extends Controller{
     // view for transaction
     public function index() {
         $data = [
-            'title' => 'Transaction'
+            'title' => 'Transaction List'
         ];
         $this->view('transaction/index', $data);
+    }
+    public function status() {
+        $data = [
+            'title' => 'Transaction Status'
+        ];
+        $this->view('transaction/status', $data);
+    }
+    public function history() {
+        $data = [
+            'title' => 'Transaction History'
+        ];
+        $this->view('transaction/history', $data);
     }
 }

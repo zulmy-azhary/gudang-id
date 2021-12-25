@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php require APPROOT . '/views/includes/head.php' ?>
-    <body class="hold-transition sidebar-mini layout-fixed">
+    <body class="sidebar-mini layout-fixed">
         <div class="wrapper">
             <?php require APPROOT . '/views/includes/nav.php' ?>
             <?php require APPROOT . '/views/includes/sidebar.php' ?>
@@ -57,7 +57,7 @@
                                                     <input type="text" class="form-control rounded-right" id="stockIn-code" name="kd_barang_in" placeholder="Pilih kode barang..." readonly>
 
                                                     <button class="btn btn-add ml-2 d-flex align-items-center" type="button" data-toggle="modal" data-target="#buttonModal">
-                                                        <i class='bx bx-search-alt mr-1'></i>Search
+                                                        <i class='bx bx-search-alt mr-1'></i>Cari
                                                     </button>
                                                 </div>
                                             </div>
