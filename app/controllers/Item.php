@@ -11,17 +11,19 @@ class Item extends Controller{
     public function index(){
         $data = [
             'title' => 'Item List',
+            'content' => 'item/index',
             'items' => $this->itemModel->getData()
         ];
-        $this->view('item/index', $data);
+        $this->view('main/index', $data);
     }
     // View for create item
     public function add(){
         $this->checkRoleUser(3);
         $data = [
             'title' => 'Add Item',
+            'content' => 'item/add'
         ];
-        $this->view('item/add', $data);
+        $this->view('main/index', $data);
     }
 
     
@@ -64,7 +66,7 @@ class Item extends Controller{
         $key = $jsonData['key'];
         
         // Query
-        $result = $this->itemModel->itemCount($category)[0]['count'];
+        $result = $this->itemModel->itemCount($category)['MAX'];
         
         // Parse data into item code
         $count = $result + 1;

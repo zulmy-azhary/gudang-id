@@ -1,7 +1,6 @@
 <?php 
 
 class CustomerModel{
-    private $tableCust = 'u_customers';
     private $db;
     
     public function __construct(){
@@ -9,7 +8,7 @@ class CustomerModel{
     }
 
     public function getCustomer(){
-        $query = "SELECT *FROM $this->tableCust";
+        $query = "SELECT *FROM {$this->db->tableCustomer}";
 
         $this->db->query($query);
         return $this->db->resultSet();
@@ -17,11 +16,11 @@ class CustomerModel{
 
     // Query for create customer
     public function createCustomer($data){
-        $query = "INSERT INTO $this->tableCust SET
-                kd_pelanggan = :kd_pelanggan,
-                nm_pelanggan = :nm_pelanggan,
-                alamat = :alamat,
-                no_telp = :tlp
+        $query = "INSERT INTO {$this->db->tableCustomer} SET
+                    kd_pelanggan = :kd_pelanggan,
+                    nm_pelanggan = :nm_pelanggan,
+                    alamat = :alamat,
+                    no_telp = :tlp
                 ";
         
         $this->db->query($query);
@@ -35,7 +34,7 @@ class CustomerModel{
 
     // Query for update customer data
     public function updateCustomer($data){
-        $query = "UPDATE $this->tableCust SET
+        $query = "UPDATE {$this->db->tableCustomer} SET
                 nm_pelanggan = :nm_pelanggan,
                 alamat = :alamat,
                 no_telp = :tlp
@@ -53,7 +52,7 @@ class CustomerModel{
 
     // Query for delete customer data
     public function deleteCustomer($id){
-        $query = "DELETE FROM $this->tableCust WHERE cust_id = :id";
+        $query = "DELETE FROM {$this->db->tableCustomer} WHERE cust_id = :id";
         
         $this->db->query($query);
         $this->db->bind(':id', $id);
@@ -63,15 +62,15 @@ class CustomerModel{
 
     // Count data from customer table
     public function itemCount(){
-        $query = "SELECT COUNT(*) as count FROM $this->tableCust";
+        $query = "SELECT MAX(RIGHT(kd_pelanggan, 1)) as MAX FROM {$this->db->tableCustomer}";
 
         $this->db->query($query);
-        return $this->db->resultSet();
+        return $this->db->single();
     }
 
     // Get customer data based on customer id
     public function getCustomerById($id){
-        $query = "SELECT *FROM $this->tableCust where cust_id = :id";
+        $query = "SELECT *FROM {$this->db->tableCustomer} where cust_id = :id";
 
         $this->db->query($query);
         $this->db->bind(':id', $id);

@@ -7,18 +7,21 @@ class ManageUser extends Controller{
         $this->userModel = $this->model("UserModel");
     }
     
+    // ! View
     public function index(){
         $data = [
             'title' => 'User Management',
+            'content' => 'manageuser/index',
             'items' => $this->userModel->getUser()
         ];
 
-        $this->view('manageuser/index', $data);
+        $this->view('main/index', $data);
     }
     
     public function add(){
         $data = [
             'title' => 'User Management',
+            'content' => 'manageuser/add',
             'confirmPasswordError' => '',
         ];
 
@@ -28,6 +31,7 @@ class ManageUser extends Controller{
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
                 'title' => 'User Management',
+                'content' => 'manageuser/add',
                 'fullname' => $_POST['fullname'],
                 'username' => trim($_POST['username']),
                 'password' => trim($_POST['password']),
@@ -61,9 +65,10 @@ class ManageUser extends Controller{
             }
         }
 
-        $this->view('manageuser/add', $data);
+        $this->view('main/index', $data);
     }
 
+    // ! Method
     public function delete($id){
         if($this->userModel->deleteUser($id) !== null){
             header('Location: ' . BASEURL . '/manageuser');

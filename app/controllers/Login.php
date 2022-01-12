@@ -7,66 +7,33 @@ class Login extends Controller{
 
     // ! Login
     public function index(){
-        if(isset($_SESSION['user_id'])){
-            header('Location: ' . BASEURL . '/home');
-        }
         $data = [
             'title' => 'Login',
             'username' => '',
-            'password' => '',
-            'usernameError' => '',
-            'passwordError' => ''
+            'password' => ''
         ];
-
-        // Check for post
+        if(isset($_SESSION['user_id'])){
+            header('Location: ' . BASEURL . '/home');
+        }
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            //Sanitize post data
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
                 'title' => 'Login',
                 'username' => trim($_POST['username']),
                 'password' => trim($_POST['password']),
-                'usernameError' => '',
-                'passwordError' => ''
             ];
-
-            // ! Validate username
-            if(empty($data['username'])){
-                $data['usernameError'] = 'Please enter a username';
+            $loggedInUser = $this->userModel->login($data['username']);
+            
+            if($loggedInUser && password_verify($data['password'], $loggedInUser['password'])){
+                $this->createUsersession($loggedInUser);
             }
-
-            // ! Validate password
-            if(empty($data['password'])){
-                $data['passwordError'] = 'Please enter a password';
-            }
-
-            // ! Check if all errors are empty
-            if(empty($data['usernameError']) && empty($data['passwordError'])){
-                $loggedInUser = $this->userModel->login($data['username'], $data['password']);
-                
-                if($loggedInUser){
-                    $this->createUsersession($loggedInUser);
-                }
-                else{
-                    $data['passwordError'] = 'Username or Password is incorrect. Please try again!';
-                }
-            }
-        }
-        else{
-            $data = [
-                'title' => 'Login',
-                'username' => '',
-                'password' => '',
-                'usernameError' => '',
-                'passwordError' => ''
-            ];
         }
 
         $this->view('login/index', $data);
     }
 
     // Create user session
-    public function createUsersession($user){
+    public static function createUsersession($user){
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['fullname'] = $user['fullname'];
         $_SESSION['username'] = $user['username'];
@@ -81,6 +48,35 @@ class Login extends Controller{
         session_destroy();
 
         header('Location: ' . BASEURL . '/login');
+    }
+
+    public function getUser(){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        
+        if(empty($username)){
+            echo 1;
+        }
+        elseif (empty($password)) {
+            echo 2;
+        }
+        else {
+            $data = $this->userModel->login($username);
+            
+            $newUsername = isset($data['username']) ? $data['username'] : "";
+            $newPassword = isset($data['password']) ? $data['password'] : "";
+
+            if($newUsername){
+                if(password_verify($password, $newPassword)){
+                    echo 9;
+                }else{
+                    echo 3;
+                }
+            }
+            else {
+                echo 3;
+            }
+        }
     }
 }
 

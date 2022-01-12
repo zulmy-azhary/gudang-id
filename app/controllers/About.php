@@ -4,11 +4,14 @@ class About extends Controller{
     public function __construct(){
         $this->checkSessionId();
     }
+    
+    // ! View
     public function index(){
         $data = [
-            'title' => 'About'
+            'title' => 'About',
+            'content' => 'about/index'
         ];
-        $this->view('about/index', $data);
+        $this->view('main/index', $data);
     }
 
 }

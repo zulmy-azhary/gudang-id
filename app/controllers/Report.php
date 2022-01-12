@@ -4,12 +4,19 @@ class Report extends Controller{
     public function __construct(){
         $this->checkSessionId();
     }
-    public function itemReport(){
-        $data['title'] = 'Item Report';
-        $this->view('report/itemreport', $data);
+    // ! View
+    public function item(){
+        $data = [
+            'title' => 'Item Report',
+            'content' => 'report/item'
+        ];
+        $this->view('main/index', $data);
     }
-    public function transReport(){
-        $data['title'] = 'Transaction Report';
-        $this->view('report/transreport', $data);
+    public function transaction(){
+        $data = [
+            'title' => 'Transaction Report',
+            'content' => 'report/transaction'
+        ];
+        $this->view('main/index', $data);
     }
 }

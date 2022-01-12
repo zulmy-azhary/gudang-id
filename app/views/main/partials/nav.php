@@ -25,6 +25,7 @@
                     <a class="btn btn-logout" href="<?= BASEURL ?>/login/logout">
                         <i class='bx bx-log-out'></i>
                     </a>
+                </div>
             </ul>
         </li>
     </ul>

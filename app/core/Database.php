@@ -1,13 +1,25 @@
 <?php 
 
 class Database{
+    // DB
     private $host = DB_HOST;
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $dbName = DB_NAME;
 
-    protected $db_handler;
-    protected $statement;
+    // Tables
+    public $tableItems = TBL_ITEM;
+    public $tableCategory = TBL_CATEGORY;
+    public $tableStock = TBL_STOCK;
+    public $tableUsers = TBL_USERS;
+    public $tableRole = TBL_ROLE;
+    public $tableCustomer = TBL_CUSTOMER;
+    public $tableCabang = TBL_CABANG;
+    public $tableTransactionOrder = TBL_T_ORDER;
+    public $tableTransactionItem = TBL_T_ITEM;
+
+    private $db_handler;
+    private $statement;
 
     // Method yang pertama kali dipanggil ketika class Database di instansiasi
     public function __construct(){

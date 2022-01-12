@@ -1,45 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php require APPROOT . '/views/includes/head.php' ?>
-    <body class="hold-transition login-page">
-        <div class="login-box">
-            <div class="card shadow-sm">
-                <div class="card-header text-center border-0">
-                    <h1>Gudang ID</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gudang ID | <?= $data['title']; ?></title>
+	<link rel="shortcut icon" href="<?= BASEURL ?>/assets/img/brand/auto.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/swiper.bundle.min.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/login.css">
+</head>
+<body>
+
+    <section class="area">
+        <div class="box-banner">
+            <div class="col-sm-12">
+                <div class="banner-header">
+                    <span class="head">GUDANG.ID</span>
                 </div>
-                
-                <form action="<?= BASEURL ?>/login" method="POST" class="form-horizontal">
-                    <div class="card-body">
-                        <div class="col-sm-12 input-group">
-                            <div class="input-box mb-4 mt-4">
-                                <input type="text" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="username" autocomplete="off" required>
-                                <span class="label">Username</span>
-                                <span class="floating-component"></span>
-                                <div class="invalid-feedback">
-                                    <?= $data['usernameError']; ?>
-                                </div>
-                            </div>
-
-                            <div class="input-box mb-5 mt-2">
-                                <input type="password" class="form-control <?= $data['usernameError'] || $data['passwordError'] ? 'is-invalid' : ''; ?>" name="password" required>
-                                <span class="label">Password</span>
-                                <span class="floating-component"></span>
-                                <div class="invalid-feedback">
-                                    <?= $data['passwordError']; ?>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="input-group col-sm-12 display-4 text-center">
-                            <button type="submit" class="btn btn-login btn-block">Login</button>
-                        </div>
+                <div class="swiper my-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"></div>
                     </div>
-                </form>
-                <div class="card-footer">
-                    
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
-        <?php require APPROOT . '/views/includes/script.php' ?>
-    </body>
+        <div class="box-form">
+            <div class="col-sm-12 heading">
+                <img class="login-icon" src="<?= BASEURL ?>/assets/img/robot-checking-user-profile.svg" alt="Login Icon">
+            </div>
+            <div class="col-sm-12 forms">
+                <form class="form-wrapper" method="POST" action="<?= BASEURL ?>/login">
+                    <div class="form-group">
+                        <label class="label" id="inLabel">Username</label>
+                        <input id="username" name="username" type="text" class="form-control input" autocomplete="off">
+                        <div class="plat"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label" id="inLabel">Password</label>
+                        <input id="password" name="password" type="password" class="form-control input" autocomplete="off">
+                        <div class="plat"></div>
+                    </div>
+                    <div class="response" id="message">
+                        <span id="msgSuccess"style="display: none;"></span>
+                        <span id="msgError"style="display: none;"></span>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-login" id="loginBtn" disabled>Login</button>
+                </form>
+            </div>
+            <div class="col-sm-12 footer">
+                <div class="form-footer">
+                    <span><i class='bx bx-copyright'></i> Copyright 2021 || alrights reserved</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="<?= BASEURL ?>/plugins/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= BASEURL ?>/assets/js/login.js"></script>
+</body>
 </html>

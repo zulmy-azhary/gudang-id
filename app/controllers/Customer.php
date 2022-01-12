@@ -1,25 +1,26 @@
 <?php 
 
 class Customer extends Controller{
-    protected $tableCust = 'u_customers';
-
     public function __construct(){
         $this->checkSessionId();
         $this->customerModel = $this->model("CustomerModel");
     }
+
+    // ! View
     // View for index item
     public function index(){
         $data = [
             'title' => 'Customer List',
+            'content' => 'customer/index',
             'items' => $this->customerModel->getCustomer()
         ];
-        $this->view('customer/index', $data);
+        $this->view('main/index', $data);
     }
 
     // View for add customer data
     public function add(){
         $this->checkRoleUser(3);
-        $result = $this->customerModel->itemCount($this->tableCust)[0]['count'];
+        $result = $this->customerModel->itemCount()['MAX'];
         
         // Parse data into item code
         $count = $result + 1;
@@ -29,9 +30,10 @@ class Customer extends Controller{
 
         $data = [
             'title' => 'Add Customer',
+            'content' => 'customer/add',
             'kd_pelanggan' => $result
         ];
-        $this->view('customer/add', $data);
+        $this->view('main/index', $data);
     }
 
     // ! Method
@@ -43,6 +45,7 @@ class Customer extends Controller{
         }
     }
     
+    // Method for update
     public function update(){
         if($this->customerModel->updateCustomer($_POST) !== null){
             header('Location: ' . BASEURL . '/customer');
