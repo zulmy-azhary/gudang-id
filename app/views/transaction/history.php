@@ -13,14 +13,17 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
+					<div class="card-header">
+						<div class="col-sm-6 length-filter"></div>
+                    </div>
                     <div class="card-body">
-                        <table id="transHistory" class="table table-dark table-striped text-center">
+                        <table id="transHistory" class="table table-dark table-striped text-center table-ui">
                             <thead id="itemListHeader">
                                 <tr>
                                     <th>Tanggal</th>
                                     <th>Invoice</th>
                                     <th>Nama Pelanggan</th>
-                                    <th>Jumlah</th>
+                                    <th class="price">Jumlah</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -31,12 +34,12 @@
                                     <td><?= $item['invoice']; ?></td>
                                     <td><?= $item['nm_pelanggan']; ?></td>
                                     <td><?= $item['grand_total']; ?></td>
-                                    <td>
-                                        <a class="btn btn-edit" data-toggle="modal" data-target="#transHistoryModal" id="historyTransactionModal" data-id="<?= $item['order_id']; ?>">
+                                    <td class="act-btn">
+                                        <a class="btn table-act-1" data-toggle="modal" data-target="#transHistoryModal" id="historyTransactionModal" data-id="<?= $item['order_id']; ?>">
                                             <i class='bx bx-info-circle'></i>
                                         </a>
                                         <?php if($_SESSION['id_role'] == 1) : ?>
-                                        <a class="btn btn-delete delete-button" href="#"><i class='bx bx-trash'></i></a>
+                                        <a class="btn table-act-2 delete-button" href="#"><i class='bx bx-trash'></i></a>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -44,6 +47,11 @@
                             </tbody>
                         </table>
                     </div>
+					<div class="card-footer">
+						<div class="col-sm-12 table-footer">
+
+						</div>
+					</div>
                 </div>
             </div>
         </div>
@@ -102,12 +110,12 @@
                     <div class="row row-content">
                         <div class="col-12 table-row">
                             <div class="modal-wrapper table-responsive">
-                            <table id="detailTrans" class="table table-dark table-striped table-valign-middle">
+                            <table id="detailTransHistory" class="table table-dark table-striped table-valign-middle table-ui">
                                 <thead>
                                     <tr>
                                         <th>Kode</th>
                                         <th>Nama</th>
-                                        <th>Harga</th>
+                                        <th class="price">Harga</th>
                                         <th>Jumlah</th>
                                         <th>Diskon</th>
                                         <th>Total</th>
@@ -139,13 +147,11 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer border-0">
-                <div class="col-md-12">
-                    <div class="row-action justify-content-center" style="gap: 1rem;">
-                        <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
-                    </div>
-                </div>
-            </div>
+            <div class="modal-footer border-0 card-footer">
+				<div class="col-sm-12 d-flex justify-content-end">
+					<button class="btn button-actions" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+				</div>
+    		</div>
         </div>
         <!-- /.modal-content -->
     </div>

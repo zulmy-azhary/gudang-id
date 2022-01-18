@@ -20,7 +20,6 @@ let DateFilters = (function (oSettings, aData, iDataIndex) {
 
 // TODO: Event
 $(document).ready(function () {
-    
     // A real time clock in transaction
     // renderClock();
     // setInterval(renderClock, 1000);
@@ -271,7 +270,7 @@ $(document).ready(function () {
         }
     })
 
-    // Transaction History
+    // !Transaction History
     $(document).on("click", "#historyTransactionModal", function () {
         $("#detailHistoryTransaction").children().remove();
         let id = $(this).data('id');
@@ -308,7 +307,7 @@ $(document).ready(function () {
     });
 
     // ! Report
-    let myTable = $("#itemReport").DataTable();
+    let myTable = $(".table").DataTable();
     $("#inputRange").on("apply.daterangepicker", function(ev, picker) {
         $(this).val(picker.startDate.format("DD/MM/YYYY") + " - " + picker.endDate.format("DD/MM/YYYY"));
         startDate = picker.startDate.format("DD/MM/YYYY");
@@ -328,22 +327,14 @@ $(document).ready(function () {
     
     // for show data in Laporan Barang
     let barang  = $("#myData");
-    let show    = $("#dataShow")
-    let action  = $("#dataAct");
-    $("#custom-select").on("change", function () {
+    $(".data-show").on("change", function () {
         let val = $(this).val();
         if (val == "masuk") {
-            barang.show();
-            action.show()
-            show.removeClass("col-md-12");
+			barang.fadeIn(200);
         } else if (val == "keluar") {
-            show.removeClass("col-md-12");
-            barang.show();
-            action.show();
+			barang.fadeIn(200);
         } else {
-            barang.hide();
-            action.hide()
-            show.addClass("col-md-12");
+            barang.fadeOut(200);
         }
     }).trigger("change");
 
@@ -351,7 +342,12 @@ $(document).ready(function () {
     for (let i = 0; i < $(".date-transaction").length; i++) {
 		let dateRecentTransaction = $(".date-transaction")[i];
 		$(".date-transaction")[i].innerHTML = moment(dateRecentTransaction.innerHTML).locale("id").fromNow();
-    }
+	}
+	
+	for (let i = 0; i < $(".grand-total-trans").length; i++) {
+		let grandTotalTransaction = $(".grand-total-trans")[i];
+		$(".grand-total-trans")[i].innerHTML = `Rp. ${commafy(grandTotalTransaction.innerHTML)},-`
+	}
 });
 
 
@@ -374,7 +370,7 @@ function itemRows(id, code, name, price, stock, discount, total) {
             <td><input type="hidden" id="itemStockAdd${id}" name="itemStockAdd[]" value="${stock}">${stock}</td>
             <td><input type="hidden" id="itemDiscountAdd${id}" name="itemDiscountAdd[]" value="${discount}">${discount}${discount == 0 ? "" : "%"}</td>
             <td><input type="hidden" id="itemTotalAdd${id}" name="itemTotalAdd[]" value="${total}">Rp. ${commafy(total)}</td>
-            <td><button type="button" class="btn btn-delete deleteRow"><i class='bx bx-trash'></i></button></td>
+            <td class="act-btn"><button type="button" class="btn table-act-2 deleteRow"><i class='bx bx-trash'></i></button></td>
         </tr>
     `);
 }
@@ -414,5 +410,5 @@ function commafy(num) {
     if (str[0].length >= 4) {
         str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1.");
     }
-    return str.join(".");
+	return str.join(".");
 }

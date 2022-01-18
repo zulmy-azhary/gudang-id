@@ -13,14 +13,12 @@
         <div class="row row-content">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="card-tools">
-                            <div class="col-sm-12">
-                                <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/manageuser"><i class='bx bx-undo'></i>Kembali</a>
-                            </div>
-                        </div>
+                    <div class="card-header item-table-head">
+						<div class="col-sm-12 button-slot">
+							<a class="btn button-actions" href="<?= BASEURL ?>/manageuser"><i class='bx bx-undo'></i>Kembali</a>
+						</div>
                     </div>
-                    <form action="<?= BASEURL ?>/manageuser/add" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
+                    <form action="<?= BASEURL ?>/manageuser/add" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center align-items-center flex-column">
                         <div class="card-body col-md-6">
                             <div class="form-group">
                                 <label for="user-fname" class="col-sm-12 col-form-label">Nama Lengkap</label>
@@ -114,14 +112,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 d-flex justify-content-end">
-                                <div class="row-action justify-content-end">
-                                    <button type="reset" class="btn btn-cancel d-flex"><i class='bx bx-reset'></i>Reset</button>
-                                    <button type="submit" class="btn btn-accept d-flex"><i class='bx bx-save' ></i>Simpan</button>
-                                </div>
-                            </div>
                         </div>
-                    </form>
+						<div class="card-footer d-flex justify-content-center">
+							<div class="row-action col-md-6 justify-content-end">
+								<button type="reset" class="btn button-warning"><i class='bx bx-reset'></i>Reset</button>
+								<button type="submit" class="btn button-success"><i class='bx bx-save' ></i>Simpan</button>
+							</div>
+						</div>
+					</form>
                 </div>
             </div>
         </div>

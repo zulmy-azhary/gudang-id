@@ -1,7 +1,7 @@
 <aside class="main-sidebar shadow-sm">
     <!-- Brand Logo -->
     <p class="brand-link d-flex align-items-center">
-        <img src="<?= BASEURL; ?>/assets/img/brand/auto.svg" alt="Gudang ID Logo" class="brand-image img-circle elevation-2" style="opacity: .8">
+        <img src="<?= BASEURL; ?>/assets/img/brand/auto.svg" alt="Gudang ID Logo" class="brand-image img-circle" style="opacity: .8">
         <span class="brand-text">Gudang ID</span>
     </p>
 

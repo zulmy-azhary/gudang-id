@@ -1,6 +1,5 @@
 [***] GUDANG.ID [***]
-aplikasi manajemen data gudang dan data penjualan.
-
+sistem informasi management penjualan dan inventory.
 
 [v0.0] analisa dan perancangan fitur-fitur awal dan siapa yang akan menggunakannya.
 [*] pembahasan mengenai jenis aplikasi apa yang mau dibuat oleh si client.

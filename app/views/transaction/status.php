@@ -14,7 +14,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <table id="transStatus" class="table table-dark table-striped text-center">
+                        <table id="transStatus" class="table table-dark table-striped text-center table-ui">
                             <thead>
                                 <tr>
                                     <th>Tanggal</th>
@@ -140,13 +140,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer border-0">
-                <div class="col-md-12">
-                    <div class="row-action justify-content-center" style="gap: 1rem;">
-                        <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
-                    </div>
-                </div>
-            </div>
+                <div class="modal-footer border-0 card-footer">
+				<div class="col-sm-12 d-flex justify-content-end">
+					<button class="btn button-actions" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+				</div>
+    		</div>
         </div>
         <!-- /.modal-content -->
     </div>

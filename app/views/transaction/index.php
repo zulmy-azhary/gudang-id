@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                     <input type="text" class="form-control rounded-right" id="custNameTransaction" name="custNameTransaction" placeholder="Pilih pelanggan..." readonly>
-                                    <button class="btn btn-add ml-2 d-flex align-items-center" type="button" data-toggle="modal" data-target="#custModal">
+                                    <button class="btn button-actions ml-2" type="button" data-toggle="modal" data-target="#custModal">
                                         <i class='bx bx-search-alt mr-1'></i>Cari
                                     </button>
                                 </div>
@@ -87,7 +87,7 @@
                                     </div>
                                     <input type="hidden" id="itemId">
                                     <input type="text" class="form-control rounded-right" id="itemCodeTransaction" placeholder="Pilih kode barang..." readonly>
-                                    <button class="btn btn-add ml-2 d-flex align-items-center" type="button" data-toggle="modal" data-target="#itemModal">
+                                    <button class="btn button-actions ml-2" type="button" data-toggle="modal" data-target="#itemModal">
                                         <i class='bx bx-search-alt mr-1'></i>Cari
                                     </button>
                                 </div>
@@ -119,21 +119,19 @@
                                 </div>
                             </div>
                             <div class="row-action col-sm-12 justify-content-center" style="padding-top: 2.1rem;">
-                                <button id="addRows" class="btn btn-add d-flex justify-content-center align-items-center"><i class='bx bx-cart-alt' ></i>Tambah</button>
+                                <button id="addRows" class="btn button-actions"><i class='bx bx-cart-alt' ></i>Tambah</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="box-wrapper">
-                        <div class="small-box shadow-none">
-                            <div class="row col-sm-12 justify-content-between">
+                        <div class="card">
+                            <div class="row col-sm-12 card-body d-flex justify-content-between">
                                 <span>Invoice</span>
                                 <h5 class="p-0 m-0"><?= $data['invoice']; ?></h5>
                                 <input type="hidden" name="invoice" value="<?= $data['invoice']; ?>">
                             </div>
                         </div>
-                    </div>
                     <div class="card" style="height: 20rem;">
                         <div class="form-horizontal">
                             <div class="card-body">
@@ -152,7 +150,7 @@
                 <div class="col-12 table-row">
                     <div class="card">
                         <div class="card-body">
-                            <table id="transactionPage" class="table table-dark table-striped table-valign-middle"">
+                            <table id="transactionPage" class="table table-dark table-striped table-valign-middle table-ui">
                                 <thead>
                                     <tr>
                                         <th>Kode Barang</th>
@@ -173,19 +171,17 @@
             </div>
             <div class=" row row-content justify-content-end">
                 <div class="col-sm-4">
-                    <div class="box-wrapper">
-                        <div class="small-box shadow-none">
-                            <div class="row col-sm-12 justify-content-between">
+                        <div class="card">
+                            <div class="row col-sm-12 justify-content-between card-body">
                                 <span>Grand Total</span>
                                 <h5 id="grandTotalTransaction" class="p-0 m-0">Rp. 0</h5>
                                 <input type="hidden" name="grandTotalTransaction" id="grandTotal">
                             </div>
                         </div>
-                    </div>
                     <div class="row-action d-flex justify-content-end" style="gap: 0.5rem;">
-                        <button type="button" id="detailTransactionButton" class="btn btn-add d-flex justify-content-center align-items-center buttonDisabled" disabled data-toggle="modal" data-target="#detailsModal"><i class='bx bx-info-circle'></i>Detail</button>
-                        <button type="button" class="btn btn-edit d-flex justify-content-center align-items-center buttonDisabled" disabled><i class='bx bx-save' ></i></i>Simpan</button>
-                        <button type="submit" name="processTransaction" class="btn btn-accept d-flex justify-content-center align-items-center buttonDisabled" disabled><i class='bx bx-check'></i></i>Proses</button>
+                        <button type="button" id="detailTransactionButton" class="btn button-actions buttonDisabled" disabled data-toggle="modal" data-target="#detailsModal"><i class='bx bx-info-circle'></i>Detail</button>
+                        <button type="button" class="btn button-warning buttonDisabled" disabled><i class='bx bx-save' ></i></i>Simpan</button>
+                        <button type="submit" name="processTransaction" class="btn button-success buttonDisabled" disabled><i class='bx bx-check'></i></i>Proses</button>
                     </div>
                 </div>
             </div>
@@ -200,9 +196,12 @@
                 <div class="modal-header border-0 d-flex align-items-center">
                     <h4 class="modal-title" id="modalLabel">Daftar Pelanggan</h4>
                 </div>
-                <div class="modal-body">
+				<div class="card-header">
+					<div class="col-sm-6 modal-filter"></div>
+				</div>
+                <div class="modal-body card-body">
                     <div class="modal-wrapper table-responsive">
-                        <table id="custModalTable" class="table table-dark table-striped text-center">
+                        <table id="custModalTable" class="table table-dark table-striped text-center table-ui">
                             <thead>
                                 <tr>
                                     <th>Nama Pelanggan</th>
@@ -217,8 +216,8 @@
                                     <td><?= $customer['nm_pelanggan']; ?></td>
                                     <td><?= $customer['alamat']; ?></td>
                                     <td><?= $customer['no_telp']; ?></td>
-                                    <td>
-                                        <button class="btn btn-add" id="selectCustModal"
+                                    <td class="act-btn">
+                                        <button class="btn table-act-3" id="selectCustModal"
                                                 data-id="<?= $customer['cust_id']; ?>"
                                                 data-name="<?= $customer['nm_pelanggan']; ?>"
                                                 data-address="<?= $customer['alamat']; ?>"
@@ -232,13 +231,13 @@
                         </table>
                     </div>
                 </div>
-                <div class="modal-footer border-0">
-                <div class="col-md-12">
-                    <div class="row-action justify-content-center" style="gap: 1rem;">
-                        <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
-                    </div>
-                </div>
-            </div>
+                <div class="modal-footer border-0 card-footer">
+					<div class="col-sm-12 d-flex justify-content-between">
+						<div class="table-footer"></div>
+						<button class="btn button-actions" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+					</div>
+    			</div>
+			</div>
         </div>
     </div>
 </div>
@@ -247,61 +246,63 @@
 <div class="modal fade" id="itemModal" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content card">
-                <div class="modal-header border-0 d-flex align-items-center">
-                    <h4 class="modal-title" id="modalLabel">Daftar Barang</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-wrapper table-responsive">
-                        <table id="itemModalTable" class="table table-dark table-striped text-center">
-                            <thead>
-                                <tr>
-                                    <th>Kode Barang</th>
-                                    <th>Nama Barang</th>
-                                    <th>Harga</th>
-                                    <th>Stok</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach($data['itemData'] as $item) : ?>
-                                <tr>
-                                    <td><?= $item['kd_barang']; ?></td>
-                                    <td><?= $item['nm_barang']; ?></td>
-                                    <td><?= $item['harga']; ?></td>
-                                    <td><?= $item['stok']; ?></td>
-                                    <td>
-                                        <button class="btn btn-add" id="selectItemModal"
-                                                data-id="<?= $item['id_barang']; ?>"
-                                                data-code="<?= $item['kd_barang']; ?>"
-                                                data-stock="<?= $item['stok']; ?>">
-                                            <i class='bx bx-check'></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="modal-footer border-0">
-                <div class="col-md-12">
-                    <div class="row-action justify-content-center" style="gap: 1rem;">
-                        <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			<div class="modal-header border-0 d-flex align-items-center">
+				<h4 class="modal-title" id="modalLabel">Daftar Barang</h4>
+			</div>
+			<div class="card-header">
+				<div class="col-sm-6 modal-filter"></div>
+			</div>
+			<div class="modal-body">
+				<div class="modal-wrapper table-responsive">
+					<table id="itemModalTable" class="table table-dark table-striped text-center table-ui">
+						<thead>
+							<tr>
+								<th>Kode Barang</th>
+								<th>Nama Barang</th>
+								<th class="price">Harga</th>
+								<th>Stok</th>
+								<th>Aksi</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach($data['itemData'] as $item) : ?>
+							<tr>
+								<td><?= $item['kd_barang']; ?></td>
+								<td><?= $item['nm_barang']; ?></td>
+								<td><?= $item['harga']; ?></td>
+								<td><?= $item['stok']; ?></td>
+								<td class="act-btn">
+									<button class="btn table-act-3" id="selectItemModal"
+											data-id="<?= $item['id_barang']; ?>"
+											data-code="<?= $item['kd_barang']; ?>"
+											data-stock="<?= $item['stok']; ?>">
+										<i class='bx bx-check'></i>
+									</button>
+								</td>
+							</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer border-0 card-footer">
+				<div class="col-sm-12 d-flex justify-content-between">
+					<div class="table-footer"></div>
+					<button class="btn button-actions" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+				</div>
+    		</div>
+		</div>
+	</div>
 </div>
 
 <!-- Modal for see details transactions -->
 <div class="modal fade" id="detailsModal" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content card">
-            <div class="modal-header border-0 d-flex align-items-center">
+            <div class="modal-header border-0 d-flex align-items-center card-header">
                 <h4 class="modal-title" id="modalLabel">Detail Transaksi</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body card-body">
                 <div class="container-fluid">
                     <div class="row row-content">
                         <div class="col-sm-8">
@@ -347,7 +348,7 @@
                     <div class="row row-content">
                         <div class="col-12 table-row">
                             <div class="modal-wrapper table-responsive">
-                            <table id="detailTrans" class="table table-dark table-striped table-valign-middle">
+                            <table id="detailTrans" class="table table-dark table-striped table-valign-middle table-ui">
                                 <thead>
                                     <tr>
                                         <th>Kode</th>
@@ -384,13 +385,11 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer border-0">
-                <div class="col-md-12">
-                    <div class="row-action justify-content-center" style="gap: 1rem;">
-                        <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
-                    </div>
-                </div>
-            </div>
+            <div class="modal-footer border-0 card-footer">
+				<div class="col-sm-12 d-flex justify-content-end">
+					<button class="btn button-actions" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+				</div>
+    		</div>
         </div>
         <!-- /.modal-content -->
     </div>

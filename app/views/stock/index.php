@@ -15,16 +15,15 @@
             <div class="col-12">
                 <div class="card">
                     <?php if($_SESSION['id_role'] != 3) : ?> 
-                    <div class="card-header">
-                        <div class="card-tools">
-                            <div class="col-sm-12">
-                                <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/stock/in"><i class='bx bx-plus' ></i>Tambah</a>
-                            </div>
-                        </div>
+					<div class="card-header item-table-head">
+						<div class="col-sm-6 length-filter"></div>
+						<div class="col-sm-6 button-slot">
+							<a class="btn button-actions" href="<?= BASEURL ?>/stock/in"><i class='bx bx-plus' ></i>Tambah</a>
+						</div>
                     </div>
                     <?php endif; ?>
                     <div class="card-body">
-                        <table id="stockInHistoryList" class="table table-dark table-striped text-center">
+                        <table id="stockInHistoryList" class="table table-dark table-striped text-center table-ui">
                             <thead id="stockListHeader">
                                 <tr>
                                     <th>Tanggal</th>
@@ -46,8 +45,8 @@
                                     <td><?= $stockIn['qty']; ?></td>
                                     <td data-toggle="tooltip" data-placement="right" title="<?= $stockIn['nm_role']; ?>"><?= $stockIn['fullname']; ?></td>
                                     <?php if($_SESSION['id_role'] != 3) : ?> 
-                                    <td>
-                                        <a class="btn btn-delete delete-button" href="<?= BASEURL ?>/stock/stockInDelete/<?= $stockIn['stock_id']; ?>/<?= $stockIn['id_barang']; ?>"><i class='bx bx-trash'></i></a>
+                                    <td class="act-btn">
+                                        <a class="btn table-act-2 delete-button" href="<?= BASEURL ?>/stock/stockInDelete/<?= $stockIn['stock_id']; ?>/<?= $stockIn['id_barang']; ?>"><i class='bx bx-trash'></i></a>
                                     </td>
                                     <?php endif; ?>
                                 </tr>
@@ -55,6 +54,9 @@
                             </tbody>
                         </table>
                     </div>
+					<div class="card-footer">
+						<div class="table-footer"></div>
+					</div>
                 </div>
             </div>
         </div>

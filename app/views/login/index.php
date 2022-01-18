@@ -52,7 +52,7 @@
             </div>
             <div class="col-sm-12 footer">
                 <div class="form-footer">
-                    <span><i class='bx bx-copyright'></i> Copyright 2021 || alrights reserved</span>
+                    <span><i class='bx bx-copyright'></i>2021-2026 Gudang ID. All rights reserved.</span>
                 </div>
             </div>
         </div>

@@ -14,15 +14,14 @@
         <div class="row row-content">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="card-tools">
-                            <div class="col-sm-12">
-                                <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/manageuser/add"><i class='bx bx-plus' ></i>Tambah</a>
-                            </div>
-                        </div>
+					<div class="card-header item-table-head">
+						<div class="col-sm-6 length-filter"></div>
+						<div class="col-sm-6 button-slot">
+							<a class="btn button-actions" href="<?= BASEURL ?>/manageuser/add"><i class='bx bx-plus' ></i>Tambah</a>
+						</div>
                     </div>
                     <div class="card-body">
-                        <table id="userList" class="table table-dark table-striped">
+                        <table id="userList" class="table table-dark table-striped table-ui">
                             <thead id="userListHeader">
                                 <tr>
                                     <th>Nama lengkap</th>
@@ -43,12 +42,12 @@
                                         <td><?= $users['nm_cabang']; ?></td>
                                     <?php endif; ?>
                                     <td><?= $users['nm_role']; ?></td>
-                                    <td>
-                                        <a class="btn btn-edit" data-toggle="modal" data-target="#userUpdateModal" id="userUpdateModalButton" data-id="<?= $users['user_id']; ?>">
+                                    <td class="act-btn">
+                                        <a class="btn table-act-1" data-toggle="modal" data-target="#userUpdateModal" id="userUpdateModalButton" data-id="<?= $users['user_id']; ?>">
                                             <i class='bx bx-edit'></i>
                                         </a>
                                         <?php if($users['id_role'] != 1) : ?>
-                                        <a class="btn btn-delete delete-button" href="<?= BASEURL ?>/manageuser/delete/<?= $users['user_id']; ?>">
+                                        <a class="btn table-act-2 delete-button" href="<?= BASEURL ?>/manageuser/delete/<?= $users['user_id']; ?>">
                                             <i class='bx bx-trash'></i>
                                         </a>
                                         <?php endif; ?>
@@ -58,6 +57,9 @@
                             </tbody>
                         </table>
                     </div>
+					<div class="card-footer">
+						<div class="table-footer"></div>
+					</div>
                 </div>
             </div>
         </div>
@@ -70,7 +72,6 @@
             <div class="modal-content card">
                 <div class="modal-header border-0">
                     <h4 class="modal-title" id="modalLabel">Update Data Pengguna</h4>
-                    <!-- <button class="btn" type="button" data-dismiss="modal">x</button> -->
                 </div>
                 <div class="modal-body">
                     <div class="form-horizontal d-flex justify-content-center">
@@ -125,7 +126,7 @@
                                                 <i class="bx bx-barcode"></i>
                                             </span>
                                         </div>
-                                        <select class="custom-select" id="updateUserCabang" name="id_role" required>
+                                        <select class="custom-select-user" id="updateUserCabang" name="id_role" required>
                                             <option selected value="">Pilih Cabang</option>
                                             <option value="1" >Cabang A</option>
                                             <option value="2" >Cabang B</option>
@@ -143,7 +144,7 @@
                                                 <i class='bx bx-network-chart' ></i>
                                             </span>
                                         </div>
-                                        <select class="custom-select" id="updateUserRole" name="kategori" required>
+                                        <select class="custom-select-user" id="updateUserRole" name="kategori" required>
                                             <option selected value="">Pilih Role</option>
                                             <option value="2" >Admin</option>
                                             <option value="3" >Branch Manager</option>

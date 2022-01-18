@@ -13,23 +13,22 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <?php if($_SESSION['id_role'] != 3) : ?> 
-                    <div class="card-header">
-                        <div class="card-tools">
-                            <div class="col-sm-12">
-                                <a class="btn btn-accept d-flex" href="<?= BASEURL ?>/item/add"><i class='bx bx-plus' ></i>Tambah</a>
-                            </div>
-                        </div>
+                    <?php if($_SESSION['id_role'] != 3) : ?>
+					<div class="card-header item-table-head">
+						<div class="col-sm-6 length-filter"></div>
+						<div class="col-sm-6 button-slot">
+						<a class="btn button-actions d-flex" href="<?= BASEURL ?>/item/add"><i class='bx bx-plus' ></i>Tambah</a>
+						</div>
                     </div>
                     <?php endif; ?>
                     <div class="card-body">
-                        <table id="itemList" class="table table-dark table-striped text-center">
+                        <table id="itemList" class="table table-dark table-striped text-center table-ui">
                             <thead id="itemListHeader">
                                 <tr>
                                     <th>Kode Barang</th>
                                     <th>Nama Barang</th>
                                     <th>Kategori</th>
-                                    <th>Harga</th>
+                                    <th class="price">Harga</th>
                                     <th>Stok</th>
                                     <?php if($_SESSION['id_role'] != 3) : ?> 
                                     <th>Aksi</th>
@@ -45,11 +44,11 @@
                                     <td><?= $item['harga']; ?></td>
                                     <td><?= $item['stok']; ?></td>
                                     <?php if($_SESSION['id_role'] != 3) : ?> 
-                                    <td>
-                                        <a class="btn btn-edit" data-toggle="modal" data-target="#itemUpdateModal" id="itemUpdateModalButton" data-id="<?= $item['id_barang']; ?>">
+                                    <td class="act-btn">
+                                        <a class="btn table-act-1" data-toggle="modal" data-target="#itemUpdateModal" id="itemUpdateModalButton" data-id="<?= $item['id_barang']; ?>">
                                             <i class='bx bx-edit' ></i>
                                         </a>
-                                        <a class="btn btn-delete delete-button" href="<?= BASEURL ?>/item/delete/<?= $item['id_barang']; ?>"><i class='bx bx-trash'></i></a>
+                                        <a class="btn table-act-2 delete-button" href="<?= BASEURL ?>/item/delete/<?= $item['id_barang']; ?>"><i class='bx bx-trash'></i></a>
                                     </td>
                                     <?php endif; ?>
                                 </tr>
@@ -57,6 +56,11 @@
                             </tbody>
                         </table>
                     </div>
+					<div class="card-footer">
+						<div class="col-sm-12 table-footer">
+
+						</div>
+					</div>
                 </div>
             </div>
         </div>
@@ -68,7 +72,7 @@
     <form action="<?= BASEURL ?>/item/update" method="POST" id="updateModalForm">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content card">
-                <div class="modal-header border-0">
+                <div class="modal-header card-header border-0">
                     <h4 class="modal-title" id="modalLabel">Update Data Barang</h4>
                 </div>
                 <div class="modal-body">
@@ -131,14 +135,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer border-0">
-                    <div class="col-md-12">
-                        <div class="row-action justify-content-center" style="gap: 1rem;">
-                            <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
-                            <button type="submit" class="btn btn-accept update-button d-flex"><i class='bx bx-save'></i>Update</button>
-                        </div>
-                    </div>
-                </div>
+				<div class="card-footer d-flex justify-content-center">
+					<div class="row-action justify-content-end">
+						<button class="btn button-actions" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+						<button type="submit" class="btn button-success update-button"><i class='bx bx-save'></i>Update</button>
+					</div>
+				</div>
             </div>
         </div>
     </form>

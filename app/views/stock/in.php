@@ -13,14 +13,12 @@
         <div class="row row-content">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="card-tools">
-                            <div class="col-sm-12">
-                                <a class="btn btn-cancel d-flex" href="<?= BASEURL ?>/stock"><i class='bx bx-undo'></i>Kembali</a>
-                            </div>
-                        </div>
+                    <div class="card-header item-table-head">
+						<div class="col-sm-12 button-slot">
+							<a class="btn button-actions" href="<?= BASEURL ?>/stock"><i class='bx bx-undo'></i>Kembali</a>
+						</div>
                     </div>
-                    <form action="<?= BASEURL ?>/stock/process" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center">
+                    <form action="<?= BASEURL ?>/stock/process" method="POST" id="createForm" class="form-horizontal d-flex justify-content-center align-items-center flex-column">
                         <div class="card-body col-md-6">
                             <div class="form-group">
                                 <label for="stockIn-date" class="col-sm-12 col-form-label">Tanggal</label>
@@ -48,7 +46,7 @@
                                     <input type="hidden" name="id_barang_in" id="stockIn-id">
                                     <input type="text" class="form-control rounded-right" id="stockIn-code" name="kd_barang_in" placeholder="Pilih kode barang..." readonly>
 
-                                    <button class="btn btn-add ml-2 d-flex align-items-center" type="button" data-toggle="modal" data-target="#buttonModal">
+                                    <button class="btn button-actions ml-2" type="button" data-toggle="modal" data-target="#buttonModal">
                                         <i class='bx bx-search-alt mr-1'></i>Cari
                                     </button>
                                 </div>
@@ -108,13 +106,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 button-group d-flex justify-content-end">
-                                <div class="row-action justify-content-end">
-                                    <button type="reset" class="btn btn-cancel d-flex buttonReset"><i class='bx bx-reset'></i>Reset</button>
-                                    <button type="submit" name="stock_in_add" class="btn btn-accept d-flex buttonDisabled" disabled><i class='bx bx-save' ></i>Simpan</button>
-                                </div>
-                            </div>
                         </div>
+						<div class="card-footer d-flrx d-flex justify-content-center">
+							<div class="row-action col-md-6 justify-content-end">
+								<button type="reset" class="btn button-warning buttonReset"><i class='bx bx-reset'></i>Reset</button>
+								<button type="submit" name="stock_in_add" class="btn button-success buttonDisabled" disabled><i class='bx bx-save' ></i>Simpan</button>
+							</div>
+						</div>
                     </form>
                 </div>
             </div>
@@ -129,9 +127,12 @@
                 <div class="modal-header border-0 d-flex align-items-center">
                     <h4 class="modal-title" id="modalLabel">List Barang</h4>
                 </div>
+				<div class="card-header">
+					<div class="col-sm-6 modal-filter"></div>
+				</div>
                 <div class="modal-body">
                     <div class="modal-wrapper table-responsive">
-                        <table id="stockInList" class="table table-dark table-striped text-center">
+                        <table id="stockInList" class="table table-dark table-striped text-center table-ui">
                             <thead>
                                 <tr>
                                     <th>Kode Barang</th>
@@ -148,8 +149,8 @@
                                     <td><?= $item['nm_barang']; ?></td>
                                     <td><?= $item['nm_kat']; ?></td>
                                     <td><?= $item['stok']; ?></td>
-                                    <td>
-                                        <button class="btn btn-add" id="selectStockInModal"
+                                    <td class="act-btn">
+                                        <button class="btn table-act-3" id="selectStockInModal"
                                                 data-id="<?= $item['id_barang']; ?>"
                                                 data-code="<?= $item['kd_barang']; ?>"
                                                 data-name="<?= $item['nm_barang']; ?>"
@@ -164,13 +165,12 @@
                         </table>
                     </div>
                 </div>
-                <div class="modal-footer border-0">
-                <div class="col-md-12">
-                    <div class="row-action justify-content-center" style="gap: 1rem;">
-                        <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
-                    </div>
-                </div>
-            </div>
+                <div class="modal-footer border-0 card-footer">
+				<div class="col-sm-12 d-flex justify-content-between">
+					<div class="table-footer"></div>
+					<button class="btn button-actions" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+				</div>
+    		</div>
         </div>
         <!-- /.modal-content -->
     </div>

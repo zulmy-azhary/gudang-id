@@ -1,7 +1,7 @@
-@import 'main_lib';
-
+@import '_main_lib';
+// !public component
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Inter", sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -17,26 +17,113 @@ body {
     }
 }
 
+input {
+	@include FormControl($Primary-8);
+	height: 2.5rem !important;
+}
+.row-action {
+	@include CenterFlex;
+	gap: 0.5rem;
+	padding: 0rem 1rem;
+}
+
+// card style
+.card {
+	@include Cards;
+	border-radius: 0.5rem;
+	.card-header {
+		border-radius: 0.5rem;
+		border: none;
+		background: $Primary-9;
+	}
+	.card-footer {
+		border-radius: 0.5rem;
+		background: $Primary-9;
+		width: 100%;
+	}
+}
+
+// pagination
+.pagination {
+	.page-item {
+		.page-link{
+			color: $Font-1;
+		}
+		&.active {
+			.page-link{
+				color: $Tosca-5;
+			}
+		}
+	}
+}
+
+// button style
+.button-actions {
+	@include Buttons($Tosca-3);
+}
+.button-success{
+	@include Buttons($Tosca-1);
+}
+.button-warning {
+	@include Buttons($Tosca-2);
+}
+.button-danger {
+	@include Buttons($Danger-5)
+}
+
+// column aksi with button component
+.act-btn{
+	@include CenterFlex;
+	gap: 0.5rem;
+	i{
+		font-size: 1rem !important;
+	}
+}
+.table-act-1{
+	@include Buttons($Tosca-5);
+}
+.table-act-2{
+	@include Buttons($Tosca-4);
+}
+.table-act-3{
+	@include Buttons($Tosca-1);
+}
+
+// header
 .main-header {
-    background: $backgroundColorOne;
+    background: $Primary-8;
     border: none;
+	.nav-item{
+		.nav-link {
+			color: $Font-1;
+		}
+		&:hover {
+			.nav-link {
+				color: $Font-1;
+			}
+		}
+		.active {
+			.nav-link {
+				color: $Font-1;
+			}
+		}
+	}
     .dropdown-menu {
-        background: $backgroundColorTwo;
         transition: 0.25s;
         width: 18rem;
         margin-top: 1.3rem;
         border: none;
         padding: 0;
         .bubbles {
-            @include Bubbles( $backgroundColorThree, 1.2rem, -0.5rem);
+            @include Bubbles( $Primary-4, 1.2rem, -0.5rem);
         }
         .cover {
             border-radius: 0.18rem 0.18rem 0rem 0rem;
-            background: $backgroundColorThree;
+            background: $Primary-4;
             height: 6rem;
             width: 100%;
             .user-avatar {
-                border: 4px solid $backgroundColorTwo;
+                border: 4px solid $Primary-4;
                 border-radius: 100%;
                 position: absolute;
                 height: 6rem;
@@ -56,16 +143,15 @@ body {
             display: flex;
             .user-name {
                 font-size: 1.2rem;
-                color: $fontSecond;
                 font-weight: bold;
             }
             .role-profile {
-                padding: 0.2rem;
+                padding: 0.1rem 0.3rem;
                 font-size: 0.7rem;
-                font-weight: 500;
+				color: $Font-3;
+                font-weight: 600;
                 border-radius: 0.3rem;
-                color: $fontPrimary;
-                background: $elementColorOne;
+				background: $Tosca-3;
             }
         }
         .action {
@@ -78,22 +164,23 @@ body {
     }
 }
 
+// sidebar
 .main-sidebar {
-    background: $backgroundColorTwo;
+	background: $Primary-9;
     .brand-link {
         border: 0;
-        color: $fontSecond;
         .brand-text {
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.5rem;
         }
     }
     .sidebar * {
-        &.bx, & p {
-            color: $fontSecond;
-        }
         & p {
+			color: $Font-1;
             font-weight: 600;
+			i { 
+				color: $Font-1;
+			}
         }
         &.nav-link {
             padding: 0.6rem 1rem;
@@ -108,166 +195,101 @@ body {
             .bx {
                 font-size: 1.5rem;
             }
-            &:hover{
-                background: $elementColorFour;
-                .bx, p {
-                    color: $fontPrimary;
-                }
-            }
-            &.active {
-                &.nav-link {
-                    background: $elementColorFour;
-                    .bx, p {
-                        color: $fontPrimary;
-                    }
-                }
-            }
+			&:hover {
+				background: $Tosca-5;
+				p, i {
+					color: $Font-3 !important;
+				}
+			}
         }
         &.nav-treeview {
-            background: $backgroundColorOne;
+            background: $Primary-8;
             margin: 0.4rem 0rem;
             border-radius: 0.3rem;
         }
+		&.active {
+			background: $Tosca-5;
+			p, .bx {
+				color: $Font-3;
+			}
+		}
     }
 }
 
-.content-wrapper {
-    background: $backgroundColorOne;
-    .content-header {
-        .container-fluid {
-            .row {
-                .col-sm-6{
-                    h1{
-                        color: $elementColorFive;
-                    }
-                }
-                .card{
-                    label, .invoice-serial, .total {
-                        font-weight: bold;
-                        color: $fontSecond;
-                    }
-                    .total {
-                        font-size: 3rem;
-                    }
-                }
-                
-            }
-        }
-    }
+// footer
+.main-footer {
+	background: $Primary-8;
+	border: none;
 }
 
-.card {
-    @include Cards;
-}
-
+// table
 .table {
     background: transparent;
+	color: $Font-1;
     thead, tbody {
+		th,td {
+			vertical-align: middle;
+			text-align: center;
+			border: none;
+		}
+		th {
+			font-weight: 600;
+		}
         td {
             font-size: 0.9rem;
         }
-        th,td {
-            vertical-align: middle;
-            color: $fontSecond;
-            text-align: center;
-            border: none;
-            .btn {
-                vertical-align: middle;
-                color: $fontPrimary;
-                i {
-                    font-size: 1rem;
+    }
+}
+.table-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.dataTables_paginate {
+        ul {
+            display: flex !important;
+            justify-content: end;
+            align-items: center;
+            width: auto;
+            li {
+                a {
+                    box-shadow: none !important;
+                    outline: none !important;
+                    justify-content: center;
+                    border: none !important;
+                    background: none !important;
+                    align-items: center;
+                    display: flex;
+                    height: 100%;
+                }
+            }
+            .active {
+                a {
+					font-weight: 600;
                 }
             }
         }
     }
+	.pagination {
+		margin: 0;
+	}
 }
 
-.form-group {
-    label {
-        color: $fontSecond;
-        font-size: 0.9rem;
-    }
-    .input-group > .select2-container {
-        width: auto !important;
-        flex: 1 1 auto !important;
-    }
-    
-    .input-group > .select2-container .select2-selection--single {
-        // height: 100% !important;
-        line-height: inherit !important;
-    }
-    .input-group {
-        .input-group-prepend, .input-group-append {
-            .input-group-text {
-                border: none !important;
-                background: $elementColorOne;
-                i {
-                    font-size: 1.3rem;
-                    color: $fontPrimary;
-                }
-            }
-        }
-        .form-control {
-            @include Inputs;
-            cursor: pointer;
-        }
-        .custom-select {
-            @include Inputs;
-            cursor: pointer;
-        }
-    }
-}
-
-.btn-login, .btn-add                     { @include Buttons($elementColorOne !important); }
-.btn-cancel, .btn-delete, .btn-logout    { @include Buttons($elementColorTwo !important); }
-.btn-accept                              { @include Buttons($elementColorThree !important); }
-.btn-edit                                { @include Buttons($elementColorFour !important); }
-
-#action-buttons {
-    display: flex;
-    justify-content: start;
-    .dt-buttons {
-        display: flex;
-        width: 100% !important;
-        justify-content: space-around !important;
-        margin: 0;
-        .btn {
-            span {
-                display: flex;
-                gap: 0.5rem;
-            }
-        }
-    }
-}
-
-.row-action {
-    display: flex;
-    gap: 0.5rem;
-    .btn {
-        width: 5.431rem;
-    }
-}
-
+// modal component
 .modal {
-    backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(0.2rem);
+	background: rgba($Primary-1, 0.2);
     .modal-dialog {
         .modal-content {
             .modal-header {
                 justify-content: center;
                 align-items: center;
-                color: $fontSecond;
                 display: flex;
                 .btn {
-                    color: $fontSecond;
                     font-weight: 600;
                     font-size: 1.5rem;
-                    &:hover {
-                        color: $elementColorTwo;
-                    }
                 }
             }
             .modal-body {
-                color: $fontSecond;
                 .row-content {
                     .brand-logo {
                         gap: 0.5rem;
@@ -288,7 +310,6 @@ body {
                         }
                         .sub-detail {
                             font-size: 0.85rem;
-                            color: $fontPrimary;
                         }
                     }
                     .detail-total{
@@ -303,224 +324,274 @@ body {
                         .sub-detail {
                             font-size: 1.3rem;
                             font-weight: bold;
-                            color: $fontPrimary;
-                        }
-                    }
-                }
-            }
-            .modal-footer {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-    }
-}
-
-.dataTables_wrapper * {
-    #itemList_length,
-    #userList_length,
-    #transStatus_length,
-    #transHistory_length,
-    #stockInHistoryList_length,
-    #customerList_length {
-        label {
-            align-items: center;
-            margin-bottom: none;
-            color: $fontSecond;
-            display: flex;
-            gap: 0.5rem;
-            .custom-select {
-                @include Inputs;
-                option{
-                    @include Inputs;
-                }
-            }
-        }
-    }
-    
-    #userList_filter,
-    #stockInList_filter,
-    #stockInHistoryList_filter,
-    #itemList_filter,
-    #itemModalTable_filter,
-    #customerList_filter,
-    #custModalTable_filter,
-    #transHistory_filter,
-    #transStatus_filter,
-    #transaction_filter {
-        label {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            color: $fontSecond;
-            font-weight: 500;
-            input {
-                @include Inputs;
-            }
-        }
-    }
-    
-    #userList_paginate,
-    #stockInList_paginate,
-    #stockInHistoryList_paginate,
-    #itemList_paginate,
-    #itemModalTable_paginate,
-    #customerList_paginate,
-    #custModalTable_paginate,
-    #transHistory_paginate,
-    #transStatus_paginate,
-    #transaction_paginate {
-        ul {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            width: auto;
-            li {
-                a {
-                    box-shadow: none !important;
-                    outline: none !important;
-                    justify-content: center;
-                    border: none !important;
-                    background: none;
-                    align-items: center;
-                    color: $fontSecond;
-                    display: flex;
-                    height: 100%;
-                }
-            }
-            .active {
-                a {
-                    color: $fontPrimary;
-                }
-            }
-        }
-    }
-    
-    #userList_info,
-    #itemList_info,
-    #customerList_info,
-    #transaction_info {
-        color: $fontSecond;
-    }
-}
-
-
-.main-footer {
-    background: $backgroundColorOne;
-    border: none;
-}
-
-
-.login-page {
-    background-color: $backgroundColorOne !important;
-    .card {
-        @include Cards;
-        border-radius: 0.4rem;
-        .card-header {
-            color: $fontSecond;
-        }
-        .card-body {
-            .input-box {
-                position: relative;
-                width: 100%;
-                height: 2.5rem;
-                input {
-                    background: transparent;
-                    @include AnimatedForm;
-                    @include Inputs;
-                    position: absolute;
-                    z-index: 1;
-                }
-                .label {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    color: $fontSecond;
-                    font-size: 1rem;
-                    font-weight: bolder;
-                    display: block;
-                    transition: 0.25s;
-                    pointer-events: none;
-                }
-                .floating-component {
-                    width: 100%;
-                    height: 0.12rem;
-                    background: $elementColorFive;
-                    border-radius: 0.2rem;
-                    pointer-events: none;
-                    position: absolute;
-                    transition: 0.25s;
-                    bottom: 0;
-                }
-            }
-        }
-        .card-footer {
-            color: $fontSecond !important;
-        }
-    }
-}
-
-.content-wrapper {
-    .content {
-        .container-fluid {
-            .row-content {
-                
-                .box-wrapper {
-                    .small-box {
-                        @include Cards;
-                        justify-content: center;
-                        padding: 1rem;
-                        gap: 0.5rem;
-                        i {
-                            font-size: 3rem;
-                        }
-                        span {
-                            font-size: 0.9rem;
-                            color: $fontSecond;
-                        }
-                        
-                        h5 {
-                            font-weight: bold;
-                            color: $fontPrimary;
-                        }
-                    }
-                }
-                #myData, #dataAct {
-                    display: none;
-                }
-                #itemReport_filter {
-                    display: none;
-                }
-                .connectedSortable {
-                    .card {
-                        @include Cards;
-                        .card-header {
-                            border: none;
-                            color: $fontSecond;
-                            h3 {
-                                font-weight: bolder;
-                            }
-                        }
-                        .card-body {
-                            .form-group {
-                                .col-sm-10 {
-                                    .input-group {
-                                        .form-control {
-                                            @include Inputs;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .card-footer {
-                            .sign-up {
-                                color: $fontSecond !important;
-                            }
                         }
                     }
                 }
             }
         }
     }
+}
+
+// form group
+.form-group {
+	.col-form-label {
+		font-weight: 600 !important;
+	}
+}
+.input-group {
+	.input-group-prepend {
+		.input-group-text {
+			background: $Tosca-5;
+			border-color: $Tosca-5;
+			i{
+				color: $Font-3;
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
+
+.box-profile {
+	@include CenterFlex;
+	flex-direction: column;;
+	.profile-username {
+		font-weight: bold;
+		margin-top: 1rem;
+	}
+	.nim {
+		font-weight: 600;
+		color: $Primary-6;
+	}
+	.social-wrapper {
+		margin: 2.5rem 0rem 0rem;
+		@include CenterFlex;
+		gap: 2rem;
+		.social {
+			@include CenterFlex;
+			flex-direction: column;
+			i {
+				font-size: 1.7rem;
+				padding: 0.8rem;
+				border-radius: 100%;
+			}
+		}
+	}
+	.facebook {
+		@include Glassy(500px, $Tosca-3, 0.40);
+		color: $Purple-5;
+	}
+	.instagram {
+		@include Glassy(500px, $Tosca-3, 0.40);
+		color: $Purple-5;
+	}
+	.twitter {
+		@include Glassy(500px, $Tosca-3, 0.40);
+		color: $Purple-5;
+	}
+}
+
+// !spesific components
+.input-group > .select2-container--default{
+	width: auto;
+	flex: 1 1 auto;
+}
+.select2-container--default .select2-selection--single{
+    @include FormControl($Primary-8);
+}
+.select2-dropdown{
+    @include FormControl($Primary-8);
+	padding: 0.4rem !important;
+	.select2-results__option {
+		border-radius: 0.2rem;
+		&active, &:hover, &.select2-results__option--highlighted {
+			background: $Tosca-5 !important;
+		}
+	}
+}
+
+.box-wrapper {
+	@include CenterFlex;
+	flex-direction: column;
+	justify-content: space-between !important;
+	.logo {
+		@include CenterFlex;
+		padding: 1.1rem;
+		border-radius: 100%;
+		i {
+			font-size: 2rem;
+		}
+	}
+	.title {
+		font-weight: 600 !important;
+	}
+	h5 {
+		font-size: 1.4rem;
+		font-weight: bold;
+		margin: 0;
+	}
+}
+.total-item{
+	.logo {
+		@include Glassy(500px, $Purple-5, 0.40);
+		i {
+			color: $Purple-5;
+		}
+	}
+}
+.total-trans{
+	.logo {
+		@include Glassy(500px, $Warning-5, 0.40);
+		i {
+			color: $Warning-5;
+		}
+	}
+}
+.total-cust{
+	.logo {
+		@include Glassy(500px, $Danger-5, 0.40);
+		i {
+			color: $Danger-5;
+		}
+	}
+}
+.total-inc{
+	.logo {
+		@include Glassy(500px, $Success-5, 0.40);
+		i {
+			color: $Success-5;
+		}
+	}
+}
+
+// recent transaction
+.recent-trans {
+	// @include CenterFlex;
+	.cust-logo {
+		@include Glassy(500px, $Danger-5, 0.40);
+		@include CenterFlex;
+		border-radius: 100%;
+		font-size: 1.5rem;
+		color: $Danger-5;
+		height: 2.6rem;
+		width: 2.6rem;
+	}
+	.cust-wrapper {
+		display: flex;
+		justify-content:center;
+		.invoice {
+			text-align: left !important;
+			font-size: 1rem;
+			font-weight: 600;
+			border: none;
+		}
+		.cust-name {
+			font-weight: 500;
+			color: $Primary-5;
+			font-size: 0.8rem;
+
+		}
+	}
+	.grand-total-trans, .date-transaction {
+		@include CenterFlex;
+		justify-content: start !important;
+		color: $Primary-5;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+}
+
+
+// customize length and table filter after move to header
+.length-filter {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: 0.5rem;
+	.custom-select {
+		width: 15%;
+		label {
+			display: none;
+		}
+	}
+	.dataTables_filter{
+		height: 2.4rem !important;
+	}
+}
+
+.item-table-head {
+		display: flex;
+		justify-content: space-between;
+	.button-slot {
+		display: flex;
+		justify-content: end;
+	}
+	.btn {
+		width: 6.5rem;
+	}
+
+}
+
+.dt-buttons {
+	display: flex;
+	justify-content: end;
+	gap: 0.5rem;
+	.btn {
+		position: relative !important;
+		span {
+			@include CenterFlex;
+			width: 3.5rem;
+			gap: 0.2rem;
+			color: $Font-3;
+		}
+	}
+}
+
+#dataAct,
+#myData{
+	display: none;
+	.dataTables_filter {
+		display: none;
+	}
+}
+
+/* 
+	because some modals on the transaction page have conflicts in the paginate section, so the style below is needed
+*/
+#custModal {
+	#itemModalTable_paginate,
+	#detailTrans_paginate,
+	#itemModalTable_filter{
+		display: none;
+	}
+}
+#itemModal {
+	#custModalTable_paginate,
+	#detailTrans_paginate,
+	#custModalTable_filter{
+		display: none;
+	}
+}
+
+#customerList_wrapper,
+#itemList_wrapper,
+#stockInHistoryList_wrapper,
+#custModalTable_wrapper,
+#itemModalTable_wrapper,
+#detailTrans_wrapper,
+#detailTransHistory_wrapper,
+#itemReport_wrapper,
+#transReport_wrapper,
+#transHistory_wrapper,
+#transactionPage_wrapper,
+#stockInList_wrapper,
+#userList_wrapper{
+	.dt-buttons {
+		display: none;
+	}
+	.dataTables_length {
+		display: none;
+	}
+	.dataTables_filter {
+		display: none;
+	}
 }

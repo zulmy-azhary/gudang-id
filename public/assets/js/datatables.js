@@ -1,278 +1,100 @@
-//! for initialize another plugins
+// !for initialize another plugins
 $(function () {
-    
-    $("#itemList").DataTable({
-        responsive: true,
-        paging: true,
-        lengthChange: true,
-        autoWidth: false,
-        ordering: false,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-        columnDefs: [
-            {
-                targets: 3,
-                render: $.fn.dataTable.render.number(".", ",", 0, "Rp. "),
-            },
-        ],
-    });
-    
-    $("#itemModalTable").DataTable({
+
+	$(".table-ui").DataTable({
 		responsive: true,
 		paging: true,
-		lengthChange: false,
+		lengthChanged: true,
 		autoWidth: false,
 		ordering: false,
 		info: false,
+		dom: "lBfrtip",
 		language: {
 			paginate: {
-				first: '<i class="fas fa-angle-double-left"></i>',
-				previous: '<i class="fas fa-angle-left"></i>',
-				next: '<i class="fas fa-angle-right"></i>',
-				last: '<i class="fas fa-angle-double-right"></i>',
+				first: "<i class='bx bxs-chevrons-left'></i>",
+				previous: "<i class='bx bxs-chevron-left' ></i>",
+				next: "<i class='bx bxs-chevron-right'>",
+				last: "<i class='bx bxs-chevrons-right' ></i>"
 			},
+			search: "",
+			searchPlaceholder: "Cari",
+			lengthMenu: "_MENU_", 
 		},
-		columnDefs: [
+		buttons: [
 			{
-				targets: 2,
+				extend: "print",
+				className: "btn button-actions",
+				text: "<i class='bx bx-printer'></i>Cetak",
+			},
+			{
+				extend: "excel",
+				className: "btn button-actions",
+				text: "<i class='bx bx-file' ></i>Excel",
+			},
+			{
+				extend: "pdf",
+				className: "btn button-actions",
+				text: "<i class='bx bxs-file-pdf'></i>Pdf",
+			},
+		],
+		columnDefs: [
+			{	
+				targets: "price", // call specific column class on table, and if you have column pricing. add class "price" on <th>
 				render: $.fn.dataTable.render.number(".", ",", 0, "Rp. "),
 			},
 		],
-	});
-    
-    $("#stockInList").DataTable({
-        responsive: true,
-        paging: true,
-        lengthChange: false,
-        autoWidth: false,
-        ordering: false,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-    });
-    
-    $("#stockInHistoryList").DataTable({
-		responsive: true,
-		paging: true,
-		lengthChange: true,
-		autoWidth: false,
-		ordering: false,
-		info: false,
-		language: {
-			paginate: {
-				first: '<i class="fas fa-angle-double-left"></i>',
-				previous: '<i class="fas fa-angle-left"></i>',
-				next: '<i class="fas fa-angle-right"></i>',
-				last: '<i class="fas fa-angle-double-right"></i>',
-			},
-		},
 		oLanguage: {
-			sEmptyTable: "Belum ada barang masuk yang ditambahkan",
+			sEmptyTable: "Data Kosong",
 		},
 	});
-    
-    $("#customerList").DataTable({
-        responsive: true,
-        paging: true,
-        lengthChange: true,
-        autoWidth: false,
-        ordering: false,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-    });
-    
-    $("#custModalTable").DataTable({
-        responsive: true,
-        paging: true,
-        lengthChange: false,
-        autoWidth: false,
-        ordering: false,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-    });
-    
-    $("#transactionPage").DataTable({
-		responsive: true,
-		paging: false,
-		filter: false,
-		lengthChange: true,
-		autoWidth: false,
-		ordering: false,
-		info: false,
-		oLanguage: {
-			sEmptyTable: "Belum ada item yang ditambahkan",
-		},
+
+	// !global access for modification table components
+	$(`.custom-select`).appendTo($(`.length-filter`)).removeClass(`form-control-sm`);
+	$(`.dataTables_filter`).appendTo($(`.length-filter, .modal-filter`));
+	$(`.table-footer`).append($(`.dataTables_paginate`));
+	$(".dt-buttons").appendTo($(".action-buttons"));
+	$(`input[placeholder = "Cari"]`).removeClass(`form-control-sm`);
+	$(".dt-buttons").removeClass("btn-group flex-wrap");
+	
+	// !specific access for modification table components
+	$(` #detailTrans_length,
+		#detailTrans_filter,
+		#detailTransHistory_paginate,
+		#detailTransHistory_filter,
+		#transactionPage_paginate,
+		#transactionPage_filter
+	`).remove();
+
+	$(`select[name = "detailTransHistory_length"]`).remove()
+
+	// !select2 component
+	$(".custom-select").select2({
+		minimumResultsForSearch: Infinity,
+		allowClear: false,
 	});
-    
-    $("#detailTrans").DataTable({
-        responsive: true,
-        paging: false,
-        filter: false,
-        lengthChange: false,
-        autoWidth: false,
-        ordering: false,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-    });
-    
-    $("#transStatus").DataTable({
-        responsive: true,
-        paging: true,
-        filter: true,
-        lengthChange: true,
-        autoWidth: false,
-        ordering: false,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-    });
-    
-    $("#transHistory").DataTable({
-        responsive: true,
-        paging: true,
-        filter: true,
-        lengthChange: true,
-        autoWidth: false,
-        ordering: false,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-		columnDefs: [
-			{
-				targets: 3,
-				render: $.fn.dataTable.render.number(".", ",", 0, "Rp. "),
-			},
-		],
-    });
-    
-    $("#userList").DataTable({
-        responsive: true,
-        paging: true,
-        lengthChange: true,
-        autoWidth: false,
-        ordering: false,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-    });
+	$(".data-show").select2({
+		placeholder: "Tampilkan data",
+		minimumResultsForSearch: Infinity,
+		allowClear: true,
+	});
+	$(".custom-select-user").select2({
+		placeholder: "Tampilkan data",
+		minimumResultsForSearch: Infinity,
+	});
+	
+	// !filter for daterange
+	$("#inputRange").daterangepicker({
+		singleDatePicker : false,
+		autoUpdateInput: false,
+		showDropdowns: true,
+		opens: "center",
+		locale: {
+			applyLabel: "Pilih",
+			cancelLabel: "Reset",
+		}
+	});
 
-    $("#transactionReport").DataTable({
-        responsive: true,
-        paging: true,
-        filter: true,
-        lengthChange: true,
-        autoWidth: false,
-        ordering: false,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-    });
-
-    $("#itemReport").DataTable({
-        responsive: true,
-        paging: false,
-        lengthChange: false,
-        autoWidth: false,
-        ordering: false,
-        filter: true,
-        info: false,
-        language: {
-            paginate: {
-                first: '<i class="fas fa-angle-double-left"></i>',
-                previous: '<i class="fas fa-angle-left"></i>',
-                next: '<i class="fas fa-angle-right"></i>',
-                last: '<i class="fas fa-angle-double-right"></i>',
-            },
-        },
-        dom: "Bfrtip",
-        buttons: [
-            {
-                extend: "print",
-                className: "btn btn-add",
-                text: "<i class='bx bx-printer'></i>Cetak",
-            },
-            {
-                extend: "excel",
-                className: "btn btn-add",
-                text: "<i class='bx bx-file' ></i>Excel",
-            },
-            {
-                extend: "pdf",
-                className: "btn btn-add",
-                text: "<i class='bx bxs-file-pdf'></i>Pdf",
-            },
-        ],
-    }).buttons().container().appendTo($("#action-buttons"));
-    
-    $("#custom-select").select2({
-        placeholder: "Tampilkan Data",
-        allowClear: true,
-    });
-    
-    $("#inputRange").daterangepicker({
-        autoUpdateInput: false,
-        locale: {
-            applyLabel: "Pilih",
-            cancelLabel: "Reset"
-        }
-    });
-    $(".dt-buttons").removeClass("btn-group flex-wrap");
+	// !daterangepicker addon custom
+	$(".drp-calendar.right").removeClass();
+	$(".daterangepicker").addClass("single");
 });
