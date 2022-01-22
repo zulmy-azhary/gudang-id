@@ -47,7 +47,7 @@
                         <span id="msgSuccess"style="display: none;"></span>
                         <span id="msgError"style="display: none;"></span>
                     </div>
-                    <button type="submit" class="btn btn-success btn-login" id="loginBtn" disabled>Login</button>
+                    <button type="submit" class="btn btn-success btn-login" id="loginBtn" tabindex="0" disabled>Login</button>
                 </form>
             </div>
             <div class="col-sm-12 footer">

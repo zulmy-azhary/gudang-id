@@ -37,15 +37,19 @@ class UserModel {
 
     // Find user by username
     public function findUserByUsername($username){
-        $this->db->query("SELECT *FROM {$this->db->tableUsers} WHERE username = :username");
-
+        $query = "SELECT *FROM {$this->db->tableUsers}
+                    WHERE username = :username
+                ";
+        
+        $this->db->query($query);
         // Username param will be binded with the username variable
         $this->db->bind(':username', $username);
-
+        $data = $this->db->single();
         // Check if username is already registered
-        if($this->db->rowCount() > 0){
+        if(isset($data['username'])){
             return true;
-        }else{
+        }
+        else {
             return false;
         }
     }
@@ -53,9 +57,9 @@ class UserModel {
     // Register
     public function register($data){
         $query = "INSERT INTO {$this->db->tableUsers} 
-                    (fullname, username, password, id_role, id_cabang) 
+                    (fullname, username, password, id_role) 
                     VALUES 
-                    (:fullname, :username, :password, :id_role, :id_cabang)
+                    (:fullname, :username, :password, :id_role)
                 ";
 
         $this->db->query($query);
@@ -63,7 +67,27 @@ class UserModel {
         $this->db->bind(':username', $data['username']);
         $this->db->bind(':password', $data['password']);
         $this->db->bind(':id_role', $data['userRole']);
-        $this->db->bind(':id_cabang', $data['userCabang']);
+        // $this->db->bind(':id_cabang', $data['userCabang']);
+
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function updateDataUser($data){
+        $hashPassword = password_hash($data['updatePassword'], PASSWORD_DEFAULT);
+        $newPassword = empty($data['updatePassword']) === true ? "" : "password = '{$hashPassword}',";
+        
+        $query = " UPDATE {$this->db->tableUsers} SET
+                    fullname = :fullname,
+                    $newPassword
+                    id_role = :id_role
+                    WHERE username = :username
+                ";
+
+        $this->db->query($query);
+        $this->db->bind(":fullname", $data['updateFullname']);
+        $this->db->bind(":username", $data['updateUsername']);
+        $this->db->bind(":id_role", $data['updateUserRole']);
 
         $this->db->execute();
         return $this->db->rowCount();

@@ -7,6 +7,11 @@
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+			<div class="switch-mode no-select">
+				<div class="switch-button"></div>
+			</div>
+		</li>
         <li class="nav-item dropdown">
             <span class="nav-link user-profile" data-toggle="dropdown">
                 <img class="brand-image img-circle" src="<?= BASEURL ?>/dist/img/avatar5.png" width="30" height="30">

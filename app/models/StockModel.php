@@ -29,18 +29,6 @@ class StockModel {
         return $this->db->resultSet();
     }
 
-    // Query for sum Stock In / Out
-    // public function getTotalStock($type){
-    //     $query = "SELECT SUM(qty) as SUM FROM {$this->db->tableStock}
-    //                 WHERE type = :type
-    //             ";
-
-    //     $this->db->query($query);
-    //     $this->db->bind(':type', $type);
-        
-    //     return $this->db->single();
-    // }
-
     public function getStockById($id){
         $query = "SELECT *FROM {$this->db->tableStock}
                     WHERE stock_id = :id

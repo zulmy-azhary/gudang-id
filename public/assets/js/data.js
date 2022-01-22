@@ -14,15 +14,8 @@ let DateFilters = (function (oSettings, aData, iDataIndex) {
     return false;
 });
 
-// let renderClock = () => {
-//     $("#dateTransaction").val(moment().format("DD/MM/YYYY hh:mm A"));
-// }
-
 // TODO: Event
 $(document).ready(function () {
-    // A real time clock in transaction
-    // renderClock();
-    // setInterval(renderClock, 1000);
     
     // ! Item
     // Item code when add item
@@ -69,7 +62,10 @@ $(document).ready(function () {
     $("#setStockIn").on("keyup", function () {
 		if ($(this).val() > $(this).attr("max") * 1) {
 			$(this).val($(this).attr("max"));
-		}
+        }
+        else if ($(this).val() < $(this).attr("min") * 1) {
+            $(this).val($(this).attr("min"))
+        }
 	});
     
     // Update data barang from Item List
@@ -113,38 +109,6 @@ $(document).ready(function () {
             },
         });
     });
-    
-    // ! Manage User
-    $(document).on("click", "#userUpdateModalButton", function () {
-        let id = $(this).data("id");
-        
-        $.ajax({
-            url: "http://localhost/gudang-id/public/manageuser/getmodalusers",
-            data: { id: JSON.stringify(id) },
-            method: "POST",
-            success: function (res) {
-                let data = JSON.parse(res);
-                console.log(data);
-                
-                $("#updateFullName").val(data.fullname);
-                $("#updateUsername").val(data.username);
-                $("#updateUserCabang").val(data.id_cabang);
-                $("#updateUserRole").val(data.id_role);
-                if (data.id_role == 1) {
-                    $("#updateUserRole").prop("disabled", true)
-                    .append($("<option selected>").val(1).text(data.nm_role));
-                    $("#updateUserCabang").prop("disabled", true)
-                    .append($("<option selected>").val(0).text("-"));
-                    // $("#updateUserCabang").append($("<option>").text("-"));
-                } else {
-                    $("#updateUserRole")
-                    .prop("disabled", false).find(`option[value=${1}]`).remove();
-                    $("#updateUserCabang")
-                    .prop("disabled", false).find(`option[value=${0}]`).remove();
-                }
-            },
-        });
-    });
 
     // ! Transaction
     // Customer
@@ -172,11 +136,19 @@ $(document).ready(function () {
         $("#itemModal").modal("hide");
 
         $("#itemStockTransaction").on('keyup', function () {
-            if ($(this).val() > $(this).attr('max') * 1) {
-                $(this).val($(this).attr('max'));
+            if ($(this).val() > $(this).attr("max") * 1) {
+                $(this).val($(this).attr("max"));
+            }
+            else if ($(this).val() < $(this).attr("min") * 1) {
+                $(this).val($(this).attr("min"));
             }
         })
-    })
+        $("#itemDiscountTransaction").keyup(function () {
+            if ($(this).val() < $(this).attr("min") * 1) {
+                $(this).val($(this).attr("min"));
+            }
+        });
+    });
 
     // Add item transaction
     $(document).on("click", "#addRows", function (e) {
@@ -329,12 +301,17 @@ $(document).ready(function () {
     let barang  = $("#myData");
     $(".data-show").on("change", function () {
         let val = $(this).val();
-        if (val == "masuk") {
-			barang.fadeIn(200);
-        } else if (val == "keluar") {
-			barang.fadeIn(200);
+        if (val == "in") {
+            barang.fadeIn(200);
+            document.title = "Gudang ID | Barang Masuk";
+            callback(val);
+        } else if (val == "out") {
+            barang.fadeIn(200);
+            document.title = "Gudang ID | Barang Keluar";
+            callback(val);
         } else {
             barang.fadeOut(200);
+            document.title = "Gudang ID | Item Report";
         }
     }).trigger("change");
 
@@ -411,4 +388,27 @@ function commafy(num) {
         str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1.");
     }
 	return str.join(".");
+}
+
+function callback(param) {
+    $.ajax({
+        url: "http://localhost/gudang-id/public/report/getstockreport",
+        data: { type: param },
+        method: "POST",
+        success: function (res) {
+            let data = JSON.parse(res);
+            $("#itemReport").children("tbody").children().remove();
+            data.forEach((stock) => {
+                $("#itemReport").children("tbody").append(`
+                    <tr>
+                        <td>${moment(stock.date).format("DD/MM/YYYY")}</td>
+                        <td>${stock.kd_barang}</td>
+                        <td>${stock.nm_barang}</td>
+                        <td>${stock.nm_kat}</td>
+                        <td>${stock.qty}</td>
+                    </tr>
+                `);
+            });
+        },
+    });
 }

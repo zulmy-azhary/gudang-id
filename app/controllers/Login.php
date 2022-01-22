@@ -50,6 +50,7 @@ class Login extends Controller{
         header('Location: ' . BASEURL . '/login');
     }
 
+    // ! Ajax
     public function getUser(){
         $username = $_POST['username'];
         $password = $_POST['password'];

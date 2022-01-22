@@ -62,7 +62,7 @@ $Font-3: #f3f5f7;
 }
 
 @mixin Glassy($Blur, $Background, $Transparent) {
-	backdrop-filter: blur($Blur) !important;
+	// backdrop-filter: blur($Blur) !important;
 	background: rgba($Background, $Transparent) !important;
 }
 
@@ -78,9 +78,9 @@ $Font-3: #f3f5f7;
 @mixin FormControl($Background){
     box-shadow      : none !important;
     outline         : none !important;
-    border          : none !important;
+    // border          : none !important;
     font-size       : 0.9rem !important;
-	background		: $Background !important;
+	background-color: $Background !important;
 }
 
 //style for button

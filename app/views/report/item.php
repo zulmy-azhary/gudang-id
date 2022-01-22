@@ -23,8 +23,8 @@
 							</div>
 							<select class="select2 data-show">
 								<option value=""></option>
-								<option value="masuk">Barang Masuk</option>
-								<option value="keluar">Barang Keluar</option>
+								<option value="in">Barang Masuk</option>
+								<option value="out">Barang Keluar</option>
 							</select>
 						</div>
                     </div>

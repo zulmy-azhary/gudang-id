@@ -7,6 +7,24 @@
   margin: 0;
 }
 
+html.dark .switch-button {
+  background: #f4f6f9 !important;
+}
+
+html.dark .switch-button:before {
+  left: 4px;
+  background: #2a333d;
+}
+
+html.dark .switch-button:after {
+  top: 4px;
+  right: 4px;
+  width: 32px;
+  height: 20px;
+  border-radius: 16px;
+  background: #f4f6f9;
+}
+
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -18,14 +36,193 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.dark .main-header {
+  background: #191e25;
+}
+
+.dark .main-header .nav-item .nav-link {
+  color: #f3f5f7;
+}
+
+.dark .main-header .nav-item:hover .nav-link {
+  color: #f3f5f7;
+}
+
+.dark .main-header .nav-item .active .nav-link {
+  color: #191e25;
+}
+
+.dark .main-header .dropdown-menu .bubbles {
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-radius: 0.2rem;
+  position: absolute;
+  background: #4b5a6e;
+  right: 1.2rem;
+  top: -0.5rem;
+}
+
+.dark .main-header .dropdown-menu .cover {
+  background: #4b5a6e;
+}
+
+.dark .main-header .dropdown-menu .cover .user-avatar {
+  border: 4px solid #4b5a6e;
+}
+
+.dark .main-sidebar {
+  background: #2a333d !important;
+}
+
+.dark .main-sidebar .sidebar * p {
+  color: #d0d6df;
+}
+
+.dark .main-sidebar .sidebar * i {
+  color: #d0d6df;
+}
+
+.dark .main-sidebar .sidebar *.nav-link:hover {
+  background: #71adff;
+}
+
+.dark .main-sidebar .sidebar *.nav-link:hover p, .dark .main-sidebar .sidebar *.nav-link:hover i {
+  color: #f3f5f7 !important;
+}
+
+.dark .main-sidebar .sidebar *.nav-treeview {
+  background: #191e25;
+}
+
+.dark .main-sidebar .sidebar *.active {
+  background: #71adff;
+}
+
+.dark .main-sidebar .sidebar *.active p, .dark .main-sidebar .sidebar *.active .bx {
+  color: #f3f5f7;
+}
+
+.dark .content-header {
+  color: #d0d6df;
+}
+
+.dark .content-wrapper {
+  background: #191e25;
+}
+
+.dark .main-footer {
+  background: #191e25;
+}
+
+.dark .card {
+  background: #2a333d !important;
+}
+
+.dark .card .card-header {
+  background: #2a333d;
+}
+
+.dark .card .card-body {
+  background: #2a333d;
+}
+
+.dark .card .card-footer {
+  background: #2a333d;
+}
+
+.switch-button {
+  margin: 0;
+  padding: 0;
+  width: 48px;
+  height: 28px;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  border-radius: 14px;
+  display: inline-block;
+  background: #2a333d;
+}
+
+.switch-button,
+.switch-button:before,
+.switch-button:after {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.switch-button:before {
+  top: 4px;
+  left: 24px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  border-radius: 12px;
+  background: #f4f6f9;
+}
+
+.switch-button:after {
+  content: "";
+  top: 14px;
+  right: 2px;
+  width: 1px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  border-radius: 0.5px;
+}
+
+.switch-button:after {
+  background: #191e25;
+}
+
+.dark .switch-button:focus,
+.dark .switch-button:active,
+.dark .switch-button:active:after {
+  background: #ffffff;
+}
+
+.no-select {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.disable-easing-temporarily,
+.disable-easing-temporarily:after,
+.disable-easing-temporarily:before {
+  -webkit-transition-property: none !important;
+  transition-property: none !important;
+  -webkit-transform: none !important;
+          transform: none !important;
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+
 input {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   outline: none !important;
-  border: none !important;
   font-size: 0.9rem !important;
-  background: #f4f6f9 !important;
+  background-color: #f4f6f9 !important;
   height: 2.5rem !important;
+}
+
+input:disabled, input:-moz-read-only {
+  background: #e4e9f0 !important;
+}
+
+input:disabled, input:read-only {
+  background: #e4e9f0 !important;
+}
+
+#notes {
+  background: #f4f6f9;
 }
 
 .row-action {
@@ -714,22 +911,16 @@ input {
 }
 
 .box-profile .facebook {
-  -webkit-backdrop-filter: blur(500px) !important;
-          backdrop-filter: blur(500px) !important;
   background: rgba(163, 113, 255, 0.4) !important;
   color: #3d2ddf;
 }
 
 .box-profile .instagram {
-  -webkit-backdrop-filter: blur(500px) !important;
-          backdrop-filter: blur(500px) !important;
   background: rgba(163, 113, 255, 0.4) !important;
   color: #3d2ddf;
 }
 
 .box-profile .twitter {
-  -webkit-backdrop-filter: blur(500px) !important;
-          backdrop-filter: blur(500px) !important;
   background: rgba(163, 113, 255, 0.4) !important;
   color: #3d2ddf;
 }
@@ -745,18 +936,16 @@ input {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   outline: none !important;
-  border: none !important;
   font-size: 0.9rem !important;
-  background: #f4f6f9 !important;
+  background-color: #f4f6f9 !important;
 }
 
 .select2-dropdown {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   outline: none !important;
-  border: none !important;
   font-size: 0.9rem !important;
-  background: #f4f6f9 !important;
+  background-color: #f4f6f9 !important;
   padding: 0.4rem !important;
 }
 
@@ -816,8 +1005,6 @@ input {
 }
 
 .total-item .logo {
-  -webkit-backdrop-filter: blur(500px) !important;
-          backdrop-filter: blur(500px) !important;
   background: rgba(61, 45, 223, 0.4) !important;
 }
 
@@ -826,8 +1013,6 @@ input {
 }
 
 .total-trans .logo {
-  -webkit-backdrop-filter: blur(500px) !important;
-          backdrop-filter: blur(500px) !important;
   background: rgba(236, 124, 39, 0.4) !important;
 }
 
@@ -836,8 +1021,6 @@ input {
 }
 
 .total-cust .logo {
-  -webkit-backdrop-filter: blur(500px) !important;
-          backdrop-filter: blur(500px) !important;
   background: rgba(221, 56, 78, 0.4) !important;
 }
 
@@ -846,8 +1029,6 @@ input {
 }
 
 .total-inc .logo {
-  -webkit-backdrop-filter: blur(500px) !important;
-          backdrop-filter: blur(500px) !important;
   background: rgba(66, 184, 127, 0.4) !important;
 }
 
@@ -856,8 +1037,6 @@ input {
 }
 
 .recent-trans .cust-logo {
-  -webkit-backdrop-filter: blur(500px) !important;
-          backdrop-filter: blur(500px) !important;
   background: rgba(221, 56, 78, 0.4) !important;
   display: -webkit-box;
   display: -ms-flexbox;

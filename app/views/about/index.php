@@ -19,7 +19,7 @@
                         <div class="text-center">
                             <img class=" img-fluid img-circle" src="<?= BASEURL ?>/dist/img/user4-128x128.jpg" alt="User profile picture">
                         </div>
-                        <h3 class="profile-username text-center">Zulmy Ashary AS</h3>
+                        <h3 class="profile-username text-center">Zulmy Azhary AS</h3>
                         <p class="text-center nim">20192205037</p>
                         <div class="row social-wrapper">
 							<span class="social"><i class='bx bxl-facebook facebook'></i>---</span>

@@ -7,6 +7,25 @@
     margin: 0;
 }
 
+html{
+	&.dark {
+		.switch-button {
+			background: $Primary-8 !important;
+			&:before {
+				left: 4px;
+				background: $Primary-2;
+			}
+			&:after {
+				top: 4px;
+				right: 4px;
+				width: 32px;
+				height: 20px;
+				border-radius: 16px;
+				background: $Primary-8;
+			}
+		}
+	} 
+}
 body {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -17,10 +36,167 @@ body {
     }
 }
 
+// Toggle mode
+.dark {
+	.main-header {
+		background: $Primary-1;
+		.nav-item{
+			.nav-link {
+				color: $Font-3;
+			}
+			&:hover {
+				.nav-link {
+					color: $Font-3;
+				}
+			}
+			.active {
+				.nav-link {
+					color: $Font-1;
+				}
+			}
+		}
+		.dropdown-menu {
+			.bubbles {
+				@include Bubbles( $Primary-4, 1.2rem, -0.5rem);
+			}
+			.cover {
+				background: $Primary-4;
+				.user-avatar {
+					border: 4px solid $Primary-4;
+				}
+			}
+		}
+	}
+	.main-sidebar {
+		background: $Primary-2 !important;
+		.sidebar * {
+			& p {
+				color: $Font-2;
+			}
+			& i {
+				color: $Font-2;
+			}
+			&.nav-link {
+				&:hover {
+					background: $Tosca-5;
+					p, i {
+						color: $Font-3 !important;
+					}
+				}
+			}
+			&.nav-treeview {
+				background: $Primary-1;
+			}
+			&.active {
+				background: $Tosca-5;
+				p, .bx {
+					color: $Font-3;
+				}
+			}
+		}
+	}
+	.content-header {
+		color: $Font-2;
+	}
+	.content-wrapper {
+		background: $Primary-1;
+	}
+	.main-footer {
+		background: $Primary-1;
+	}
+	.card{
+		background: $Primary-2 !important;
+		.card-header {
+			background: $Primary-2;
+		}
+		.card-body {
+			background: $Primary-2;
+		}
+		.card-footer {
+			background: $Primary-2;
+		}
+	}
+}
+
+.switch-button {
+	margin: 0;
+	padding: 0;
+	width: 48px;
+	height: 28px;
+	border: none;
+	outline: none;
+	overflow: hidden;
+	position: relative;
+	border-radius: 14px;
+	display: inline-block;
+	background: $Primary-2;
+}
+
+.switch-button,
+.switch-button:before,
+.switch-button:after {
+	transition: all 0.25s ease-in-out;
+}
+
+.switch-button:before {
+	top: 4px;
+	left: 24px;
+	content: "";
+	width: 20px;
+	height: 20px;
+	display: block;
+	position: absolute;
+	border-radius: 12px;
+	background: $Primary-8;
+}
+
+.switch-button:after {
+	content: "";
+	top: 14px;
+	right: 2px;
+	width: 1px;
+	height: 1px;
+	display: block;
+	position: absolute;
+	border-radius: 0.5px;
+}
+
+.switch-button:after {
+	background: $Primary-1;
+}
+
+.dark .switch-button:focus,
+.dark .switch-button:active,
+.dark .switch-button:active:after { 
+	background: $Primary-9;
+}
+
+.no-select {
+	user-select: none;
+}
+
+.disable-easing-temporarily,
+.disable-easing-temporarily:after,
+.disable-easing-temporarily:before {
+	transition-property: none !important;
+	transform: none !important;
+	animation: none !important;
+}
+
+
+// Main component here
 input {
 	@include FormControl($Primary-8);
 	height: 2.5rem !important;
+	&:disabled, &:read-only{
+		background: darken($Primary-8, $amount: 5) !important; 
+	}
 }
+
+#notes {
+	background: $Primary-8;
+}
+
 .row-action {
 	@include CenterFlex;
 	gap: 0.5rem;

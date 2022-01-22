@@ -22,7 +22,6 @@ class ManageUser extends Controller{
         $data = [
             'title' => 'User Management',
             'content' => 'manageuser/add',
-            'confirmPasswordError' => '',
         ];
 
         // Method for create user
@@ -36,22 +35,23 @@ class ManageUser extends Controller{
                 'username' => trim($_POST['username']),
                 'password' => trim($_POST['password']),
                 'confirmPassword' => trim($_POST['confirmPassword']),
-                'userCabang' => $_POST['userCabang'],
+                // 'userCabang' => $_POST['userCabang'],
                 'userRole' => $_POST['userRole'],
-                'confirmPasswordError' => '',
             ];
+
+            $confirmPasswordError = "";
 
             // ! Validate confirm password
             if(empty($data['confirmPassword'])){
-                $data['confirmPasswordError'] = "Please enter password";
+                $confirmPasswordError = "Please enter password";
             } else{
                 if($data['password'] != $data['confirmPassword']){
-                    $data['confirmPasswordError'] = "Password do not match, please try again";
+                    $confirmPasswordError = "Password do not match, please try again";
                 }
             }
 
             // ! Make user that errors are empty
-            if(empty($data['confirmPasswordError'])){
+            if(empty($confirmPasswordError)){
                 // Hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
@@ -68,6 +68,14 @@ class ManageUser extends Controller{
         $this->view('main/index', $data);
     }
 
+    // ! Update
+    public function updateUser(){
+        if($this->userModel->updateDataUser($_POST) > 0){
+            header('Location: ' . BASEURL . '/manageuser');
+            exit;     
+        }
+    }
+
     // ! Method
     public function delete($id){
         if($this->userModel->deleteUser($id) !== null){
@@ -79,5 +87,9 @@ class ManageUser extends Controller{
     // ! Ajax
     public function getModalUsers(){
         echo json_encode($this->userModel->getUserById($_POST['id']));
+    }
+
+    public function getUsername(){
+        echo json_encode($this->userModel->findUserByUsername($_POST['username']));
     }
 }

@@ -29,11 +29,18 @@
 									<th>Tanggal</th>
                                     <th>Invoice</th>
                                     <th>Nama Pelanggan</th>
-                                    <th>Jumlah</th>
+                                    <th class="price">Jumlah</th>
                                 </tr>
                             </thead>
                             <tbody>
-								
+                            <?php foreach($data['items'] as $transaction) : ?>
+								<tr>
+                                    <td><?= indoDate($transaction['date']) ?></td>
+                                    <td><?= $transaction['invoice'] ?></td>
+                                    <td><?= $transaction['nm_pelanggan'] ?></td>
+                                    <td><?= $transaction['grand_total'] ?></td>
+                                </tr>
+                            <?php endforeach; ?>
 							</tbody>
                         </table>
                     </div>

@@ -76,9 +76,9 @@ class TransactionModel{
         return $this->db->rowCount();
     }
 
-    public function getInvoice($limit = ""){
+    public function getInvoice($limit = "", $sort = "DESC"){
         $query = "SELECT *FROM {$this->db->tableTransactionOrder}
-                    ORDER BY created_at DESC
+                    ORDER BY created_at $sort
                     $limit
                 ";
 

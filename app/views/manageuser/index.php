@@ -26,7 +26,7 @@
                                 <tr>
                                     <th>Nama lengkap</th>
                                     <th>Username</th>
-                                    <th>Cabang</th>
+                                    <!-- <th>Cabang</th> -->
                                     <th>Role</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -36,11 +36,11 @@
                                 <tr>
                                     <td><?= $users['fullname']; ?></td>
                                     <td><?= $users['username']; ?></td>
-                                    <?php if($users['id_role'] == 1): ?>
+                                    <!-- <?php if($users['id_role'] == 1): ?>
                                         <td>-</td>
                                     <?php else : ?>
                                         <td><?= $users['nm_cabang']; ?></td>
-                                    <?php endif; ?>
+                                    <?php endif; ?> -->
                                     <td><?= $users['nm_role']; ?></td>
                                     <td class="act-btn">
                                         <a class="btn table-act-1" data-toggle="modal" data-target="#userUpdateModal" id="userUpdateModalButton" data-id="<?= $users['user_id']; ?>">
@@ -67,7 +67,7 @@
 </section>
 
 <div class="modal fade" id="userUpdateModal" aria-labelledby="modalLabel" aria-hidden="true">
-    <form action="<?= BASEURL ?>/item/update" method="POST" id="updateModalForm">
+    <form action="<?= BASEURL ?>/manageuser/updateuser" method="POST" id="updateModalForm">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content card">
                 <div class="modal-header border-0">
@@ -75,7 +75,6 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-horizontal d-flex justify-content-center">
-                        <input type="hidden" name="id_barang" id="updateIdBarang">
                         <div class="card-body col-md-8">
                             <div class="form-group">
                                 <label for="updateFname" class="col-sm-12 col-form-label">Nama Lengkap</label>
@@ -86,7 +85,7 @@
                                             <i class='bx bx-rename'></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" name="" id="updateFullName">
+                                        <input type="text" class="form-control" name="updateFullname" id="updateFullName">
                                         <!-- <input type="hidden" name="kategori" id="updateCategory"> -->
                                     </div>
                                 </div>
@@ -100,7 +99,7 @@
                                                 <i class='bx bx-user-circle'></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" name="" id="updateUsername" disabled>
+                                        <input type="text" class="form-control" name="updateUsername" id="updateUsername" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -113,11 +112,11 @@
                                                 <i class='bx bx-key'></i>
                                             </span>
                                         </div>
-                                        <input type="password" class="form-control" name="" id="updatePassword" autocomplete="off">
+                                        <input type="password" class="form-control" name="updatePassword" id="updatePassword" autocomplete="off">
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="updateUserCabang" class="col-sm-12 col-form-label">Cabang</label>
                                 <div class="col-sm-12">
                                     <div class="input-group">
@@ -126,7 +125,7 @@
                                                 <i class="bx bx-barcode"></i>
                                             </span>
                                         </div>
-                                        <select class="custom-select-user" id="updateUserCabang" name="id_role" required>
+                                        <select class="custom-select-user" id="updateUserCabang" name="updateUserCabang" required>
                                             <option selected value="">Pilih Cabang</option>
                                             <option value="1" >Cabang A</option>
                                             <option value="2" >Cabang B</option>
@@ -134,7 +133,7 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="updateUserRole" class="col-sm-12 col-form-label">Role</label>
                                 <div class="col-sm-12">
@@ -144,8 +143,7 @@
                                                 <i class='bx bx-network-chart' ></i>
                                             </span>
                                         </div>
-                                        <select class="custom-select-user" id="updateUserRole" name="kategori" required>
-                                            <option selected value="">Pilih Role</option>
+                                        <select class="custom-select-user" id="updateUserRole" name="updateUserRole" required>
                                             <option value="2" >Admin</option>
                                             <option value="3" >Branch Manager</option>
                                         </select>
@@ -155,12 +153,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer border-0">
-                    <div class="col-md-12">
-                        <div class="row-action justify-content-center" style="gap: 1rem;">
-                            <button class="btn btn-cancel d-flex" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
-                            <button type="submit" class="btn btn-accept update-button d-flex"><i class='bx bx-save'></i>Update</button>
-                        </div>
+                <div class="card-footer d-flex justify-content-center">
+                    <div class="row-action justify-content-end">
+                        <button class="btn button-actions" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+                        <button type="submit" class="btn button-success update-button"><i class='bx bx-save'></i>Update</button>
                     </div>
                 </div>
             </div>

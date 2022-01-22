@@ -26,6 +26,9 @@
 <!-- This is Alert for validation -->
 <script src="<?= BASEURL ?>/assets/js/alert.js"></script>
 <!-- JS for sweet alerts, datatables, etc -->
+
+<script src="<?= BASEURL ?>/assets/js/toggle.js"></script>
+<script src="<?= BASEURL ?>/assets/js/validation.js"></script>
 <script src="<?= BASEURL ?>/assets/js/terbilang.js"></script>
 <script src="<?= BASEURL ?>/assets/js/datatables.js"></script>
 <script src="<?= BASEURL ?>/assets/js/data.js"></script>

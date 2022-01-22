@@ -138,7 +138,7 @@
                             <div class="form-group">
                                     <label for="inputName" class="col-sm-12 col-form-label">Catatan</label>
                                     <div class="input-group col-sm-12">
-                                    <textarea name="notes" id="notes" class="form-control" placeholder="Masukkan pesan" style="height: 13.499rem;"></textarea>
+                                    <textarea name="notes" id="notes" class="form-control" placeholder="Masukkan pesan" style="height: 13.499rem; resize: none;"></textarea>
                                     </div>
                                 </div>
                             </div>
