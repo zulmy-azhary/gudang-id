@@ -14,47 +14,28 @@
 <body>
 
     <section class="area">
-        <div class="box-banner">
-            <div class="col-sm-12">
-                <div class="banner-header">
-                    <span class="head">GUDANG.ID</span>
-                </div>
-                <div class="swiper my-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </div>
+		<img src="<?= BASEURL ?>/assets/img/circle.svg" alt="" class="circle-path">
         <div class="box-form">
-            <div class="col-sm-12 heading">
-                <img class="login-icon" src="<?= BASEURL ?>/assets/img/robot-checking-user-profile.svg" alt="Login Icon">
-            </div>
+			<span class="header">Masuk</span>
+			<p class="system">Sistem Manajemen Penjualan & Inventory</p>
             <div class="col-sm-12 forms">
                 <form class="form-wrapper" method="POST" action="<?= BASEURL ?>/login">
                     <div class="form-group">
                         <label class="label" id="inLabel">Username</label>
                         <input id="username" name="username" type="text" class="form-control input" autocomplete="off">
-                        <div class="plat"></div>
                     </div>
                     <div class="form-group">
                         <label class="label" id="inLabel">Password</label>
                         <input id="password" name="password" type="password" class="form-control input" autocomplete="off">
-                        <div class="plat"></div>
                     </div>
                     <div class="response" id="message">
                         <span id="msgSuccess"style="display: none;"></span>
                         <span id="msgError"style="display: none;"></span>
                     </div>
-                    <button type="submit" class="btn btn-success btn-login" id="loginBtn" tabindex="0" disabled>Login</button>
+                    <button type="submit" class="btn btn-login" id="loginBtn" tabindex="0" disabled>Login</button>
                 </form>
             </div>
-            <div class="col-sm-12 footer">
-                <div class="form-footer">
-                    <span><i class='bx bx-copyright'></i>2021-2026 Gudang ID. All rights reserved.</span>
-                </div>
-            </div>
+			<span class="footer">2021-2026 Gudang ID. All rights reserved.</span>
         </div>
     </section>
 

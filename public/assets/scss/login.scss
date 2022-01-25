@@ -8,123 +8,81 @@ body {
 .area {
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: space-between;
+    @include CenterFlex;
+	background: $Secondary-1;
     padding: 0;
 }
 
-.box-banner {
-    width: 60%;
-    padding: 2rem 0rem;
-    background: $Primary-1;
-    position: relative;
-    color: $Font-3;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    .banner-header {
-        .head {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-    }
+.circle-path {
+	position: absolute;
+	vertical-align: middle;
+    left: calc(50% - 260px);
+	bottom: calc(50% - 316px);
+    z-index: 0;
+    width: 33rem;
 }
+
 .box-form {
-    width: 40%;
-    height: 100%;
-    padding: 2rem 0rem;
-    background: white;
-    display: flex;
+	background: $Secondary-2;
+	position: relative;
+    padding: 2.8rem 2.5rem;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    .heading {
-        transition: 0.25s;
-        @include CenterFlex;
-        flex-direction: column;
-        justify-content: space-between !important;
-        .login-icon{
-            width: 25rem;
-        }
-    }
-    .footer {
-        transition: 0.25s;
-        margin-top: 3rem;
-        .form-footer {
-            padding: 0rem 5rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: gray;
-            margin:0;
-            span {
-                display: flex;
-                align-items: center;
-                i {
-                    font-size: 1.2rem;
-                }
-            }
-        }
-    }
+	border-radius: 0.7rem;
+	min-height: 18.75rem;
+    width: 26.25rem;
+    display: flex;
+	.header, .system, .footer {
+		color: $Font-2;
+		text-align: center;
+	}
+	.footer {
+		margin-top: 0.5rem;
+		padding-top:0.9rem ;
+		border-top: 2.5px solid $Secondary-4;
+		color: $Font-2;
+		text-align: center;
+	}
+	.header {
+		font-size: 2.25rem;
+		font-weight: 600;
+	}
+	.system {
+		font-size: 0.9rem;
+		margin: 0;
+	}
     .forms {
-        height: 35%;
         position: relative;
+		margin: 1.4rem 0rem;
         .form-wrapper {
             @include CenterFlex;
 			flex-direction: column;
             width: 100%;
-            height: 100%;
             .form-group {
-                margin-bottom: 5rem;
-                width: 60%;
+				margin: 1rem 0rem;
+                width: 100%;
                 position: relative;
                 .label {
-                    position: absolute;
-                    top: 0.8rem;
-                    left: 0.5rem;
-                    color: $Primary-5;
-                    transition: 0.15s;
-                    font-size: 0.95rem;
-                    padding: 0.1rem 0.5rem;
-                    border-radius: 0.5rem;
+					background: $Secondary-2;
+					padding: 0rem 0.2rem;
+					border-radius: 0.2rem;
+					position: absolute;
+                    font-size: 0.8rem;
+                    color: $Font-2;
+                    top: -0.6rem;
+                    left: 1rem;
+                    z-index: 3;
                 }
                 .input {
-                    height: 3.2rem;
-                    transition: 0.25s;
-                    outline: none !important;
                     box-shadow: none !important;
-                    border: none;
-                    position: absolute;
-                    color: $Font-1;
+                    outline: none !important;
+					background: $Secondary-3;
+					border: none;
+                    border-radius: 0.4rem;
                     padding: 0rem 1.2rem;
-                    border-radius: 0.8rem;
-                    background: transparent;
-                    font-size: 1.1rem;
-                    z-index: 2;
-                }
-                .plat {
-                    position: absolute;
-                    width: 100%;
-                    bottom: -3.2rem;
                     transition: 0.25s;
-                    height: 0.15rem;
-                    border-radius: 1rem;
-                    background: $Primary-8;
-                }
-            }
-            .label-float {
-                .plat {
+                    font-size: 1.1rem;
+                    color: $Font-3;
                     height: 3.2rem;
-                    border-radius: 0.3rem;
-                }
-                .label {
-                    top: -1rem;
-                    transition: 0.15s;
-                    left: 1rem;
-                    font-size: 0.9rem;
-                    font-weight: 600;
-                    color: black;
-                    background: $Primary-9;
-                    z-index: 3;
                 }
             }
 
@@ -144,14 +102,14 @@ body {
             } 
             
             .btn-login {
-                margin-top: 1rem;
-                width: 60%;
-                height: 3rem;
-                border-radius: 0.3rem;
+                border-radius: 10rem;
                 background: $Tosca-5;
                 box-shadow: none;
+                margin-top: 1rem;
                 outline: none;
+                height: 3rem;
                 border: none;
+                width: 100%;
             }
         }
     }

@@ -74,7 +74,7 @@
                             </p>
                         </div>
                         <div class="col-sm-4 d-flex justify-content-end align-items-center">
-                            <h5 class="p-0 m-0" id="invoiceHistory"></h5>
+                            <h5 class="p-0 m-0 invoice" id="invoiceHistory"></h5>
                         </div>
                     </div>
 

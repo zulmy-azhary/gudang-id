@@ -27,7 +27,7 @@
                     <span class="role-profile"><?= $_SESSION['nm_role']; ?></span>
                 </div>
                 <div class="action">
-                    <a class="btn button-actions	" href="<?= BASEURL ?>/login/logout">
+                    <a class="btn button-actions" href="<?= BASEURL ?>/login/logout">
                         <i class='bx bx-log-out'></i>
                     </a>
                 </div>

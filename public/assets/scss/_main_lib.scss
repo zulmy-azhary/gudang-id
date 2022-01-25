@@ -6,26 +6,18 @@ $Primary-1: #191e25;
 $Primary-2: #2a333d;
 $Primary-3: #3a4656;
 $Primary-4: #4b5a6e;
-$Primary-5: #69788e;
-$Primary-6: #96a2b2;
-$Primary-7: #d0d6df;
-$Primary-8: #f4f6f9;
-$Primary-9: #ffffff;
+$Primary-5: #f1f3fe;
+$Primary-6: #eff2f9;
+$Primary-7: #e8e9fb;
+$Primary-8: #ffffff;
 
-// !purple elements
-$Purple-1: #160f5a;
-$Purple-2: #1e157c;
-$Purple-3: #261c9f;
-$Purple-4: #2f21c4;
-$Purple-5: #3d2ddf;
-
-// !tosca elements
-$Tosca-1: #00c2ae;
-$Tosca-2: #ee8a18;
-$Tosca-3: #a371ff;
-$Tosca-4: #ff7174;
-$Tosca-5: #71adff;
-
+// !secondary color 
+$Secondary-1: #1a1c29;
+$Secondary-2: #222433;
+$Secondary-3: #292a3c;
+$Secondary-4: #2e3141;
+$Secondary-5: #bcc2e4;
+$Secondary-6: #e8ecf7;
 
 // !danger elements
 $Danger-1: #450910;
@@ -48,11 +40,37 @@ $Warning-3: #bc5404;
 $Warning-4: #e26505;
 $Warning-5: #ec7c27;
 
+// !purple elements
+$Purple-1: #160f5a;
+$Purple-2: #1e157c;
+$Purple-3: #261c9f;
+$Purple-4: #2f21c4;
+$Purple-5: #3d2ddf;
+$Purple-6: #eb1279;
+
+// !blue elements
+$Blue-1: #4267B2;
+$Blue-2: #0077b5;
+
+// !tosca elements
+$Tosca-1: #00c2ae;
+$Tosca-2: #ee8a18;
+$Tosca-3: #a371ff;
+$Tosca-4: #ff7174;
+$Tosca-5: #71adff;
+
+$Tosca-6: #00b7a5;
+$Tosca-7: #eb8412;
+$Tosca-8: #803cff;
+$Tosca-9: #ff4246;
+$Tosca-10: #207eff;
+
 
 // !font color
-$Font-1: #191e25;
-$Font-2: #d0d6df;
-$Font-3: #f3f5f7;
+$Font-1: #374251;
+$Font-2: #878b9a;
+$Font-3: #d0d6df;
+$Font-4: #f3f5f7;
 
 //centerFlex
 @mixin CenterFlex {
@@ -61,44 +79,42 @@ $Font-3: #f3f5f7;
 	align-items		: center;
 }
 
-@mixin Glassy($Blur, $Background, $Transparent) {
-	// backdrop-filter: blur($Blur) !important;
+@mixin Glassy($Background, $Transparent) {
 	background: rgba($Background, $Transparent) !important;
 }
 
 //style for cards
 @mixin Cards {
-    background      : $Primary-9 !important;
     box-shadow      : none !important;
     flex-direction  : column;
     display         : flex;
 }
 
 //style for input at all form
-@mixin FormControl($Background){
+@mixin FormControl($Background, $Border){
     box-shadow      : none !important;
     outline         : none !important;
-    // border          : none !important;
+    border          : 1.8px solid $Border !important;
     font-size       : 0.9rem !important;
 	background-color: $Background !important;
 }
 
 //style for button
-@mixin Buttons($background){
+@mixin Buttons($Background){
 	@include CenterFlex;
     border-radius   : 0.3rem !important;
-    color           : $Font-3 !important;
+    color           : $Font-4 !important;
     font-size       : 0.8rem !important;
     box-shadow      : none !important;
     font-weight     : 500 !important;
     outline         : none !important;
     border          : none !important;
-    background      : $background;
+    background      : $Background !important;
     padding         : 0.5rem 0.6rem;
 	gap				: 0.2rem;
     i {
         font-size   : 1.4rem;
-		color       : $Font-3 !important;
+		color       : $Font-4 !important;
 		font-weight	: 400;
         align-items : center;
     }

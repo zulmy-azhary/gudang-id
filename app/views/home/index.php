@@ -69,9 +69,9 @@
                     <div class="col-md-6">
                         <div class="connectedSortable">
                             <div class="card">
-								<div class="card-header">
-									<h3 class="card-title">Transaksi Terakhir</h3>
-									<div class="card-tools">
+								<div class="card-header item-table-head">
+									<h4 class="col-sm-6 ">Transaksi Terakhir</h4>
+									<div class="col-sm-6 button-slot">
 										<button type="button" class="btn" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
 									</div>
 								</div>

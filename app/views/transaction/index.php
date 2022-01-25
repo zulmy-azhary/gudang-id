@@ -126,9 +126,9 @@
                 </div>
                 <div class="col-sm-4">
                         <div class="card">
-                            <div class="row col-sm-12 card-body d-flex justify-content-between">
-                                <span>Invoice</span>
-                                <h5 class="p-0 m-0"><?= $data['invoice']; ?></h5>
+                            <div class="card-body invoice">
+                                <span class="col-sm-4 labels">Invoice</span>
+                                <h5 class="col-sm-8 data"><?= $data['invoice']; ?></h5>
                                 <input type="hidden" name="invoice" value="<?= $data['invoice']; ?>">
                             </div>
                         </div>
@@ -172,10 +172,10 @@
             <div class=" row row-content justify-content-end">
                 <div class="col-sm-4">
                         <div class="card">
-                            <div class="row col-sm-12 justify-content-between card-body">
-                                <span>Grand Total</span>
-                                <h5 id="grandTotalTransaction" class="p-0 m-0">Rp. 0</h5>
-                                <input type="hidden" name="grandTotalTransaction" id="grandTotal">
+                            <div class="card-body grand-total">
+                                <span class="col-sm-4 labels">Grand Total</span>
+                                <h5 id="grandTotalTransaction" class="col-sm-8 data">Rp. 0</h5>
+                                <input type="hidden" name="grandTotalTransaction" id="grandTotal">	
                             </div>
                         </div>
                     <div class="row-action d-flex justify-content-end" style="gap: 0.5rem;">
@@ -312,7 +312,7 @@
                             </p>
                         </div>
                         <div class="col-sm-4 d-flex justify-content-end align-items-center">
-                            <h5 class="p-0 m-0"><?= $data['invoice']; ?></h5>
+                            <h5 class="p-0 m-0 invoice"><?= $data['invoice']; ?></h5>
                         </div>
                     </div>
 
