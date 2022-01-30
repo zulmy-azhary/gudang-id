@@ -91,7 +91,7 @@
                                         </div>
                                         <?php endforeach; ?>
                                     <?php else : ?>
-                                        <span>Belum ada riwayat transaksi</span>
+											<span class="cust-name">Belum ada riwayat transaksi</span>
                                     <?php endif; ?>
                                 </div>
                             </div>

@@ -44,12 +44,27 @@ class Transaction extends Controller{
             $this->transactionModel->createItem($_POST);
             $this->itemModel->updateStockOut($_POST);
             $this->stockModel->addStockOut($_POST);
-
             header('Location: ' . BASEURL . '/transaction');
             exit; 
         }
     }
 
+    // ! Delete transaction history 
+    public function deleteTransaction($id){
+        $data = $this->transactionModel->getInvoiceById($id);
+        if($this->transactionModel->deleteTransaction($data['order_id']) > 0){
+            $invoice = $this->transactionModel->getInvoiceItems($data['invoice']);
+            $this->transactionModel->deleteTransactionItems($invoice);
+            $this->itemModel->retrieveTransaction($invoice);
+            for($i = 0; $i < count($invoice); $i++){
+                $idBarang = $this->itemModel->getItemId($invoice[$i]);
+                $this->stockModel->deleteStockOut($idBarang['id_barang']);
+            }
+
+            header('Location: ' . BASEURL . '/transaction/history');
+            exit;  
+        }
+    }
 
     // ! Ajax
     public function getHistory(){

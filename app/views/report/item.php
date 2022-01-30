@@ -45,7 +45,7 @@
 					</div>
                     <div class="card-body">
                         <table id="itemReport" class="table table-dark table-striped text-center table-ui">
-                            <thead id="itemReportHead">
+                            <thead>
                                 <tr>
                                     <th>Tanggal</th>
                                     <th>Kode Barang</th>

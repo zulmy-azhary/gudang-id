@@ -35,7 +35,6 @@ class ManageUser extends Controller{
                 'username' => trim($_POST['username']),
                 'password' => trim($_POST['password']),
                 'confirmPassword' => trim($_POST['confirmPassword']),
-                // 'userCabang' => $_POST['userCabang'],
                 'userRole' => $_POST['userRole'],
             ];
 

@@ -39,7 +39,7 @@
                                             <i class='bx bx-info-circle'></i>
                                         </a>
                                         <?php if($_SESSION['id_role'] == 1) : ?>
-                                        <a class="btn table-act-2 delete-button" href="#"><i class='bx bx-trash'></i></a>
+                                        <a class="btn table-act-2 delete-button" href="<?= BASEURL ?>/transaction/deletetransaction/<?= $item['order_id']; ?>"><i class='bx bx-trash'></i></a>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -148,8 +148,9 @@
                 </div>
             </div>
             <div class="modal-footer border-0 card-footer">
-				<div class="col-sm-12 d-flex justify-content-end">
-					<button class="btn button-actions" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+				<div class="col-sm-12 d-flex justify-content-center" style="gap: 1rem;">
+					<button class="btn button-warning" data-dismiss="modal"><i class='bx bx-undo'></i>Kembali</button>
+                    <button type="submit" class="btn button-actions d-flex"><i class='bx bx-printer'></i>Cetak</button>
 				</div>
     		</div>
         </div>

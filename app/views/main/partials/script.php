@@ -30,7 +30,7 @@
 <script src="<?= BASEURL ?>/assets/js/toggle.js"></script>
 <script src="<?= BASEURL ?>/assets/js/validation.js"></script>
 <script src="<?= BASEURL ?>/assets/js/terbilang.js"></script>
-<script src="<?= BASEURL ?>/assets/js/datatables.js"></script>
+<script src="<?= BASEURL ?>/assets/js/functions.js"></script>
 <script src="<?= BASEURL ?>/assets/js/data.js"></script>
 
 <!-- Tables -->

@@ -180,7 +180,6 @@
                         </div>
                     <div class="row-action d-flex justify-content-end" style="gap: 0.5rem;">
                         <button type="button" id="detailTransactionButton" class="btn button-actions buttonDisabled" disabled data-toggle="modal" data-target="#detailsModal"><i class='bx bx-info-circle'></i>Detail</button>
-                        <button type="button" class="btn button-warning buttonDisabled" disabled><i class='bx bx-save' ></i></i>Simpan</button>
                         <button type="submit" name="processTransaction" class="btn button-success buttonDisabled" disabled><i class='bx bx-check'></i></i>Proses</button>
                     </div>
                 </div>

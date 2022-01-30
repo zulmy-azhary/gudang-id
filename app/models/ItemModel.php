@@ -120,6 +120,33 @@ class ItemModel{
         return $this->db->rowCount();
     }
 
+    public function getItemId($data){
+            $query = "SELECT id_barang FROM {$this->db->tableItems}
+                    WHERE kd_barang = :kd_barang
+                    ";
+
+        $this->db->query($query);
+        $this->db->bind(':kd_barang', $data['kd_barang']);
+        $this->db->execute();
+
+        return $this->db->single();
+    }
+
+    public function retrieveTransaction($data){
+        for($i = 0; $i < count($data); $i++){
+            $query = "UPDATE {$this->db->tableItems} SET
+                        stok = stok + :stock_retrieve
+                        WHERE kd_barang = :kd_barang
+                    ";
+
+            $this->db->query($query);
+            $this->db->bind(':stock_retrieve', $data[$i]['qty']);
+            $this->db->bind(':kd_barang', $data[$i]['kd_barang']);
+            $this->db->execute();
+        }
+        return $this->db->rowCount();
+    }
+
     public function updateStockOut($data){
         for($i = 0; $i < count($data['itemCodeAdd']); $i++){
             $query = "UPDATE {$this->db->tableItems} SET
@@ -128,8 +155,8 @@ class ItemModel{
                     ";
             
             $this->db->query($query);
-            $this->db->bind(":stock_out", $data['itemStockAdd'][$i]);
-            $this->db->bind(":code", $data['itemCodeAdd'][$i]);
+            $this->db->bind(':stock_out', $data['itemStockAdd'][$i]);
+            $this->db->bind(':code', $data['itemCodeAdd'][$i]);
             $this->db->execute();
         }
         return $this->db->rowCount();

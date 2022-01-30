@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  position: relative;
+  font-family: "Inter", sans-serif;
+}
+
+.area {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, right bottom, left top, from(#1a1c29), to(#292a3c));
+  background: linear-gradient(bottom right, #1a1c29, #292a3c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+}
+
+.login-card {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0.7rem;
+  background: transparent;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  background-color: #8b1322;
+}
+
+.box {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.box-form {
+  background: #1c1e28;
+  position: relative;
+  padding: 2rem 2.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top-right-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+  min-height: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box-form .title, .box-form .subtitle, .box-form .coop, .box-form .footer {
+  color: #878b9a;
+  text-align: center;
+}
+
+.box-form .footer {
+  margin-top: 0.5rem;
+  padding-top: 2rem;
+  border-top: 2.5px solid #2e3141;
+  color: #878b9a;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.box-form .title {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.box-form .subtitle {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.box-form .coop {
+  font-size: 1.2rem;
+}
+
+.box-form .forms {
+  position: relative;
+  margin: 1.4rem 0rem;
+}
+
+.box-form .forms .form-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.box-form .forms .form-wrapper .form-group {
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+}
+
+.box-form .forms .form-wrapper .form-group .label {
+  background: #1c1e28;
+  padding: 0rem 0.2rem;
+  border-radius: 0.2rem;
+  position: absolute;
+  font-size: 0.8rem;
+  color: #878b9a;
+  top: -0.6rem;
+  left: 1rem;
+  z-index: 3;
+}
+
+.box-form .forms .form-wrapper .form-group .input {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: none !important;
+  background: #272937;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0rem 1.2rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  color: #d0d6df;
+  height: 3.2rem;
+}
+
+.box-form .forms .form-wrapper .response {
+  height: 1rem;
+}
+
+.box-form .forms .form-wrapper .response #msgSuccess {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #A5DC86;
+}
+
+.box-form .forms .form-wrapper .response #msgError {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #dd384e;
+}
+
+.box-form .forms .form-wrapper .btn-login {
+  border-radius: 10rem;
+  background: #71adff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-top: 1rem;
+  outline: none;
+  height: 3rem;
+  border: none;
+  width: 100%;
+}
+/*# sourceMappingURL=temp.css.map */

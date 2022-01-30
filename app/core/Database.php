@@ -14,7 +14,6 @@ class Database{
     public $tableUsers = TBL_USERS;
     public $tableRole = TBL_ROLE;
     public $tableCustomer = TBL_CUSTOMER;
-    public $tableCabang = TBL_CABANG;
     public $tableTransactionOrder = TBL_T_ORDER;
     public $tableTransactionItem = TBL_T_ITEM;
 

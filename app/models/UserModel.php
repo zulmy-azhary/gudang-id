@@ -8,12 +8,11 @@ class UserModel {
     }
 
     public function getUser(){
-        $query = "SELECT a.*, b.id_role, b.nm_role , c.*
+        $query = "SELECT a.*, b.id_role, b.nm_role
                     FROM {$this->db->tableUsers} as a
                     INNER JOIN {$this->db->tableRole} as b
                     ON a.id_role = b.id_role
-                    LEFT JOIN {$this->db->tableCabang} as c
-                    ON a.id_cabang = c.id_cabang
+                    ORDER BY b.id_role, a.fullname ASC
                 ";
 
         $this->db->query($query);
@@ -21,12 +20,10 @@ class UserModel {
     }
 
     public function getUserById($id){
-        $query = "SELECT a.*, b.id_role, b.nm_role , c.*
+        $query = "SELECT a.*, b.id_role, b.nm_role
                     FROM {$this->db->tableUsers} as a
                     INNER JOIN {$this->db->tableRole} as b
                     ON a.id_role = b.id_role
-                    LEFT JOIN {$this->db->tableCabang} as c
-                    ON a.id_cabang = c.id_cabang
                     WHERE a.user_id = :id
                 ";
 
@@ -67,7 +64,6 @@ class UserModel {
         $this->db->bind(':username', $data['username']);
         $this->db->bind(':password', $data['password']);
         $this->db->bind(':id_role', $data['userRole']);
-        // $this->db->bind(':id_cabang', $data['userCabang']);
 
         $this->db->execute();
         return $this->db->rowCount();

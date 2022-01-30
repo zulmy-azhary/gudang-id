@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   font-family: "Inter", sans-serif;
-  -webkit-transition: background 0.2s ease-in-out, color 0.1s ease-in-out;
-  transition: background 0.2s ease-in-out, color 0.1s ease-in-out;
+  -webkit-transition: background 0.2s ease-in-out, color 0.03s ease-in-out;
+  transition: background 0.2s ease-in-out, color 0.03s ease-in-out;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;

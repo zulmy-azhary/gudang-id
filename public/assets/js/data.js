@@ -1,19 +1,3 @@
-let startDate, endDate;
-let DateFilters = (function (oSettings, aData, iDataIndex) {
-    let start = parseDateValue(startDate);
-    let end = parseDateValue(endDate);
-    
-    let evalDate= parseDateValue(aData[0]);
-    if ( ( isNaN( start ) && isNaN( end ) ) ||
-    ( isNaN( start ) && evalDate <= end ) ||
-    ( start <= evalDate && isNaN( end ) ) ||
-    ( start <= evalDate && evalDate <= end ) )
-    {
-        return true;
-    }
-    return false;
-});
-
 // TODO: Event
 $(document).ready(function () {
     
@@ -277,25 +261,8 @@ $(document).ready(function () {
             },
         })
     });
-
-    // ! Report
-    let myTable = $(".table").DataTable();
-    $("#inputRange").on("apply.daterangepicker", function(ev, picker) {
-        $(this).val(picker.startDate.format("DD/MM/YYYY") + " - " + picker.endDate.format("DD/MM/YYYY"));
-        startDate = picker.startDate.format("DD/MM/YYYY");
-        endDate = picker.endDate.format("DD/MM/YYYY");
-        $.fn.dataTableExt.afnFiltering.push(DateFilters);
-        myTable.draw();
-    });
     
-    $("#inputRange").on("cancel.daterangepicker", function(ev, picker) {
-        $(this).val("");
-        startDate = "";
-        endDate = "";
-        $.fn.dataTable.ext.search.splice($.fn.dataTable.ext.search.indexOf(DateFilters, 1));
-        myTable.draw();
-    });
-    
+    dateRange();
     
     // for show data in Laporan Barang
     let barang  = $("#myData");
@@ -326,89 +293,3 @@ $(document).ready(function () {
 		$(".grand-total-trans")[i].innerHTML = `Rp. ${commafy(grandTotalTransaction.innerHTML)},-`
 	}
 });
-
-
-
-
-function parseDateValue(rawDate) {
-	let dateArray = rawDate.split("/");
-	let parsedDate = new Date(dateArray[2], parseInt(dateArray[1]) - 1, dateArray[0]);
-	return parsedDate;
-} 
-
-// Item Rows format
-function itemRows(id, code, name, price, stock, discount, total) {
-    $("#itemRows").append(`
-        <tr>
-            <input type="hidden" name="itemIdAdd[]" value="${id}">
-            <td><input type="hidden" name="itemCodeAdd[]" value="${code}">${code}</td>
-            <td><input type="hidden" name="itemNameAdd[]" value="${name}">${name}</td>
-            <td><input type="hidden" id="itemPriceAdd${id}" name="itemPriceAdd[]" value="${price}">Rp. ${commafy(price)}</td>
-            <td><input type="hidden" id="itemStockAdd${id}" name="itemStockAdd[]" value="${stock}">${stock}</td>
-            <td><input type="hidden" id="itemDiscountAdd${id}" name="itemDiscountAdd[]" value="${discount}">${discount}${discount == 0 ? "" : "%"}</td>
-            <td><input type="hidden" id="itemTotalAdd${id}" name="itemTotalAdd[]" value="${total}">Rp. ${commafy(total)}</td>
-            <td class="act-btn"><button type="button" class="btn table-act-2 deleteRow"><i class='bx bx-trash'></i></button></td>
-        </tr>
-    `);
-}
-
-function discount(price, stock, discount) {
-    return parseInt(price * stock) - ((price * stock) * (discount / 100));
-}
-
-function setTextContents(element, text) {
-    element.contents().filter(function () {
-        if (this.nodeType == Node.TEXT_NODE) {
-            this.nodeValue = text;
-        }
-    })
-}
-
-function calculateTotal() {
-    let totalAmount = 0;
-    $("[id^='itemPriceAdd']").each(function () {
-        let id = $(this).attr("id");
-        id = id.replace("itemPriceAdd", "");
-        let price = $(`#itemPriceAdd${id}`).val();
-        let qty = $(`#itemStockAdd${id}`).val();
-        let itemDiscount = $(`#itemDiscountAdd${id}`).val();
-        let total = discount(price, qty, itemDiscount);
-        $(`#itemTotalAdd${id}`).val(total);
-        totalAmount += total;
-    });
-
-    $("#grandTotal").val(totalAmount);
-	$("#grandTotalTransaction").html(`Rp. ${commafy(totalAmount)}`);
-}
-
-// Price format, every 3 digit add dot (.) as separator
-function commafy(num) {
-    let str = num.toString().split(".");
-    if (str[0].length >= 4) {
-        str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1.");
-    }
-	return str.join(".");
-}
-
-function callback(param) {
-    $.ajax({
-        url: "http://localhost/gudang-id/public/report/getstockreport",
-        data: { type: param },
-        method: "POST",
-        success: function (res) {
-            let data = JSON.parse(res);
-            $("#itemReport").children("tbody").children().remove();
-            data.forEach((stock) => {
-                $("#itemReport").children("tbody").append(`
-                    <tr>
-                        <td>${moment(stock.date).format("DD/MM/YYYY")}</td>
-                        <td>${stock.kd_barang}</td>
-                        <td>${stock.nm_barang}</td>
-                        <td>${stock.nm_kat}</td>
-                        <td>${stock.qty}</td>
-                    </tr>
-                `);
-            });
-        },
-    });
-}

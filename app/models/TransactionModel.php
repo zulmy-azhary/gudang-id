@@ -115,4 +115,28 @@ class TransactionModel{
         $this->db->query($query);
         return $this->db->single();
     }
+
+    public function deleteTransaction($id){
+        $query = "DELETE FROM {$this->db->tableTransactionOrder}
+                    WHERE order_id = :id
+                ";
+
+        $this->db->query($query);
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function deleteTransactionItems($data){
+        for($i = 0; $i < count($data); $i++){
+            $query = "DELETE FROM {$this->db->tableTransactionItem}
+                        WHERE order_item_id = :order_item_id
+                    ";
+
+            $this->db->query($query);
+            $this->db->bind(':order_item_id', $data[$i]['order_item_id']);
+            $this->db->execute();
+        }
+        return $this->db->rowCount();
+    }
 }

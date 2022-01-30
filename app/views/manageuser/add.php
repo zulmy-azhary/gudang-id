@@ -87,32 +87,13 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="form-group">
-                                <label for="user-code" class="col-sm-12 col-form-label">Cabang</label>
-                                <div class="col-sm-12">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="bx bx-barcode"></i>
-                                            </span>
-                                        </div>
-                                        <select class="custom-select" id="u_cabang" name="userCabang" required>
-                                            <option selected value="">Pilih Cabang</option>
-                                            <option value="1" >Cabang A</option>
-                                            <option value="2" >Cabang B</option>
-                                            <option value="3" >Cabang C</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div> -->
-
                             <div class="form-group">
                                 <label for="user-role" class="col-sm-12 col-form-label">Role</label>
                                 <div class="col-sm-12">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
-                                                <i class='bx bx-network-chart' ></i>
+                                                <i class='bx bx-network-chart'></i>
                                             </span>
                                         </div>
                                         <select class="custom-select" id="userRole" name="userRole" required>

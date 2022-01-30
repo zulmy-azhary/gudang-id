@@ -99,17 +99,13 @@ $(document).on("click", "#userUpdateModalButton", function () {
 
 			$("#updateFullName").val(data.fullname);
 			$("#updateUsername").val(data.username);
-			// $("#updateUserCabang").val(data.id_cabang);
 			$("#updateUserRole").select2("val", data.id_role);
 			if (data.id_role == 1) {
 				$("#updateUserRole")
-					.prop("disabled", true)
-					.append($(`<option selected value="${1}">${data.nm_role}</option>`));
-				// $("#updateUserCabang")
-				// 	.prop("disabled", true)
-				// 	.append($("<option selected>").val(0).text("-"));
+					.prepend($(`<option selected value="${1}">${data.nm_role}</option>`));
+				$("#updateUserRole option:not(:selected)").prop("disabled", true);
 			} else {
-				$("#updateUserRole").prop("disabled", false);
+				$("#updateUserRole option").prop("disabled", false);
 			}
 		},
 	});

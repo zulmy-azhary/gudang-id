@@ -93,5 +93,17 @@ class StockModel {
         }
         return $this->db->rowCount();
     }
+
+    public function deleteStockOut($id){
+        $query = "DELETE FROM {$this->db->tableStock}
+                    WHERE id_barang = :retrieve_stockOut AND type = 'out'
+                ";
+
+        $this->db->query($query);
+        $this->db->bind(":retrieve_stockOut", $id);
+        $this->db->execute();
+        
+        return $this->db->rowCount();
+    }
 }
 
